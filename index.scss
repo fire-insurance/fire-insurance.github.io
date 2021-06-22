@@ -1,0 +1,267 @@
+* {
+    margin: 0;
+}
+
+@font-face {
+    font-family: OleoScript;
+    src: url(Fonts/OleoScript-Regular.ttf);
+}
+
+@font-face {
+    font-family: Roboto-Regular;
+    src: url(Fonts/Roboto-Regular.ttf);
+}
+
+@font-face {
+    font-family: Roboto-Light;
+    src: url(Fonts/Roboto-Light.ttf);
+}
+
+@font-face {
+    font-family: OpenSans-Semibold;
+    src: url(Fonts/OpenSans-SemiBold.ttf);
+}
+
+@font-face {
+    font-family: Roboto-Bold;
+    src: url(Fonts/Roboto-Bold.ttf);
+}
+
+@font-face {
+    font-family: Roboto-Thin;
+    src: url(Fonts/Roboto-Thin.ttf);
+}
+
+@font-face {
+    font-family: Roboto-ThinItalic;
+    src: url(Fonts/Roboto-ThinItalic.ttf);
+}
+
+body {
+    background-image: url("Pictures/NewBackground.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+  
+}
+
+
+nav {
+    width: 100%;
+    height: auto;
+    margin-top: 2em;
+    margin-right: 5em;
+    display: grid;
+    position: fixed;
+
+    section {
+        display: flex;
+        width: 50ch;
+        justify-content: space-around;
+        justify-self: right;
+        margin-right: 7em;
+    }
+
+    span {
+        color: white;
+        font-family: Roboto-Light;
+        font-size: 1.5em;
+        opacity: 0.7;
+        transition: 700ms;
+        user-select: none;
+    }
+    span:hover {
+        opacity: 1;
+        cursor: pointer;
+        text-shadow: 2px 2px 30px white;
+        font-family: Roboto-Regular;
+    }
+}
+
+.Greetings {
+    height: 80vh;
+    display: grid;
+    place-items: center;
+
+    color: white;
+    font-size: 12em;
+    font-family: OpenSans-Semibold;
+    user-select: none;
+}
+
+//Cursor
+.txt-type > .txt {
+    border-right: 0.3rem solid rgba(255, 255, 255, 0.8);
+    font-family: Roboto-Light;
+    text-shadow: 0px 0px 15px white;
+    animation: blinking 1s steps(100) infinite normal;
+}
+
+
+
+.About {
+    padding-bottom: 15vh;
+    padding-top: 25vh;
+    display: grid;
+    grid-template-columns: auto auto;
+    .Rocketship {
+        margin-top: 15vh;
+        position: absolute;
+        pointer-events: none;
+        .Fire {
+            position: relative;
+            right: 50.3%;
+            bottom: 10px;
+            animation: ignition 220ms alternate infinite;
+        }
+    }
+}
+
+
+.Info{
+    margin-left: 500px;
+    height: 80vh;
+    display: grid;
+    grid-template-columns: auto auto auto;
+
+    .Card{
+        background-color: rgba(255, 255, 255, 0.1);
+        width: 40ch;
+        display: flex;
+        flex-direction: column;
+        padding: 5ch;
+        padding-top: 3ch;
+        border-radius: 2em;
+        box-shadow: 20px 20px 50px rgba(0,0,0, 0.5);
+        overflow: hidden;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+        border-left: 1px solid rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(1em);
+        p{
+            color: white;
+            font-size: 1.2em;
+            user-select: none;
+        }
+        .Title{
+            font-family: Roboto-Bold;
+            font-size: 2.2em;
+            align-self: center;
+        }
+        .LilTitle{
+            font-family: Roboto-Regular;
+            margin-top: 0.8em;
+        }
+        .Description{
+            font-family: Roboto-Thin;
+        }
+    }
+
+.Whoami{
+    height: 29em;
+}
+
+    .Skills{
+        height: 19em;
+        .ASkill{
+            margin-top: 0.8em;
+            display: flex;
+            align-items: center;
+            justify-items: center;
+            .Description{
+                font-family: Roboto-Regular;
+            }
+            .Level{
+                margin-left: 2ch;
+                width: 10px;
+                height: 10px;
+                border-radius: 100%;
+            }
+            .Red{
+                background-color: red; 
+                box-shadow: 0px 0px 15px red;
+            }
+            .Green{
+                background-color:rgb(27, 192, 27); 
+                box-shadow: 0px 0px 15px rgb(27, 192, 27); 
+            }
+            .Orange{
+                background-color: orange;
+                box-shadow: 0px 0px 15px orange;
+            }
+            .Tip{
+                font-family: 'Roboto-ThinItalic';
+                color: white;
+                position: relative;
+                bottom: 4px;
+                left: 20px;
+                display: none;
+                width: 15ch;
+            }
+            .Level:hover{
+                cursor:help;
+            }
+            .Green:hover{
+                .Tip{
+                    display: block;
+                }
+                .Tip::before{
+                    content: "Высокий уровень";
+                }
+            }
+            .Orange:hover{
+                .Tip{
+                    display: block;
+                }
+                .Tip::before{
+                    content: "Средний уровень";
+                }
+            }
+            .Red:hover{
+                .Tip{
+                    display: block;
+                }
+                .Tip::before{
+                    content: "Низкий уровень";
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 700px) {
+    nav {
+        span {
+            font-size: 1em;
+        }
+    }
+    .Greetings {
+        font-size: 8em;
+    }
+    .About{
+        .Rocketship, .Fire{
+            transform: scale(0.5);
+        }
+        .Fire{
+            left: 50px;
+            bottom: 50px;
+        }
+    }
+}
+
+
+@keyframes blinking {
+    from {
+        border-right-color: rgba(255, 255, 255, 0.8);
+    }
+    to {
+        border-right-color: transparent;
+    }
+}
+
+@keyframes ignition {
+    50%{
+        transform: scaleY(1.1) translateY(7px);   
+    }
+    100% {
+        transform: scaleY(1.2) translateY(14px);
+    }
+}

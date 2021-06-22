@@ -1,0 +1,332 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+}
+
+@font-face {
+  font-family: OleoScript;
+  src: url(Fonts/OleoScript-Regular.ttf);
+}
+
+@font-face {
+  font-family: Roboto-Regular;
+  src: url(Fonts/Roboto-Regular.ttf);
+}
+
+@font-face {
+  font-family: Roboto-Light;
+  src: url(Fonts/Roboto-Light.ttf);
+}
+
+@font-face {
+  font-family: OpenSans-Semibold;
+  src: url(Fonts/OpenSans-SemiBold.ttf);
+}
+
+@font-face {
+  font-family: Roboto-Bold;
+  src: url(Fonts/Roboto-Bold.ttf);
+}
+
+@font-face {
+  font-family: Roboto-Thin;
+  src: url(Fonts/Roboto-Thin.ttf);
+}
+
+@font-face {
+  font-family: Roboto-ThinItalic;
+  src: url(Fonts/Roboto-ThinItalic.ttf);
+}
+
+body {
+  background-image: url("Pictures/NewBackground.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+nav {
+  width: 100%;
+  height: auto;
+  margin-top: 2em;
+  margin-right: 5em;
+  display: -ms-grid;
+  display: grid;
+  position: fixed;
+}
+
+nav section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 50ch;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  justify-self: right;
+  margin-right: 7em;
+}
+
+nav span {
+  color: white;
+  font-family: Roboto-Light;
+  font-size: 1.5em;
+  opacity: 0.7;
+  -webkit-transition: 700ms;
+  transition: 700ms;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+nav span:hover {
+  opacity: 1;
+  cursor: pointer;
+  text-shadow: 2px 2px 30px white;
+  font-family: Roboto-Regular;
+}
+
+.Greetings {
+  height: 80vh;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  color: white;
+  font-size: 12em;
+  font-family: OpenSans-Semibold;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.txt-type > .txt {
+  border-right: 0.3rem solid rgba(255, 255, 255, 0.8);
+  font-family: Roboto-Light;
+  text-shadow: 0px 0px 15px white;
+  -webkit-animation: blinking 1s steps(100) infinite normal;
+          animation: blinking 1s steps(100) infinite normal;
+}
+
+.About {
+  padding-bottom: 15vh;
+  padding-top: 25vh;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto auto;
+      grid-template-columns: auto auto;
+}
+
+.About .Rocketship {
+  margin-top: 15vh;
+  position: absolute;
+  pointer-events: none;
+}
+
+.About .Rocketship .Fire {
+  position: relative;
+  right: 50.3%;
+  bottom: 10px;
+  -webkit-animation: ignition 220ms alternate infinite;
+          animation: ignition 220ms alternate infinite;
+}
+
+.Info {
+  margin-left: 500px;
+  height: 80vh;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto auto auto;
+      grid-template-columns: auto auto auto;
+}
+
+.Info .Card {
+  background-color: rgba(255, 255, 255, 0.1);
+  width: 40ch;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 5ch;
+  padding-top: 3ch;
+  border-radius: 2em;
+  -webkit-box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+          box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
+  -webkit-backdrop-filter: blur(1em);
+          backdrop-filter: blur(1em);
+}
+
+.Info .Card p {
+  color: white;
+  font-size: 1.2em;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.Info .Card .Title {
+  font-family: Roboto-Bold;
+  font-size: 2.2em;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.Info .Card .LilTitle {
+  font-family: Roboto-Regular;
+  margin-top: 0.8em;
+}
+
+.Info .Card .Description {
+  font-family: Roboto-Thin;
+}
+
+.Info .Whoami {
+  height: 29em;
+}
+
+.Info .Skills {
+  height: 19em;
+}
+
+.Info .Skills .ASkill {
+  margin-top: 0.8em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  justify-items: center;
+}
+
+.Info .Skills .ASkill .Description {
+  font-family: Roboto-Regular;
+}
+
+.Info .Skills .ASkill .Level {
+  margin-left: 2ch;
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+}
+
+.Info .Skills .ASkill .Red {
+  background-color: red;
+  -webkit-box-shadow: 0px 0px 15px red;
+          box-shadow: 0px 0px 15px red;
+}
+
+.Info .Skills .ASkill .Green {
+  background-color: #1bc01b;
+  -webkit-box-shadow: 0px 0px 15px #1bc01b;
+          box-shadow: 0px 0px 15px #1bc01b;
+}
+
+.Info .Skills .ASkill .Orange {
+  background-color: orange;
+  -webkit-box-shadow: 0px 0px 15px orange;
+          box-shadow: 0px 0px 15px orange;
+}
+
+.Info .Skills .ASkill .Tip {
+  font-family: 'Roboto-ThinItalic';
+  color: white;
+  position: relative;
+  bottom: 4px;
+  left: 20px;
+  display: none;
+  width: 15ch;
+}
+
+.Info .Skills .ASkill .Level:hover {
+  cursor: help;
+}
+
+.Info .Skills .ASkill .Green:hover .Tip {
+  display: block;
+}
+
+.Info .Skills .ASkill .Green:hover .Tip::before {
+  content: "Высокий уровень";
+}
+
+.Info .Skills .ASkill .Orange:hover .Tip {
+  display: block;
+}
+
+.Info .Skills .ASkill .Orange:hover .Tip::before {
+  content: "Средний уровень";
+}
+
+.Info .Skills .ASkill .Red:hover .Tip {
+  display: block;
+}
+
+.Info .Skills .ASkill .Red:hover .Tip::before {
+  content: "Низкий уровень";
+}
+
+@media (max-width: 700px) {
+  nav span {
+    font-size: 1em;
+  }
+  .Greetings {
+    font-size: 8em;
+  }
+  .About .Rocketship, .About .Fire {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+  }
+  .About .Fire {
+    left: 50px;
+    bottom: 50px;
+  }
+}
+
+@-webkit-keyframes blinking {
+  from {
+    border-right-color: rgba(255, 255, 255, 0.8);
+  }
+  to {
+    border-right-color: transparent;
+  }
+}
+
+@keyframes blinking {
+  from {
+    border-right-color: rgba(255, 255, 255, 0.8);
+  }
+  to {
+    border-right-color: transparent;
+  }
+}
+
+@-webkit-keyframes ignition {
+  50% {
+    -webkit-transform: scaleY(1.1) translateY(7px);
+            transform: scaleY(1.1) translateY(7px);
+  }
+  100% {
+    -webkit-transform: scaleY(1.2) translateY(14px);
+            transform: scaleY(1.2) translateY(14px);
+  }
+}
+
+@keyframes ignition {
+  50% {
+    -webkit-transform: scaleY(1.1) translateY(7px);
+            transform: scaleY(1.1) translateY(7px);
+  }
+  100% {
+    -webkit-transform: scaleY(1.2) translateY(14px);
+            transform: scaleY(1.2) translateY(14px);
+  }
+}
+/*# sourceMappingURL=index.css.map */
