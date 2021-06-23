@@ -2,6 +2,10 @@
     margin: 0;
 }
 
+a {
+    text-decoration: none;
+}
+
 @font-face {
     font-family: OleoScript;
     src: url(Fonts/OleoScript-Regular.ttf);
@@ -41,9 +45,7 @@ body {
     background-image: url("Pictures/NewBackground.png");
     background-repeat: no-repeat;
     background-size: cover;
-  
 }
-
 
 nav {
     width: 100%;
@@ -52,6 +54,7 @@ nav {
     margin-right: 5em;
     display: grid;
     position: fixed;
+    z-index: 1000;
 
     section {
         display: flex;
@@ -88,7 +91,7 @@ nav {
     user-select: none;
 }
 
-//Cursor
+//Cursor effect (typewriter)
 .txt-type > .txt {
     border-right: 0.3rem solid rgba(255, 255, 255, 0.8);
     font-family: Roboto-Light;
@@ -96,157 +99,274 @@ nav {
     animation: blinking 1s steps(100) infinite normal;
 }
 
+.Filler {
+    width: 100%;
+    display: grid;
 
+    place-items: center;
+}
 
 .About {
     padding-bottom: 15vh;
-    padding-top: 25vh;
+    margin-top: 25vh;
+    column-gap: 3em;
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: auto auto auto auto;
     .Rocketship {
-        margin-top: 15vh;
-        position: absolute;
         pointer-events: none;
+        display: flex;
+        flex-direction: column;
+        width: 60ch;
         .Fire {
             position: relative;
-            right: 50.3%;
-            bottom: 10px;
+            width: 179px;
+            height: 191px;
+            left: 9.5em;
+            bottom: 11.7em;
             animation: ignition 220ms alternate infinite;
         }
     }
 }
 
-
-.Info{
-    margin-left: 500px;
-    height: 80vh;
-    display: grid;
-    grid-template-columns: auto auto auto;
-
-    .Card{
-        background-color: rgba(255, 255, 255, 0.1);
-        width: 40ch;
-        display: flex;
-        flex-direction: column;
-        padding: 5ch;
-        padding-top: 3ch;
-        border-radius: 2em;
-        box-shadow: 20px 20px 50px rgba(0,0,0, 0.5);
-        overflow: hidden;
-        border-top: 1px solid rgba(255, 255, 255, 0.2);
-        border-left: 1px solid rgba(255, 255, 255, 0.2);
-        backdrop-filter: blur(1em);
-        p{
-            color: white;
-            font-size: 1.2em;
-            user-select: none;
-        }
-        .Title{
-            font-family: Roboto-Bold;
-            font-size: 2.2em;
-            align-self: center;
-        }
-        .LilTitle{
-            font-family: Roboto-Regular;
-            margin-top: 0.8em;
-        }
-        .Description{
-            font-family: Roboto-Thin;
-        }
+.Card {
+    background-color: rgba(255, 255, 255, 0.1);
+    width: 40ch;
+    display: flex;
+    flex-direction: column;
+    padding: 5ch;
+    padding-top: 3ch;
+    border-radius: 2em;
+    box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    border-left: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5em);
+    p {
+        color: white;
+        font-size: 1.2em;
+        user-select: none;
     }
+    .Title {
+        font-family: Roboto-Bold;
+        font-size: 2.2em;
+        align-self: center;
+    }
+    .LilTitle {
+        font-family: Roboto-Regular;
+        margin-top: 0.8em;
+    }
+    .Description {
+        font-family: Roboto-Thin;
+    }
+}
 
-.Whoami{
+.Whoami {
     height: 29em;
 }
 
-    .Skills{
-        height: 19em;
-        .ASkill{
-            margin-top: 0.8em;
-            display: flex;
-            align-items: center;
-            justify-items: center;
-            .Description{
-                font-family: Roboto-Regular;
+.Skills {
+    height: 19em;
+    .ASkill {
+        margin-top: 0.8em;
+        display: flex;
+        align-items: center;
+        justify-items: center;
+        .Description {
+            font-family: Roboto-Regular;
+        }
+        .Level {
+            margin-left: 2ch;
+            width: 10px;
+            height: 10px;
+            border-radius: 100%;
+        }
+        .Red {
+            background-color: red;
+            box-shadow: 0px 0px 15px red;
+        }
+        .Green {
+            background-color: rgb(27, 192, 27);
+            box-shadow: 0px 0px 15px rgb(27, 192, 27);
+        }
+        .Orange {
+            background-color: orange;
+            box-shadow: 0px 0px 15px orange;
+        }
+        .Tip {
+            font-family: "Roboto-ThinItalic";
+            color: white;
+            position: relative;
+            bottom: 4px;
+            left: 20px;
+            display: none;
+            width: 15ch;
+        }
+        .Level:hover {
+            cursor: help;
+        }
+        .Green:hover {
+            .Tip {
+                display: block;
             }
-            .Level{
-                margin-left: 2ch;
-                width: 10px;
-                height: 10px;
-                border-radius: 100%;
+            .Tip::before {
+                content: "Высокий уровень";
             }
-            .Red{
-                background-color: red; 
-                box-shadow: 0px 0px 15px red;
+        }
+        .Orange:hover {
+            .Tip {
+                display: block;
             }
-            .Green{
-                background-color:rgb(27, 192, 27); 
-                box-shadow: 0px 0px 15px rgb(27, 192, 27); 
+            .Tip::before {
+                content: "Средний уровень";
             }
-            .Orange{
-                background-color: orange;
-                box-shadow: 0px 0px 15px orange;
+        }
+        .Red:hover {
+            .Tip {
+                display: block;
             }
-            .Tip{
-                font-family: 'Roboto-ThinItalic';
-                color: white;
-                position: relative;
-                bottom: 4px;
-                left: 20px;
-                display: none;
-                width: 15ch;
-            }
-            .Level:hover{
-                cursor:help;
-            }
-            .Green:hover{
-                .Tip{
-                    display: block;
-                }
-                .Tip::before{
-                    content: "Высокий уровень";
-                }
-            }
-            .Orange:hover{
-                .Tip{
-                    display: block;
-                }
-                .Tip::before{
-                    content: "Средний уровень";
-                }
-            }
-            .Red:hover{
-                .Tip{
-                    display: block;
-                }
-                .Tip::before{
-                    content: "Низкий уровень";
-                }
+            .Tip::before {
+                content: "Низкий уровень";
             }
         }
     }
 }
 
-@media (max-width: 700px) {
-    nav {
-        span {
-            font-size: 1em;
-        }
+.Contacts {
+    height: 15em;
+    img {
+        width: 3.5em;
+        height: auto;
     }
-    .Greetings {
-        font-size: 8em;
+    button {
+        background-color: transparent;
+        border: none;
     }
-    .About{
-        .Rocketship, .Fire{
-            transform: scale(0.5);
-        }
-        .Fire{
-            left: 50px;
-            bottom: 50px;
-        }
+    .Icons {
+        margin-top: 2em;
+        display: grid;
+        grid-template-columns: auto auto;
+        row-gap: 3em;
+    }
+
+    .ContactWrapper {
+        height: 4em;
+        width: 4em;
+        border-radius: 3em;
+        display: grid;
+        place-items: center;
+        align-self: center;
+        justify-self: center;
+    }
+    .ContactWrapper:hover {
+        box-shadow: 0px 0px 30px rgba(255, 255, 255, 0.61);
+        background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.671), rgba(255, 255, 255, 0.05));
+    }
+    .CopiedTip {
+        font-family: Roboto-Light;
+        position: absolute;
+        right: 15%;
+        opacity: 0;
     }
 }
 
+@media (min-width: 1501px) and (max-width: 1850px) {
+    .About {
+        grid-template-areas:
+            "Rocketship Whoami Skills"
+            "Rocketship   .   Contacts";
+    }
+
+    .Rocketship {
+        grid-area: Rocketship;
+    }
+    .Whoami {
+        grid-area: Whoami;
+    }
+    .Skills {
+        grid-area: Skills;
+    }
+    .Contacts {
+        grid-area: Contacts;
+    }
+}
+
+@media (min-width: 1051px) and (max-width: 1500px) {
+    .About {
+        grid-template-areas:
+            "Rocketship Whoami "
+            "   Skills   Contacts";
+            
+    }
+
+    .Rocketship {
+        grid-area: Rocketship;
+        margin-left: -2em;
+    }
+    .Whoami {
+        grid-area: Whoami;
+    }
+    .Skills {
+        grid-area: Skills;
+    }
+    .Contacts {
+        grid-area: Contacts;
+    }
+}
+
+
+@media (min-width: 401px) and (max-width: 1050px) {
+    .About {
+        grid-template-areas:
+            "Rocketship"
+            "Whoami"
+            "Skills"
+            "Contacts";
+        width: 60ch;
+        row-gap: 4em;
+        place-items: center;
+    }
+
+    .Rocketship {
+        grid-area: Rocketship;
+        margin-left: 0em;
+    }
+    .Whoami {
+        grid-area: Whoami;
+    }
+    .Skills {
+        grid-area: Skills;
+    }
+    .Contacts {
+        grid-area: Contacts;
+    }
+}
+
+@media (min-width: 251px) and (max-width: 400px) {
+  nav{
+      span{
+          color: red;
+      };
+  }
+}
+
+
+@keyframes fade {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        top: 65%;
+    }
+    to {
+        top: 60%;
+    }
+}
 
 @keyframes blinking {
     from {
@@ -258,8 +378,8 @@ nav {
 }
 
 @keyframes ignition {
-    50%{
-        transform: scaleY(1.1) translateY(7px);   
+    50% {
+        transform: scaleY(1.1) translateY(7px);
     }
     100% {
         transform: scaleY(1.2) translateY(14px);

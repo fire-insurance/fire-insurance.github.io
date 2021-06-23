@@ -3,6 +3,10 @@
   margin: 0;
 }
 
+a {
+  text-decoration: none;
+}
+
 @font-face {
   font-family: OleoScript;
   src: url(Fonts/OleoScript-Regular.ttf);
@@ -52,6 +56,7 @@ nav {
   display: -ms-grid;
   display: grid;
   position: fixed;
+  z-index: 1000;
 }
 
 nav section {
@@ -107,39 +112,47 @@ nav span:hover {
           animation: blinking 1s steps(100) infinite normal;
 }
 
-.About {
-  padding-bottom: 15vh;
-  padding-top: 25vh;
+.Filler {
+  width: 100%;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: auto auto;
-      grid-template-columns: auto auto;
+  place-items: center;
+}
+
+.About {
+  padding-bottom: 15vh;
+  margin-top: 25vh;
+  -webkit-column-gap: 3em;
+          column-gap: 3em;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto auto auto auto;
+      grid-template-columns: auto auto auto auto;
 }
 
 .About .Rocketship {
-  margin-top: 15vh;
-  position: absolute;
   pointer-events: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 60ch;
 }
 
 .About .Rocketship .Fire {
   position: relative;
-  right: 50.3%;
-  bottom: 10px;
+  width: 179px;
+  height: 191px;
+  left: 9.5em;
+  bottom: 11.7em;
   -webkit-animation: ignition 220ms alternate infinite;
           animation: ignition 220ms alternate infinite;
 }
 
-.Info {
-  margin-left: 500px;
-  height: 80vh;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: auto auto auto;
-      grid-template-columns: auto auto auto;
-}
-
-.Info .Card {
+.Card {
   background-color: rgba(255, 255, 255, 0.1);
   width: 40ch;
   display: -webkit-box;
@@ -157,11 +170,11 @@ nav span:hover {
   overflow: hidden;
   border-top: 1px solid rgba(255, 255, 255, 0.2);
   border-left: 1px solid rgba(255, 255, 255, 0.2);
-  -webkit-backdrop-filter: blur(1em);
-          backdrop-filter: blur(1em);
+  -webkit-backdrop-filter: blur(5em);
+          backdrop-filter: blur(5em);
 }
 
-.Info .Card p {
+.Card p {
   color: white;
   font-size: 1.2em;
   -webkit-user-select: none;
@@ -170,7 +183,7 @@ nav span:hover {
           user-select: none;
 }
 
-.Info .Card .Title {
+.Card .Title {
   font-family: Roboto-Bold;
   font-size: 2.2em;
   -ms-flex-item-align: center;
@@ -178,24 +191,24 @@ nav span:hover {
       align-self: center;
 }
 
-.Info .Card .LilTitle {
+.Card .LilTitle {
   font-family: Roboto-Regular;
   margin-top: 0.8em;
 }
 
-.Info .Card .Description {
+.Card .Description {
   font-family: Roboto-Thin;
 }
 
-.Info .Whoami {
+.Whoami {
   height: 29em;
 }
 
-.Info .Skills {
+.Skills {
   height: 19em;
 }
 
-.Info .Skills .ASkill {
+.Skills .ASkill {
   margin-top: 0.8em;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -206,37 +219,37 @@ nav span:hover {
   justify-items: center;
 }
 
-.Info .Skills .ASkill .Description {
+.Skills .ASkill .Description {
   font-family: Roboto-Regular;
 }
 
-.Info .Skills .ASkill .Level {
+.Skills .ASkill .Level {
   margin-left: 2ch;
   width: 10px;
   height: 10px;
   border-radius: 100%;
 }
 
-.Info .Skills .ASkill .Red {
+.Skills .ASkill .Red {
   background-color: red;
   -webkit-box-shadow: 0px 0px 15px red;
           box-shadow: 0px 0px 15px red;
 }
 
-.Info .Skills .ASkill .Green {
+.Skills .ASkill .Green {
   background-color: #1bc01b;
   -webkit-box-shadow: 0px 0px 15px #1bc01b;
           box-shadow: 0px 0px 15px #1bc01b;
 }
 
-.Info .Skills .ASkill .Orange {
+.Skills .ASkill .Orange {
   background-color: orange;
   -webkit-box-shadow: 0px 0px 15px orange;
           box-shadow: 0px 0px 15px orange;
 }
 
-.Info .Skills .ASkill .Tip {
-  font-family: 'Roboto-ThinItalic';
+.Skills .ASkill .Tip {
+  font-family: "Roboto-ThinItalic";
   color: white;
   position: relative;
   bottom: 4px;
@@ -245,48 +258,206 @@ nav span:hover {
   width: 15ch;
 }
 
-.Info .Skills .ASkill .Level:hover {
+.Skills .ASkill .Level:hover {
   cursor: help;
 }
 
-.Info .Skills .ASkill .Green:hover .Tip {
+.Skills .ASkill .Green:hover .Tip {
   display: block;
 }
 
-.Info .Skills .ASkill .Green:hover .Tip::before {
+.Skills .ASkill .Green:hover .Tip::before {
   content: "Высокий уровень";
 }
 
-.Info .Skills .ASkill .Orange:hover .Tip {
+.Skills .ASkill .Orange:hover .Tip {
   display: block;
 }
 
-.Info .Skills .ASkill .Orange:hover .Tip::before {
+.Skills .ASkill .Orange:hover .Tip::before {
   content: "Средний уровень";
 }
 
-.Info .Skills .ASkill .Red:hover .Tip {
+.Skills .ASkill .Red:hover .Tip {
   display: block;
 }
 
-.Info .Skills .ASkill .Red:hover .Tip::before {
+.Skills .ASkill .Red:hover .Tip::before {
   content: "Низкий уровень";
 }
 
-@media (max-width: 700px) {
+.Contacts {
+  height: 15em;
+}
+
+.Contacts img {
+  width: 3.5em;
+  height: auto;
+}
+
+.Contacts button {
+  background-color: transparent;
+  border: none;
+}
+
+.Contacts .Icons {
+  margin-top: 2em;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto auto;
+      grid-template-columns: auto auto;
+  row-gap: 3em;
+}
+
+.Contacts .ContactWrapper {
+  height: 4em;
+  width: 4em;
+  border-radius: 3em;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  -ms-grid-row-align: center;
+      align-self: center;
+  -ms-grid-column-align: center;
+      justify-self: center;
+}
+
+.Contacts .ContactWrapper:hover {
+  -webkit-box-shadow: 0px 0px 30px rgba(255, 255, 255, 0.61);
+          box-shadow: 0px 0px 30px rgba(255, 255, 255, 0.61);
+  background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.671), rgba(255, 255, 255, 0.05));
+}
+
+.Contacts .CopiedTip {
+  font-family: Roboto-Light;
+  position: absolute;
+  right: 15%;
+  opacity: 0;
+}
+
+@media (min-width: 1501px) and (max-width: 1850px) {
+  .About {
+        grid-template-areas: "Rocketship Whoami Skills" "Rocketship   .   Contacts";
+  }
+  .Rocketship {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 1;
+    grid-area: Rocketship;
+  }
+  .Whoami {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    grid-area: Whoami;
+  }
+  .Skills {
+    -ms-grid-row: 1;
+    -ms-grid-column: 3;
+    grid-area: Skills;
+  }
+  .Contacts {
+    -ms-grid-row: 2;
+    -ms-grid-column: 3;
+    grid-area: Contacts;
+  }
+}
+
+@media (min-width: 1051px) and (max-width: 1500px) {
+  .About {
+        grid-template-areas: "Rocketship Whoami " "   Skills   Contacts";
+  }
+  .Rocketship {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: Rocketship;
+    margin-left: -2em;
+  }
+  .Whoami {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    grid-area: Whoami;
+  }
+  .Skills {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    grid-area: Skills;
+  }
+  .Contacts {
+    -ms-grid-row: 2;
+    -ms-grid-column: 2;
+    grid-area: Contacts;
+  }
+}
+
+@media (min-width: 401px) and (max-width: 1050px) {
+  .About {
+        grid-template-areas: "Rocketship" "Whoami" "Skills" "Contacts";
+    width: 60ch;
+    row-gap: 4em;
+    place-items: center;
+  }
+  .Rocketship {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: Rocketship;
+    margin-left: 0em;
+  }
+  .Whoami {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    grid-area: Whoami;
+  }
+  .Skills {
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+    grid-area: Skills;
+  }
+  .Contacts {
+    -ms-grid-row: 4;
+    -ms-grid-column: 1;
+    grid-area: Contacts;
+  }
+}
+
+@media (min-width: 251px) and (max-width: 400px) {
   nav span {
-    font-size: 1em;
+    color: red;
   }
-  .Greetings {
-    font-size: 8em;
+}
+
+@-webkit-keyframes fade {
+  from {
+    opacity: 1;
   }
-  .About .Rocketship, .About .Fire {
-    -webkit-transform: scale(0.5);
-            transform: scale(0.5);
+  to {
+    opacity: 0;
   }
-  .About .Fire {
-    left: 50px;
-    bottom: 50px;
+}
+
+@keyframes fade {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes slideUp {
+  from {
+    top: 65%;
+  }
+  to {
+    top: 60%;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    top: 65%;
+  }
+  to {
+    top: 60%;
   }
 }
 

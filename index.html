@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="IT Portfolio" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Портфолио | Дуда Дмитрий</title>
     <link rel="shortcut icon" href="Pictures/TinyLogo.png" type="image/x-icon">
     <link rel="stylesheet" href="index.css">
@@ -15,109 +15,133 @@
 
     <nav>
         <section>
-            <span>Домой</span>
-            <span>Обо мне</span>
+            <a href="#Home"><span>Домой</span></a>
+            <a href="#AboutPage"><span>Обо мне</span></a>
             <span>Проекты</span>
         </section>
     </nav>
     <main>
-        <section class="Greetings">
+        <section class="Greetings" id="Home">
             <span class="txt-type" data-wait="3000" data-words='["Привет!", "Hello!", "¡Hola!", "你好!", "Ciao!"]'></span>
         </section>
+        <div class="Filler" id="AboutPage">
+            <section class="About">
+                <div class="Rocketship">
+                    <img src="Pictures/rocket.png" alt="Cute vector rocket">
+                    <img class="Fire" src="Pictures/fire.png" alt="ignition fire">
+                </div>
 
-        <section class="About">
-            <div class="Rocketship">
-                <img src="Pictures/rocket.png" alt="Cute vector rocket">
-                <img class="Fire" src="Pictures/fire.png" alt="ignition fire">
-            </div>
-        </section>
+                <article class="Card Whoami">
+                    <p class="Title">Обо мне</p>
+                    <p class="LilTitle">Имя</p>
+                    <p class="Description">Дмитрий</p>
+                    <p class="LilTitle">Возраст</p>
+                    <p class="Description">20</p>
+                    <p class="LilTitle">Образование</p>
+                    <p class="Description">Прикладная информатика в дизайне (4 курс)</p>
+                    <p class="LilTitle">Город</p>
+                    <p class="Description">Хабаровск</p>
+                    <p class="LilTitle">Характер</p>
+                    <p class="Description">Нордический</p>
+                    <p class="LilTitle">Интересы</p>
+                    <p class="Description">Английский язык, Графический и WEB дизайн, Научная фантастика</p>
+                </article>
 
-        <section class="Info">
-            <section class="Card Whoami">
-                <p class="Title">Обо мне</p>
-                <p class="LilTitle">Имя</p>
-                <p class="Description">Дима</p>
-                <p class="LilTitle">Возраст</p>
-                <p class="Description">20</p>
-                <p class="LilTitle">Образование</p>
-                <p class="Description">Прикладная информатика в дизайне (4 курс)</p>
-                <p class="LilTitle">Город</p>
-                <p class="Description">Хабаровск</p>
-                <p class="LilTitle">Характер</p>
-                <p class="Description">Нордический</p>
-                <p class="LilTitle">Интересы</p>
-                <p class="Description">Английский язык, Графический и WEB дизайн, Научная фантастика</p>
+
+                <article class="Card Skills">
+                    <p class="Title">Навыки</p>
+                    <div class="ASkill">
+                        <p class="Description">Photoshop</p>
+                        <div class="Level Green">
+                            <div class="Tip"></div>
+                        </div>
+                    </div>
+                    <div class="ASkill">
+                        <p class="Description">CorelDraw / Figma</p>
+                        <div class="Level Orange">
+                            <div class="Tip"></div>
+                        </div>
+
+                    </div>
+                    <div class="ASkill">
+                        <p class="Description">Английский язык</p>
+                        <div class="Level Green">
+                            <div class="Tip"></div>
+                        </div>
+                    </div>
+                    <div class="ASkill">
+                        <p class="Description">C#</p>
+                        <div class="Level Orange">
+                            <div class="Tip"></div>
+                        </div>
+                    </div>
+                    <div class="ASkill">
+                        <p class="Description">HTML + SASS</p>
+                        <div class="Level Orange">
+                            <div class="Tip"></div>
+                        </div>
+                    </div>
+                    <div class="ASkill">
+                        <p class="Description">Javascript</p>
+                        <div class="Level Red">
+                            <div class="Tip"></div>
+                        </div>
+                    </div>
+                    <div class="ASkill">
+                        <p class="Description">SQL</p>
+                        <div class="Level Orange">
+                            <div class="Tip"></div>
+                        </div>
+                    </div>
+
+                </article>
+
+                <article class="Card Contacts">
+                    <p class="Title">Контакты</p>
+                    <div class="Icons">
+                        <div class="ContactWrapper">
+                            <a href="https://github.com/fire-insurance" target="_blank" rel="noopener noreferrer">
+                                <img src="Pictures/SocialNetworks/github.png" alt="Github logo">
+                            </a>
+                        </div>
+                        <div class="ContactWrapper">
+                            <a href="https://vk.com/seattlebay" target="_blank" rel="noopener noreferrer">
+                                <img src="Pictures/SocialNetworks/vk_White_logo.png" alt="VK logo">
+                            </a>
+                        </div>
+                        <div class="ContactWrapper">
+                            <a href="https://www.instagram.com/fire_insurance/" target="_blank"
+                                rel="noopener noreferrer">
+                                <img src="Pictures/SocialNetworks/insta_White_logo.png" alt="Instagram logo">
+                            </a>
+                        </div>
+                        <div class="ContactWrapper">
+                            <p class="CopiedTip">Скопировано!</p>
+                            <button class="MailTo">
+                                <img src="Pictures/SocialNetworks/mail_white.png" alt="Mailbox icon">
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
             </section>
-
-
-            <section class="Card Skills">
-                <p class="Title">Навыки</p>
-                <div class="ASkill">
-                    <p class="Description">Photoshop</p>
-                    <div class="Level Green">
-                        <div class="Tip"></div>
-                    </div>
-                </div>
-                <div class="ASkill">
-                    <p class="Description">CorelDraw / Figma</p>
-                    <div class="Level Orange">
-                        <div class="Tip"></div>
-                    </div>
-
-                </div>
-                <div class="ASkill">
-                    <p class="Description">Английский язык</p>
-                    <div class="Level Green">
-                        <div class="Tip"></div>
-                    </div>
-                </div>
-                <div class="ASkill">
-                    <p class="Description">C#</p>
-                    <div class="Level Orange">
-                        <div class="Tip"></div>
-                    </div>
-                </div>
-                <div class="ASkill">
-                    <p class="Description">HTML + SASS</p>
-                    <div class="Level Orange">
-                        <div class="Tip"></div>
-                    </div>
-                </div>
-                <div class="ASkill">
-                    <p class="Description">Javascript</p>
-                    <div class="Level Red">
-                        <div class="Tip"></div>
-                    </div>
-                </div>
-                <div class="ASkill">
-                    <p class="Description">SQL</p>
-                    <div class="Level Orange">
-                        <div class="Tip"></div>
-                    </div>
-                </div>
-
-            </section>
-
-        </section>
+        </div>
     </main>
 
 
 
 
     <script src="js/main.js"></script>
+    <script src="js/copy-to-buffer.js"></script>
     <script type="text/javascript" src="js/vanilla-tilt.js"></script>
     <script type="text/javascript">
-        VanillaTilt.init(document.querySelector(".Card"), {
+        VanillaTilt.init(document.querySelectorAll(".Card"), {
             max: 25,
-            speed: 400
+            speed: 200,
+            glare: true,
         });
     </script>
-    <script type="text/javascript">
-        VanillaTilt.init(document.querySelector(".Skills"), {
-            max: 25,
-            speed: 400
-        });
-    </script>
+
 </body>
 
 </html>
