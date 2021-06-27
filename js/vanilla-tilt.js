@@ -91,6 +91,10 @@ class VanillaTilt {
    * @return {Node}
    */
   addEventListeners() {
+    if ( !('ontouchstart' in window ) ) {
+  
+    
+   
     this.onMouseEnterBind = this.onMouseEnter.bind(this);
     this.onMouseMoveBind = this.onMouseMove.bind(this);
     this.onMouseLeaveBind = this.onMouseLeave.bind(this);
@@ -108,6 +112,7 @@ class VanillaTilt {
     if (this.gyroscope) {
       window.addEventListener("deviceorientation", this.onDeviceOrientationBind);
     }
+  }
   }
 
   /**

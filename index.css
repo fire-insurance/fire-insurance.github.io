@@ -3,6 +3,10 @@
   margin: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 a {
   text-decoration: none;
 }
@@ -334,6 +338,119 @@ nav span:hover {
   opacity: 0;
 }
 
+#EndPage {
+  margin-bottom: 20em;
+  margin-top: 10em;
+}
+
+.Projects {
+  display: -ms-grid;
+  display: grid;
+  gap: 3em;
+  place-items: center;
+  -ms-grid-columns: auto auto;
+      grid-template-columns: auto auto;
+}
+
+.Project {
+  display: -ms-grid;
+  display: grid;
+  position: relative;
+  min-height: 22em;
+}
+
+.Project .Preview,
+.Project .ProjectInfo {
+  display: -ms-grid;
+  display: grid;
+  justify-items: center;
+  padding-top: 2ch;
+  width: 100%;
+  height: 10%;
+  position: absolute;
+  top: 1em;
+  left: 0;
+  -webkit-transition: 500ms;
+  transition: 500ms;
+}
+
+.Project .Preview {
+  height: 10%;
+}
+
+.Project .ProjectName {
+  font-family: Roboto-Bold;
+  font-size: 2.2em;
+}
+
+.Project .ProjectMiniature {
+  margin-top: 3ch;
+  opacity: 0.8;
+  width: 35ch;
+  height: 35ch;
+}
+
+.Project .ProjectInfo {
+  -webkit-transform: translateY(150px);
+          transform: translateY(150px);
+  opacity: 0;
+}
+
+.Project .ProjectInfo .Description {
+  text-indent: 1ch;
+  width: 30ch;
+  margin-top: 2ch;
+}
+
+.Project .ProjectInfo .Links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  gap: 5ch;
+  margin-top: 3em;
+}
+
+.Project .ProjectInfo .LinkButton {
+  color: white;
+  font-family: Roboto-Regular;
+  background-color: rgba(39, 226, 80, 0.8);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 4ch;
+  padding: 1.5ch;
+  width: 10ch;
+  text-align: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-transition: 500ms;
+  transition: 500ms;
+}
+
+.Project .ProjectInfo .LinkButton:hover {
+  -webkit-box-shadow: 0px 0px 20px #27e250;
+          box-shadow: 0px 0px 20px #27e250;
+}
+
+.Project:hover .Preview {
+  opacity: 0;
+  -webkit-transform: translateY(150px);
+          transform: translateY(150px);
+}
+
+.Project:hover .ProjectInfo {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
 @media (min-width: 1501px) and (max-width: 1850px) {
   .About {
         grid-template-areas: "Rocketship Whoami Skills" "Rocketship   .   Contacts";
@@ -416,9 +533,19 @@ nav span:hover {
     -ms-grid-column: 1;
     grid-area: Contacts;
   }
+  .Projects {
+    -ms-grid-columns: auto;
+        grid-template-columns: auto;
+  }
 }
 
-@media (min-width: 251px) and (max-width: 400px) {
+@media (max-width: 560px) {
+  .Greetings {
+    font-size: 4em;
+  }
+}
+
+@media (min-width: 251px) and (max-width: 750px) {
   nav section {
     -ms-grid-column-align: center;
         justify-self: center;

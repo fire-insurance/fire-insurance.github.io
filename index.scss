@@ -1,6 +1,9 @@
 * {
     margin: 0;
 }
+html{
+    scroll-behavior: smooth;
+}
 
 a {
     text-decoration: none;
@@ -51,7 +54,7 @@ nav {
     width: 100%;
     height: auto;
     margin-top: 2em;
-    
+
     display: grid;
     position: fixed;
     z-index: 1000;
@@ -102,7 +105,6 @@ nav {
 .Filler {
     width: 100%;
     display: grid;
-
     place-items: center;
 }
 
@@ -269,6 +271,93 @@ nav {
     }
 }
 
+#EndPage {
+    margin-bottom: 20em;
+    margin-top: 10em;
+}
+
+.Projects{
+    display: grid;
+    gap: 3em;
+    place-items: center;
+    grid-template-columns: auto auto;
+}
+
+.Project {
+    display: grid;
+    position: relative;
+    min-height: 22em;
+    .Preview,
+    .ProjectInfo {
+        display: grid;
+        justify-items: center;
+        padding-top: 2ch;
+        width: 100%;
+        height: 10%;
+        position: absolute;
+        top: 1em;
+        left: 0;
+        transition: 500ms;
+    }
+    .Preview {
+        height: 10%;
+    }
+    .ProjectName {
+        font-family: Roboto-Bold;
+        font-size: 2.2em;
+    }
+    .ProjectMiniature {
+        margin-top: 3ch;
+        opacity: 0.8;
+        width: 35ch;
+        height: 35ch;
+    }
+    .ProjectInfo {
+        transform: translateY(150px);
+        opacity: 0;
+
+        .Description {
+            text-indent: 1ch;
+            width: 30ch;
+            margin-top: 2ch;
+        }
+
+        .Links {
+            display: flex;
+            flex-direction: row;
+            height: max-content;
+            gap: 5ch;
+            margin-top: 3em;
+        }
+        .LinkButton {
+            color: white;
+            font-family: Roboto-Regular;
+            background-color: rgba(39, 226, 80, 0.8);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 4ch;
+            padding: 1.5ch;
+            width: 10ch;
+            text-align: center;
+            user-select: none;
+            transition: 500ms;
+        }
+        .LinkButton:hover {
+            box-shadow: 0px 0px 20px rgb(39, 226, 80);
+        }
+    }
+}
+
+.Project:hover{
+    .Preview{
+        opacity: 0;
+        transform: translateY(150px);
+    }
+    .ProjectInfo{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 @media (min-width: 1501px) and (max-width: 1850px) {
     .About {
         grid-template-areas:
@@ -295,7 +384,6 @@ nav {
         grid-template-areas:
             "Rocketship Whoami "
             "   Skills   Contacts";
-            
     }
 
     .Rocketship {
@@ -313,8 +401,7 @@ nav {
     }
 }
 
-
-@media  (max-width: 1050px) {
+@media (max-width: 1050px) {
     .About {
         grid-template-areas:
             "Rocketship"
@@ -339,25 +426,30 @@ nav {
     .Contacts {
         grid-area: Contacts;
     }
+    .Projects{
+        grid-template-columns: auto;
+    }
+}
+@media (max-width: 560px)
+{
+    .Greetings{
+        font-size: 4em;
+    }
 }
 
-@media (min-width: 251px) and (max-width: 400px) {
-  nav{
-      section{
-          justify-self: center;
-      }
-      span{
-          font-size: 1em;
-      }
-    
-  }
-  .Greetings{
-      font-size: 6em;
-  }
-
-
+@media (min-width: 251px) and (max-width: 750px) {
+    nav {
+        section {
+            justify-self: center;
+        }
+        span {
+            font-size: 1em;
+        }
+    }
+    .Greetings {
+        font-size: 6em;
+    }
 }
-
 
 @keyframes fade {
     from {

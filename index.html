@@ -17,7 +17,7 @@
         <section>
             <a href="#Home"><span>Домой</span></a>
             <a href="#AboutPage"><span>Обо мне</span></a>
-            <span>Проекты</span>
+            <a href="#EndPage"><span>Проекты</span></a>
         </section>
     </nav>
     <main>
@@ -46,7 +46,6 @@
                     <p class="LilTitle">Интересы</p>
                     <p class="Description">Английский язык, Графический и WEB дизайн, Научная фантастика</p>
                 </article>
-
 
                 <article class="Card Skills">
                     <p class="Title">Навыки</p>
@@ -126,17 +125,65 @@
 
             </section>
         </div>
+        <div class="Filler" id="EndPage">
+            <section class="Projects">
+                <article class="Card Project">
+                    <div class="Preview">
+                        <p class="ProjectName">barx2</p>
+                        <img src="Pictures/Projects/barx2.png" alt="A miniature img of a project"
+                            class="ProjectMiniature">
+                    </div>
+                    <div class="ProjectInfo">
+                        <p class="Description">
+                            Проект сайта для вымышленного (пока) сайта по продаже барного инвентаря.
+                        </p>
+                        <p class="Description">
+                            Создан в рамках курсовой работы по дисциплине "WEB-дизайн" (3 курс).
+                        </p>
+                        <p class="Description">
+                            Первый крупный проект по верстке.
+                        </p>
+                        <div class="Links">
+                            <a href="Projects/Barx2_Website/index.html" class="LinkButton">Посетить</a>
+                            <a href="https://github.com/fire-insurance/Barx2_Website" class="LinkButton">Код</a>
+                        </div>
+                    </div>
+                </article>
+                <article class="Card Project">
+                    <div class="Preview">
+                        <p class="ProjectName">DECBASE</p>
+                        <img src="Pictures/Projects/DECBASE.png" alt="A miniature img of a project"
+                            class="ProjectMiniature">
+                    </div>
+                    <div class="ProjectInfo">
+                        <p class="Description">
+                            Сравнительно простой проект для тренировки навыков UX/UI дизайна
+                        </p>
+                        <p class="Description">
+                            Создан в рамках первого задания по Front End курсов от компании WhiteSoft
+                        </p>
+                        <div class="Links">
+                            <a href="Projects/WhiteSoftFE-1/index.html" class="LinkButton">Посетить</a>
+                            <a href="https://github.com/fire-insurance/WhiteSoftFE-1" class="LinkButton">Код</a>
+                        </div>
+                    </div>
+                </article>
+            </section>
+        </div>
+
     </main>
 
 
 
-
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="js/main.js"></script>
     <script src="js/copy-to-buffer.js"></script>
+    <script src="js/scroll.js"></script>
     <script type="text/javascript" src="js/vanilla-tilt.js"></script>
     <script type="text/javascript">
         VanillaTilt.init(document.querySelectorAll(".Card"), {
-            max: 25,
+            max: 20,
             speed: 200,
             glare: true,
         });
