@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="Main Page" content="Главная страница сайта Barx2">
+    <title>Barx2</title>
+    <link rel="shortcut icon" href="Icons/round.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/Main_Page.css">
+</head>
+
+<body>
+    <div class="Header">
+
+        <a href="index.html">
+            <img class="MainLogo" src="main_logo.png" alt="Логотип компании">
+        </a>
+
+        <div class="SearchBar">
+            <button class="SearchButton">
+                <img src="Icons/looking_glass.png" alt="">
+            </button>
+            <input class="SearchInput" type="text" placeholder="Поиск...">
+        </div>
+        <div class="UserStuff">
+            <div class="UserCartFav" id="FavPage">
+
+                <a href="Favorites.html">
+                    <div class="FavImg"></div>
+                </a>
+
+                <a href="Favorites.html">
+                    <p>Избранное</p>
+                </a>
+
+            </div>
+            <div class="UserCartFav" id="CartPage">
+
+                <a href="Cart.html">
+                    <div class="CartImg"></div>
+                </a>
+
+                <a href="Cart.html">
+                    <p>Корзина</p>
+                </a>
+
+            </div>
+            <div class="UserCartFav" id="UserPage">
+
+
+                <a href="Login.html">
+                    <div class="UserImg"></div>
+                </a>
+
+                <a href="Login.html">
+                    <p>Личный кабинет</p>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="Panel">
+        <img src="Icons/catalog.png" alt="">
+        <div class="PanelBlocks" id="Inventory">
+            <p>Инвентарь</p>
+        </div>
+        <div class="PanelBlocks" id="Syrups">
+            <p>Сиропы</p>
+        </div>
+        <div class="PanelBlocks" id="Alcohol">
+            <p>Алкоголь</p>
+        </div>
+        <div class="PanelBlocks" id="Glass">
+            <p>Бокалы</p>
+        </div>
+        <div class="PanelBlocks" id="Literature">
+            <p>Литература</p>
+        </div>
+        <div class="PanelBlocks" id="Sales">
+            <p>Акции</p>
+        </div>
+        <div class="PanelBlocks" id="Delivery">
+            <p>Оплата и доставка</p>
+        </div>
+        <a href="About.html" class="PanelBlocks" id="last" id="About">
+            <p>О нас</p>
+        </a>
+
+    </div>
+
+    <div class="BigAdPanel">
+        <svg class="Arrow" id="LeftArrow" width="50" height="50" viewBox="0 0 250 250" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <circle cx="125" cy="125" r="125" fill="none" />
+            <rect x="90" y="36.577" width="6.47281" height="134.512" rx="3.2364" transform="rotate(-45 90 36.577)"
+                fill="black" />
+            <rect width="6.47281" height="129.456" rx="3.2364"
+                transform="matrix(-0.707107 -0.707107 -0.707107 0.707107 190 127.196)" fill="black" />
+        </svg>
+        <div class="Promotion"></div>
+        <svg class="Arrow" id="RightArrow" width="50" height="50" viewBox="0 0 250 250" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <circle cx="125" cy="125" r="125" fill="none" />
+            <rect x="90" y="36.577" width="6.47281" height="134.512" rx="3.2364" transform="rotate(-45 90 36.577)"
+                fill="black" />
+            <rect width="6.47281" height="129.456" rx="3.2364"
+                transform="matrix(-0.707107 -0.707107 -0.707107 0.707107 190 127.196)" fill="black" />
+        </svg>
+
+    </div>
+
+    <div class="NewGoods">
+        <p>Новинки</p>
+        <div class="Arrows">
+            <img class="FLeftArrow" src="Icons/full_arrow.png" alt="">
+            <img class="FRightArrow" src="Icons/full_arrow.png" alt="">
+        </div>
+    </div>
+
+    <div class="NewGoodsRollGrid">
+        <div class="NewGoodsRoll">
+            <div class="Item">
+                <img src="Goods/сироп_лайм_барлайн.jpg" alt="">
+                <p class="Price">299</p>
+                <p class="Description">Сироп со вкусом лайма "Barline" 1л</p>
+                <div class="CartNHeart">
+                    <input class="MoveToCart" type="submit" value="В корзину">
+                    <div class="MvToFavorites">
+                        <img src="Icons/white_heart.png" >
+                    </div>
+                    </input>
+                </div>
+            </div>
+
+            <div class="Item">
+                <img src="Goods/стрейнер.jpg" alt="">
+                <p class="Price">589</p>
+                <p class="Description">Стрейнер классический "Futura"</p>
+                <div class="CartNHeart">
+                    <input class="MoveToCart" type="submit" value="В корзину">
+                    <div class="MvToFavorites">
+                        <img src="Icons/white_heart.png" >
+                    </div>
+                </div>
+            </div>
+            <div class="Item">
+                <img src="Goods/адвокат.jpg" alt="">
+                <p class="Price">1599</p>
+                <p class="Description">Ликёр яичный "Advocaat" 1л</p>
+                <div class="CartNHeart">
+                    <input class="MoveToCart" type="submit" value="В корзину">
+                    <div class="MvToFavorites">
+                        <img src="Icons/white_heart.png">
+                    </div>
+                </div>
+            </div>
+            <div class="Item">
+                <img src="Goods/ложка.jpg" alt="">
+                <p class="Price">429</p>
+                <p class="Description">Барная ложка 21см "NewCast" </p>
+                <div class="CartNHeart">
+                    <input class="MoveToCart" type="submit" value="В корзину">
+                    <div class="MvToFavorites">
+                        <img src="Icons/white_heart.png" >
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="RecGoods">
+        <p>Рекомендации</p>
+        <div class="Arrows">
+            <img class="FLeftArrow" src="Icons/full_arrow.png" alt="">
+            <img class="FRightArrow" src="Icons/full_arrow.png" alt="">
+        </div>
+    </div>
+
+    <div class="NewGoodsRollGrid">
+        <div class="RecGoodsRoll">
+            <div class="Item">
+                <img src="Goods/Шейкер бостон.jpg" alt="">
+                <p class="Price">1759</p>
+                <p class="Description">Шейкер бостонский "Big Kahuna" 700/400мл</p>
+                <div class="CartNHeart">
+                    <input class="MoveToCart" type="submit" value="В корзину">
+                    <div class="MvToFavorites">
+                        <img src="Icons/white_heart.png" >
+                    </div>
+                </div>
+            </div>
+            <div class="Item">
+                <img src="Goods/гейзеры.jpg" alt="">
+                <p class="Price">539</p>
+                <p class="Description">Набор из 10 гейзеров "Luminarc alpha"</p>
+                <div class="CartNHeart">
+                    <input class="MoveToCart" type="submit" value="В корзину">
+                    <div class="MvToFavorites">
+                        <img src="Icons/white_heart.png" >
+                    </div>
+                </div>
+            </div>
+            <div class="Item">
+                <img src="Goods/Джиггер.jpg" alt="">
+                <p class="Price">399</p>
+                <p class="Description">Джиггер 30/50мл "Mastercrafter"</p>
+                <div class="CartNHeart">
+                    <input class="MoveToCart" type="submit" value="В корзину">
+                    <div class="MvToFavorites">
+                        <img src="Icons/white_heart.png" >
+                    </div>
+                </div>
+            </div>
+            <div class="Item">
+                <img src="Goods/ангостура.jpg" alt="">
+                <p class="Price">1229</p>
+                <p class="Description">Биттер "Angostura bitter" 80мл</p>
+                <div class="CartNHeart">
+                    <input class="MoveToCart" type="submit" value="В корзину">
+                    <div class="MvToFavorites">
+                        <img src="Icons/white_heart.png" >
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="Offers">
+        <p>Специальные предложения</p>
+    </div>
+
+    <div class="OffersRoll">
+        <img src="Promotions/BartenderDiscount.png" alt="">
+        <img src="Promotions/Delivery.png" alt="">
+    </div>
+</body>
+
+<footer>
+
+    <div class="SubWrapper">
+        <p class="subscribeText">Подпишитесь на новости</p>
+        <div class="subscribeBlock">
+            <input type="email" placeholder="Ваш email">
+            <img src="Icons/full_arrow_white.png" alt="">
+        </div>
+    </div>
+
+
+    <div class="SocialNetworks">
+        <div class="SocialWrapper">
+            <img src="Icons/SocialNetworks/vk_White_logo.png" alt="">
+        </div>
+        <div class="SocialWrapper">
+            <img src="Icons/SocialNetworks/insta_White_logo.png" alt="">
+        </div>
+        <div class="SocialWrapper">
+            <img src="Icons/SocialNetworks/youtube_White_logo.png" alt="">
+        </div>
+        <div class="SocialWrapper">
+            <img src="Icons/SocialNetworks/fb_WhiteLogo.png" alt="">
+        </div>
+    </div>
+    <div class="FlexParagraphs">
+        <p class="Number">8 (914) 423-26-93</p>
+        <p class="Support">Поддержка</p>
+        <p class="Entity">Юридическим лицам</p>
+    </div>
+</footer>
+
+
+</html>

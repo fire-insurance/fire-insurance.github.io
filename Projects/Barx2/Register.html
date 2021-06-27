@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barx2 | Регистрация</title>
+    <link rel="shortcut icon" href="Icons/round.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/Register.css">
+</head>
+
+<body>
+  
+    <div class="Wrapper">
+        <a href="index.html">
+            <img src="main_logo.png" alt="">
+        </a>
+        
+        <div class="LoginRegister">
+            <button class="NotRegistered">
+                Первый раз?
+            </button>
+            <button class="AlreadyRegistered" onclick="window.location.href = 'Login.html';">
+                <p>Уже зарегистрированы?</p>
+            </button>
+        </div>
+        <form class="LoginForm"  action="index.html">
+            <input type="email" placeholder="Электронная почта" required>
+            <input type="text"  placeholder="Имя" required>
+            <input type="text"  placeholder="Фамилия" required>
+            <input type="password" placeholder="Пароль" required>
+            <input type="submit" value="Регистрация">
+        </form>
+    </div>
+    <div class="CrudeFixer"></div>
+    
+    
+</body>
+
+</html>

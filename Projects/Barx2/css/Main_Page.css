@@ -1,0 +1,1165 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+@font-face {
+  font-family: Roboto-Thin;
+  src: url(/Fonts/Roboto-Thin.ttf);
+}
+
+@font-face {
+  font-family: Roboto-Light;
+  src: url(/Fonts/Roboto-Light.ttf);
+}
+
+p {
+  font-family: Roboto-Light;
+}
+
+img:hover {
+  cursor: pointer;
+}
+
+.Description:hover {
+  color: #ff3d3d;
+  -webkit-transition: 200ms;
+  transition: 200ms;
+  cursor: pointer;
+}
+
+.Header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  position: -webkit-sticky;
+  position: sticky;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.Header .Profile {
+  margin: 0;
+}
+
+.Header .SearchBar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+.Header .SearchBar button:active,
+.Header .SearchBar button:focus {
+  outline: none;
+}
+
+.Header .SearchBar .SearchButton {
+  background-color: transparent;
+  border-style: none;
+  border: 0;
+}
+
+.Header .SearchBar .SearchButton:not(:disabled) {
+  cursor: pointer;
+}
+
+.Header .SearchBar input:active,
+.Header .SearchBar input:focus {
+  outline: none;
+}
+
+.Header .SearchBar .SearchInput {
+  border: 0;
+  border-style: none;
+}
+
+.Header .UserStuff {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-self: end;
+}
+
+.Header .UserStuff div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.Header .UserStuff .UserCartFav {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto auto auto auto auto auto;
+      grid-template-columns: auto auto auto auto auto auto;
+  place-items: center;
+}
+
+.Header .UserStuff .UserCartFav .FavImg {
+  background: url(../Icons/heart.png) no-repeat;
+  background-size: contain;
+}
+
+.Header .UserStuff .UserCartFav .CartImg {
+  background: url(../Icons/cart.png) no-repeat;
+  background-size: contain;
+}
+
+.Header .UserStuff .UserCartFav .UserImg {
+  background: url(../Icons/user.png) no-repeat;
+  background-size: contain;
+}
+
+.Header .UserStuff #UserPage {
+  padding-right: 0px;
+}
+
+.Header .UserStuff .UserCartFav:hover {
+  cursor: pointer;
+}
+
+.Header .UserStuff .UserCartFav:hover p {
+  color: #ff3d3d;
+  -webkit-transition: 200ms;
+  transition: 200ms;
+}
+
+.Header .UserStuff #FavPage:hover .FavImg {
+  background: url(../Icons/heart_softred.png) no-repeat;
+  background-size: contain;
+  -webkit-transition: 200ms;
+  transition: 200ms;
+}
+
+.Header .UserStuff #CartPage:hover .CartImg {
+  background: url(../Icons/cart_softred.png) no-repeat;
+  background-size: contain;
+  -webkit-transition: 200ms;
+  transition: 200ms;
+}
+
+.Header .UserStuff #UserPage:hover .UserImg {
+  background: url(../Icons/user_softred.png) no-repeat;
+  background-size: contain;
+  -webkit-transition: 200ms;
+  transition: 200ms;
+}
+
+.Panel {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+.Panel .PanelBlocks {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.Panel .PanelBlocks:hover {
+  cursor: pointer;
+}
+
+.Panel .PanelBlocks:hover p {
+  color: #ff3d3d;
+  -webkit-transition: 200ms;
+  transition: 200ms;
+}
+
+.BigAdPanel {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto auto auto;
+      grid-template-columns: auto auto auto;
+  place-items: center;
+}
+
+.BigAdPanel .Promotion {
+  width: auto;
+}
+
+.BigAdPanel .Arrow rect {
+  fill: black;
+}
+
+.BigAdPanel .Arrow circle {
+  fill: transparent;
+}
+
+.BigAdPanel #LeftArrow {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.BigAdPanel .Arrow:hover {
+  cursor: pointer;
+}
+
+.BigAdPanel .Arrow:hover rect {
+  fill: white;
+  -webkit-transition: 200ms;
+  transition: 200ms;
+}
+
+.BigAdPanel .Arrow:hover circle {
+  fill: black;
+  -webkit-transition: 200ms;
+  transition: 200ms;
+}
+
+.NewGoodsRollGrid {
+  width: 100%;
+  height: auto;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+}
+
+footer {
+  background-color: black;
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-grid-columns: auto auto auto;
+      grid-template-columns: auto auto auto;
+}
+
+footer .subscribeText {
+  color: white;
+}
+
+footer .SubWrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+footer .SubWrapper .subscribeBlock input {
+  color: white;
+  background: black;
+}
+
+footer .SubWrapper .subscribeBlock input:active,
+footer .SubWrapper .subscribeBlock input:focus {
+  outline: none;
+}
+
+footer .SubWrapper .subscribeBlock input:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+
+footer .SubWrapper .subscribeBlock input:focus:-ms-input-placeholder {
+  color: transparent;
+}
+
+footer .SubWrapper .subscribeBlock input:focus::-ms-input-placeholder {
+  color: transparent;
+}
+
+footer .SubWrapper .subscribeBlock input:focus::placeholder {
+  color: transparent;
+}
+
+footer .SocialNetworks {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+footer .SocialNetworks .SocialWrapper {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+}
+
+footer .SocialNetworks .SocialWrapper:hover {
+  background-color: rgba(158, 158, 158, 0.1);
+  -webkit-box-shadow: 0.1em 0.1em 3em rgba(255, 255, 255, 0.2);
+          box-shadow: 0.1em 0.1em 3em rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+}
+
+footer .FlexParagraphs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: white;
+}
+
+footer .FlexParagraphs p {
+  background-color: transparent;
+}
+
+footer .FlexParagraphs p:hover {
+  background-color: rgba(255, 255, 255, 0.045);
+  cursor: pointer;
+  -webkit-box-shadow: 0.1em 0.1em 3em rgba(255, 255, 255, 0.2);
+          box-shadow: 0.1em 0.1em 3em rgba(255, 255, 255, 0.2);
+}
+
+@media (min-width: 300px) {
+  .Header {
+    margin-left: 2em;
+    margin-top: 1.5em;
+  }
+  .Header p {
+    font-size: 0.8em;
+  }
+  .Header .MainLogo {
+    height: 2.5em;
+    width: auto;
+  }
+  .Header .SearchBar {
+    width: 3ch;
+    height: 1.5em;
+    -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch;
+    border-radius: 0.3em;
+  }
+  .Header .SearchBar .SearchButton {
+    margin-left: 0.2em;
+    height: 1.5em;
+    width: 1.5em;
+  }
+  .Header .SearchBar .SearchButton img {
+    height: 1.5em;
+    width: 1.5em;
+  }
+  .Header .SearchBar .SearchInput {
+    height: 2em;
+    width: 0px;
+    font-size: 0;
+  }
+  .Header .UserStuff .UserCartFav {
+    padding: 0.3em;
+  }
+  .Header .UserStuff .UserCartFav p {
+    font-size: 0;
+  }
+  .Header .UserStuff .UserCartFav .FavImg {
+    width: 1.3em;
+    height: 1.3em;
+    margin-right: 0.6em;
+  }
+  .Header .UserStuff .UserCartFav .CartImg {
+    width: 1.3em;
+    height: 1.3em;
+    margin-right: 0.6em;
+  }
+  .Header .UserStuff .UserCartFav .UserImg {
+    width: 1.3em;
+    height: 1.3em;
+    margin-right: 0.6em;
+  }
+  .Header .UserStuff #UserPage {
+    padding-right: 0px;
+  }
+  .Panel {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-top: 1.5em;
+    border-top: 0.1em solid black;
+    border-bottom: 0.1em solid black;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    border-color: rgba(0, 0, 0, 0.2);
+  }
+  .Panel #Inventory,
+  .Panel #Syrups,
+  .Panel #Alcohol,
+  .Panel #Glass,
+  .Panel #Literature {
+    display: none;
+  }
+  .Panel .PanelBlocks {
+    height: 3em;
+    width: auto;
+    font-size: 0.8em;
+  }
+  .Panel .PanelBlocks:hover {
+    cursor: pointer;
+  }
+  .Panel .PanelBlocks:hover p {
+    color: #ff3d3d;
+    -webkit-transition: 200ms;
+    transition: 200ms;
+  }
+  .Panel img {
+    margin-left: 2em;
+    width: 1.5em;
+    height: 1.5em;
+  }
+  .Panel #last {
+    margin-right: 4.5em;
+  }
+  .BigAdPanel {
+    height: auto;
+    width: 100%;
+    margin-top: 1em;
+  }
+  .BigAdPanel .Promotion:hover {
+    cursor: pointer;
+  }
+  .BigAdPanel .Promotion {
+    width: 24em;
+    height: 27em;
+    background: url(../Promotions/StarterKitSmall.png) no-repeat;
+    background-size: contain;
+  }
+  .BigAdPanel .Arrow {
+    display: none;
+    height: 2em;
+  }
+  .NewGoodsRoll, .RecGoodsRoll {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-top: 2em;
+    gap: 3em;
+  }
+  .NewGoodsRoll .Item, .RecGoodsRoll .Item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 15em;
+    border-radius: 2em;
+    background-color: rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    padding: 2em;
+    -webkit-box-shadow: 0.1em 0.1em 3em rgba(0, 0, 0, 0.2);
+            box-shadow: 0.1em 0.1em 3em rgba(0, 0, 0, 0.2);
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    -webkit-backdrop-filter: blur(8px);
+            backdrop-filter: blur(8px);
+  }
+  .NewGoodsRoll .Item img, .RecGoodsRoll .Item img {
+    height: 15em;
+    width: 15em;
+  }
+  .NewGoodsRoll .Item .Price, .RecGoodsRoll .Item .Price {
+    color: #ff3d3d;
+    font-size: 1.5em;
+    margin-top: 0.6em;
+  }
+  .NewGoodsRoll .Item .Price::after, .RecGoodsRoll .Item .Price::after {
+    content: " ₽";
+  }
+  .NewGoodsRoll .Item .Description, .RecGoodsRoll .Item .Description {
+    font-size: 1.25em;
+    width: 12em;
+  }
+  .NewGoodsRoll .Item .CartNHeart, .RecGoodsRoll .Item .CartNHeart {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-column-gap: 0.25em;
+            column-gap: 0.25em;
+    width: auto;
+  }
+  .NewGoodsRoll .Item .CartNHeart .MoveToCart, .RecGoodsRoll .Item .CartNHeart .MoveToCart {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    font-size: 1.25em;
+    background-color: #007eff;
+    width: 7.5em;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin-top: 0.6em;
+    border-top-left-radius: 0.6em;
+    border-bottom-left-radius: 0.6em;
+    color: white;
+    outline: none;
+    border: none;
+    height: 2em;
+  }
+  .NewGoodsRoll .Item .CartNHeart .MvToFavorites, .RecGoodsRoll .Item .CartNHeart .MvToFavorites {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    font-size: 20px;
+    background-color: #007eff;
+    width: 2em;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin-top: 0.6em;
+    border-top-right-radius: 0.6em;
+    border-bottom-right-radius: 0.6em;
+    color: white;
+    outline: none;
+    border: none;
+    height: 2em;
+  }
+  .NewGoodsRoll .Item .CartNHeart .MvToFavorites img, .RecGoodsRoll .Item .CartNHeart .MvToFavorites img {
+    height: 1.25em;
+    width: 1.25em;
+    margin: 7px;
+  }
+  .NewGoodsRoll .Item .CartNHeart .MvToFavorites:hover, .RecGoodsRoll .Item .CartNHeart .MvToFavorites:hover {
+    -webkit-transform: scaleX(1.15) scaleY(1.1);
+            transform: scaleX(1.15) scaleY(1.1);
+    -webkit-transition: 200ms;
+    transition: 200ms;
+    background-color: #007eff;
+  }
+  .NewGoodsRoll .Item .CartNHeart input:hover, .RecGoodsRoll .Item .CartNHeart input:hover {
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05);
+    -webkit-transition: 200ms;
+    transition: 200ms;
+    background-color: #007eff;
+    cursor: pointer;
+  }
+  .NewGoods, .RecGoods, .Offers {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: auto auto;
+        grid-template-columns: auto auto;
+    margin-left: 2em;
+    margin-top: 5em;
+    width: 85%;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .NewGoods p, .RecGoods p, .Offers p {
+    font-family: Roboto-Thin;
+    font-size: 1em;
+  }
+  .NewGoods .Arrows, .RecGoods .Arrows, .Offers .Arrows {
+    justify-self: flex-end;
+  }
+  .NewGoods img, .RecGoods img, .Offers img {
+    height: 1em;
+    opacity: 0.7;
+  }
+  .NewGoods .FLeftArrow, .RecGoods .FLeftArrow, .Offers .FLeftArrow {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+    margin-right: 1.25em;
+  }
+  .OffersRoll {
+    margin-top: 1em;
+    display: -ms-grid;
+    display: grid;
+    place-items: center;
+    row-gap: 1em;
+    width: 100%;
+    -ms-grid-columns: auto;
+        grid-template-columns: auto;
+  }
+  .OffersRoll img {
+    height: auto;
+    width: 20em;
+  }
+  footer {
+    margin-top: 2em;
+    height: auto;
+    padding-left: 2em;
+    padding-top: 2em;
+    -ms-grid-columns: auto;
+        grid-template-columns: auto;
+  }
+  footer .subscribeText {
+    font-size: 1em;
+  }
+  footer .SubWrapper {
+    row-gap: 1em;
+    margin-bottom: 3.5em;
+  }
+  footer .SubWrapper .subscribeBlock {
+    border-bottom: solid 1px white;
+    width: 35ch;
+    height: 4ch;
+  }
+  footer .SubWrapper .subscribeBlock input {
+    border: 0px;
+    font-size: 1.2em;
+    width: 23ch;
+    height: 2.7ch;
+  }
+  footer .SubWrapper .subscribeBlock img {
+    height: 1em;
+  }
+  footer .SocialNetworks {
+    -webkit-column-gap: 1em;
+            column-gap: 1em;
+  }
+  footer .SocialNetworks .SocialWrapper {
+    margin-bottom: 3.5em;
+    width: 4em;
+    height: 4em;
+    border-radius: 50%;
+  }
+  footer .SocialNetworks .SocialWrapper img {
+    width: 1.5em;
+    height: 1.5em;
+  }
+  footer .FlexParagraphs {
+    margin-bottom: 3.5em;
+    -webkit-column-gap: 1em;
+            column-gap: 1em;
+    font-size: 1em;
+  }
+  footer .FlexParagraphs p {
+    width: 40cx;
+  }
+}
+
+@media (min-width: 500px) {
+  .Header .SearchBar {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 25ch;
+    height: 2.5em;
+    border: 0.1em solid rgba(0, 0, 0, 0.3);
+    border-radius: 0.3em;
+  }
+  .Header .SearchBar .SearchInput {
+    margin-left: 0.5em;
+    width: 15ch;
+    font-size: 1.2em;
+  }
+  .Panel #Literature {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .BigAdPanel .Promotion {
+    width: 25em;
+    height: 29em;
+    background: url(../Promotions/StarterKitSmall.png) no-repeat;
+    background-size: contain;
+  }
+  .BigAdPanel .Arrow {
+    display: block;
+    height: 2em;
+  }
+}
+
+@media (min-width: 700px) {
+  .Header img {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  .Header .SearchBar {
+    width: 45ch;
+    height: 2.5em;
+    border: 0.1em solid rgba(0, 0, 0, 0.3);
+    border-radius: 0.3em;
+  }
+  .Panel #Glass {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .BigAdPanel {
+    height: 30em;
+    width: 100%;
+    margin-top: 1em;
+  }
+  .BigAdPanel .Promotion {
+    width: 26em;
+    height: 30em;
+    background: url(../Promotions/StarterKitSmall.png) no-repeat;
+    background-size: contain;
+  }
+  .BigAdPanel .Arrow {
+    height: 3em;
+  }
+  .BigAdPanel #LeftArrow {
+    margin-right: 5em;
+  }
+  .BigAdPanel #RightArrow {
+    margin-left: 5em;
+  }
+  .NewGoods p, .RecGoods p, .Offers p {
+    font-size: 2em;
+  }
+  .OffersRoll {
+    -ms-grid-columns: auto auto;
+        grid-template-columns: auto auto;
+    row-gap: 2em;
+  }
+  img {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+  }
+}
+
+@media (min-width: 800px) {
+  .Header .SearchBar {
+    width: 55ch;
+  }
+  .Header .SearchBar .SearchInput {
+    width: 20ch;
+    font-size: 1.2em;
+  }
+  .Panel #Syrups {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .NewGoods, .RecGoods, .Offers {
+    margin-left: 5em;
+  }
+  .NewGoodsRoll, .RecGoodsRoll {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: auto auto;
+        grid-template-columns: auto auto;
+    -ms-grid-rows: auto auto;
+        grid-template-rows: auto auto;
+    row-gap: 2em;
+    -webkit-column-gap: 4em;
+            column-gap: 4em;
+  }
+  .OffersRoll img {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  footer {
+    -ms-grid-columns: auto auto;
+        grid-template-columns: auto auto;
+  }
+}
+
+@media (min-width: 1150px) {
+  .Header {
+    margin-left: 6em;
+    margin-right: 6em;
+    margin-top: 1.5em;
+  }
+  .Header .MainLogo {
+    height: 3em;
+    width: auto;
+  }
+  .Header .SearchBar {
+    width: 30ch;
+    height: 3em;
+    border: 0.1em solid rgba(0, 0, 0, 0.3);
+    border-radius: 0.3em;
+  }
+  .Header .SearchBar .SearchButton {
+    margin-left: 0.5em;
+    height: 2.5em;
+    width: 2.5em;
+  }
+  .Header .SearchBar .SearchButton img {
+    height: 2em;
+    width: 2em;
+  }
+  .Header .SearchBar .SearchInput {
+    height: 2em;
+    width: 10ch;
+    font-size: 1.2em;
+  }
+  .Header .UserStuff {
+    justify-self: flex-end;
+  }
+  .Header .UserStuff .UserCartFav {
+    margin-left: 2.5em;
+    padding: 0.3em;
+  }
+  .Header .UserStuff .UserCartFav p {
+    font-size: 1em;
+  }
+  .Header .UserStuff .UserCartFav .FavImg {
+    width: 1.7em;
+    height: 1.7em;
+    margin-right: 0.6em;
+  }
+  .Header .UserStuff .UserCartFav .CartImg {
+    width: 1.7em;
+    height: 1.7em;
+    margin-right: 0.6em;
+  }
+  .Header .UserStuff .UserCartFav .UserImg {
+    width: 1.7em;
+    height: 1.7em;
+    margin-right: 0.6em;
+  }
+  .Header .UserStuff #UserPage {
+    padding-right: 0px;
+  }
+  .Panel {
+    border-color: rgba(0, 0, 0, 0.2);
+  }
+  .Panel .PanelBlocks {
+    font-size: 1em;
+    height: 3.75em;
+  }
+  .Panel .PanelBlocks:hover {
+    cursor: pointer;
+  }
+  .Panel .PanelBlocks:hover p {
+    color: #ff3d3d;
+    -webkit-transition: 200ms;
+    transition: 200ms;
+  }
+  .Panel img {
+    margin-left: 6em;
+    width: 2em;
+    height: 2em;
+  }
+  .Panel #last {
+    margin-right: 6em;
+  }
+  .BigAdPanel {
+    height: 15em;
+    margin-top: 1em;
+  }
+  .BigAdPanel .Promotion {
+    width: 50em;
+    height: 15em;
+    background: url(../Promotions/test.png) no-repeat;
+    background-size: contain;
+  }
+  .NewGoodsRoll, .RecGoodsRoll {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: auto auto;
+        grid-template-columns: auto auto;
+    -ms-grid-rows: auto auto;
+        grid-template-rows: auto auto;
+    row-gap: 2em;
+    -webkit-column-gap: 4em;
+            column-gap: 4em;
+  }
+  .NewGoods, .RecGoods, .Offers {
+    width: 90%;
+  }
+  .OffersRoll {
+    margin-top: 2em;
+  }
+  .OffersRoll img {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+  footer {
+    -ms-grid-columns: auto auto auto;
+        grid-template-columns: auto auto auto;
+  }
+}
+
+@media (min-width: 1400px) {
+  .Header .SearchBar {
+    width: 50ch;
+  }
+  .Header .SearchBar .SearchInput {
+    height: 2em;
+    width: 50ch;
+    font-size: 1.2em;
+  }
+  .Header .UserStuff .UserCartFav p {
+    font-size: 1.2em;
+  }
+  .Panel {
+    font-size: 1.2em;
+  }
+  .BigAdPanel {
+    height: 22em;
+    margin-top: 1em;
+  }
+  .BigAdPanel .Promotion {
+    width: 65em;
+    height: 20em;
+    background: url(../Promotions/test.png) no-repeat;
+    background-size: contain;
+  }
+  .OffersRoll {
+    margin-top: 8em;
+    margin-bottom: 8em;
+    gap: 14em;
+    -ms-grid-columns: auto;
+        grid-template-columns: auto;
+  }
+  .OffersRoll img {
+    -webkit-transform: scale(2.2);
+            transform: scale(2.2);
+  }
+  footer {
+    margin-top: 2em;
+    height: auto;
+    padding-left: 2em;
+    padding-top: 2em;
+    -ms-grid-columns: auto auto auto;
+        grid-template-columns: auto auto auto;
+  }
+  footer .subscribeText {
+    font-size: 1.5em;
+  }
+  footer .SubWrapper {
+    row-gap: 1em;
+    margin-bottom: 3.5em;
+  }
+  footer .SubWrapper .subscribeBlock {
+    border-bottom: solid 1px white;
+    width: 35ch;
+    height: 4ch;
+  }
+  footer .SubWrapper .subscribeBlock input {
+    border: 0px;
+    font-size: 1.2em;
+    width: 23ch;
+    height: 2.7ch;
+  }
+  footer .SubWrapper .subscribeBlock img {
+    height: 1em;
+  }
+  footer .SocialNetworks {
+    -webkit-column-gap: 1em;
+            column-gap: 1em;
+  }
+  footer .SocialNetworks .SocialWrapper {
+    margin-bottom: 3.5em;
+    width: 7em;
+    height: 7em;
+    border-radius: 50%;
+  }
+  footer .SocialNetworks .SocialWrapper img {
+    width: 3em;
+    height: 3em;
+  }
+  footer .FlexParagraphs {
+    margin-bottom: 3.5em;
+    -webkit-column-gap: 1em;
+            column-gap: 1em;
+    font-size: 1.5em;
+  }
+  footer .FlexParagraphs p {
+    width: 40cx;
+  }
+}
+
+@media (min-width: 1600px) {
+  .Header .SearchBar {
+    width: 70ch;
+  }
+  .Panel #Alcohol,
+  .Panel #Inventory,
+  .Panel #Glass {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .NewGoodsRoll, .RecGoodsRoll {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: auto auto auto auto;
+        grid-template-columns: auto auto auto auto;
+    row-gap: 2em;
+    -webkit-column-gap: 4em;
+            column-gap: 4em;
+  }
+  .OffersRoll {
+    margin-top: 8em;
+    margin-bottom: 8em;
+    -ms-grid-columns: auto auto;
+        grid-template-columns: auto auto;
+    gap: 6em;
+  }
+  .OffersRoll img {
+    -webkit-transform: scale(2.2);
+            transform: scale(2.2);
+  }
+  .NewGoods, .RecGoods, .Offers {
+    margin-left: 8em;
+    width: 85%;
+  }
+}
+
+@media (min-width: 1800px) {
+  .Header {
+    margin-left: 12.5em;
+    margin-right: 10.5em;
+    margin-top: 1.5em;
+  }
+  .Header .SearchBar {
+    width: 80ch;
+  }
+  .Header .SearchBar .SearchInput {
+    height: 2em;
+    width: 75ch;
+    font-size: 1.2em;
+  }
+  .Header .UserStuff .UserCartFav {
+    margin-left: 2.5em;
+    padding: 0.3em;
+  }
+  .Header .UserStuff .UserCartFav p {
+    font-size: 1.2em;
+  }
+  .Panel p {
+    font-size: 1em;
+  }
+  .Panel .PanelBlocks {
+    height: 4em;
+    padding-right: 2.5em;
+    padding-left: 2.5em;
+  }
+  .Panel img {
+    margin-left: 10.5em;
+    width: 2em;
+    height: 2em;
+  }
+  .BigAdPanel {
+    height: 24em;
+    margin-top: 1em;
+    margin-bottom: 12em;
+  }
+  .BigAdPanel .Promotion {
+    width: 90em;
+    height: 30em;
+    background: url(../Promotions/test.png) no-repeat;
+    background-size: contain;
+  }
+  .NewGoodsRoll, .RecGoodsRoll {
+    margin-top: 2em;
+    gap: 3em;
+  }
+  .NewGoodsRoll .Item, .RecGoodsRoll .Item {
+    width: 20em;
+    height: 30em;
+  }
+  .NewGoodsRoll .Item img, .RecGoodsRoll .Item img {
+    height: 20em;
+    width: 20em;
+  }
+  .NewGoodsRoll .Item .Price, .RecGoodsRoll .Item .Price {
+    color: #ff3d3d;
+    font-size: 1.7em;
+    margin-top: 0.6em;
+  }
+  .NewGoodsRoll .Item .Price::after, .RecGoodsRoll .Item .Price::after {
+    content: " ₽";
+  }
+  .NewGoodsRoll .Item .Description, .RecGoodsRoll .Item .Description {
+    font-size: 1.5em;
+    width: 12em;
+  }
+  .NewGoodsRoll .Item .CartNHeart, .RecGoodsRoll .Item .CartNHeart {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-column-gap: 0.25em;
+            column-gap: 0.25em;
+    width: auto;
+  }
+  .NewGoodsRoll .Item .CartNHeart .MoveToCart, .RecGoodsRoll .Item .CartNHeart .MoveToCart {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    font-size: 1.25em;
+    background-color: #007eff;
+    width: 7.5em;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin-top: 0.6em;
+    border-top-left-radius: 0.6em;
+    border-bottom-left-radius: 0.6em;
+    color: white;
+    outline: none;
+    border: none;
+    height: 2em;
+  }
+  .NewGoodsRoll .Item .CartNHeart .MvToFavorites, .RecGoodsRoll .Item .CartNHeart .MvToFavorites {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    font-size: 20px;
+    background-color: #007eff;
+    width: 2em;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin-top: 0.6em;
+    border-top-right-radius: 0.6em;
+    border-bottom-right-radius: 0.6em;
+    color: white;
+    outline: none;
+    border: none;
+    height: 2em;
+  }
+  .NewGoodsRoll .Item .CartNHeart .MvToFavorites img, .RecGoodsRoll .Item .CartNHeart .MvToFavorites img {
+    height: 1.25em;
+    width: 1.25em;
+    margin: 7px;
+  }
+  .NewGoodsRoll .Item .CartNHeart .MvToFavorites:hover, .RecGoodsRoll .Item .CartNHeart .MvToFavorites:hover {
+    -webkit-transform: scaleX(1.15) scaleY(1.1);
+            transform: scaleX(1.15) scaleY(1.1);
+    -webkit-transition: 200ms;
+    transition: 200ms;
+    background-color: #007eff;
+  }
+  .NewGoodsRoll .Item .CartNHeart input:hover, .RecGoodsRoll .Item .CartNHeart input:hover {
+    -webkit-transform: scale(1.03);
+            transform: scale(1.03);
+    -webkit-transition: 200ms;
+    transition: 200ms;
+    background-color: #007eff;
+    cursor: pointer;
+  }
+  .OffersRoll img {
+    -webkit-transform: scale(2);
+            transform: scale(2);
+  }
+}
+
+.Item:hover {
+  -webkit-box-shadow: 0.1em 0.1em 3em rgba(0, 0, 0, 0.3);
+          box-shadow: 0.1em 0.1em 3em rgba(0, 0, 0, 0.3);
+}
+/*# sourceMappingURL=Main_Page.css.map */

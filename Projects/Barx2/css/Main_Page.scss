@@ -1,0 +1,1133 @@
+* {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+$SoftRed: #ff3d3d;
+$SoftBlue: #007eff;
+
+@font-face {
+    font-family: Roboto-Thin;
+    src: url(/Fonts/Roboto-Thin.ttf);
+}
+
+@font-face {
+    font-family: Roboto-Light;
+    src: url(/Fonts/Roboto-Light.ttf);
+}
+
+p {
+    font-family: Roboto-Light;
+}
+
+img:hover {
+    cursor: pointer;
+}
+
+.Description:hover {
+    color: $SoftRed;
+    transition: 200ms;
+    cursor: pointer;
+}
+
+.Header {
+    display: flex;
+    flex-direction: row;
+    
+position: sticky;
+    align-items: center;
+    justify-content: space-between;
+
+    .Profile {
+        margin: 0;
+    }
+    .SearchBar {
+        display: flex;
+        align-items: center;
+
+        border-color: rgba(0, 0, 0, 0.2);
+
+        button:active,
+        button:focus {
+            outline: none;
+        }
+        .SearchButton {
+            background-color: transparent;
+
+            border-style: none;
+            border: 0;
+        }
+        .SearchButton:not(:disabled) {
+            cursor: pointer;
+        }
+        input:active,
+        input:focus {
+            outline: none;
+        }
+        .SearchInput {
+            border: 0;
+            border-style: none;
+        }
+    }
+
+    .UserStuff {
+        display: flex;
+        justify-self: end;
+        div {
+            display: flex;
+        }
+        .UserCartFav {
+            display: grid;
+            grid-template-columns: auto auto auto auto auto auto;
+            place-items: center;
+            .FavImg {
+                background: url(../Icons/heart.png) no-repeat;
+                background-size: contain;
+            }
+            .CartImg {
+                background: url(../Icons/cart.png) no-repeat;
+                background-size: contain;
+            }
+            .UserImg {
+                background: url(../Icons/user.png) no-repeat;
+                background-size: contain;
+            }
+        }
+
+        #UserPage {
+            padding-right: 0px;
+        }
+
+        .UserCartFav:hover {
+            cursor: pointer;
+
+            p {
+                color: $SoftRed;
+                transition: 200ms;
+            }
+        }
+        #FavPage:hover {
+            .FavImg {
+                background: url(../Icons/heart_softred.png) no-repeat;
+                background-size: contain;
+                transition: 200ms;
+            }
+        }
+        #CartPage:hover {
+            .CartImg {
+                background: url(../Icons/cart_softred.png) no-repeat;
+                background-size: contain;
+                transition: 200ms;
+            }
+        }
+        #UserPage:hover {
+            .UserImg {
+                background: url(../Icons/user_softred.png) no-repeat;
+                background-size: contain;
+                transition: 200ms;
+            }
+        }
+    }
+}
+
+.Panel {
+    display: flex;
+    justify-content: space-between;
+
+    border-color: rgba(0, 0, 0, 0.2);
+
+    .PanelBlocks {
+        display: flex;
+        align-items: center;
+    }
+    .PanelBlocks:hover {
+        cursor: pointer;
+
+        p {
+            color: $SoftRed;
+            transition: 200ms;
+        }
+    }
+}
+
+.BigAdPanel {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    place-items: center;
+
+    .Promotion {
+        width: auto;
+    }
+    .Arrow {
+        rect {
+            fill: black;
+        }
+        circle {
+            fill: transparent;
+        }
+    }
+    #LeftArrow {
+        transform: rotate(180deg);
+    }
+
+    .Arrow:hover {
+        cursor: pointer;
+        rect {
+            fill: white;
+            transition: 200ms;
+        }
+        circle {
+            fill: black;
+            transition: 200ms;
+        }
+    }
+}
+
+.NewGoodsRollGrid {
+    width: 100%;
+    height: auto;
+    display: grid;
+    place-items: center;
+}
+
+.NewGoods {
+    @extend %Section;
+}
+
+.RecGoods {
+    @extend %Section;
+}
+
+.Offers {
+    @extend %Section;
+}
+
+footer {
+    background-color: black;
+
+    display: grid;
+    align-items: center;
+
+    grid-template-columns: auto auto auto;
+
+    .subscribeText {
+        color: white;
+    }
+    .SubWrapper {
+        display: flex;
+        flex-direction: column;
+
+        .subscribeBlock {
+            input {
+                color: white;
+                background: black;
+            }
+
+            input:active,
+            input:focus {
+                outline: none;
+            }
+
+            input:focus::placeholder {
+                color: transparent;
+            }
+        }
+    }
+
+    .SocialNetworks {
+        display: flex;
+
+        .SocialWrapper {
+            display: grid;
+            place-items: center;
+
+            border-radius: 50%;
+        }
+        .SocialWrapper:hover {
+            background-color: rgba(158, 158, 158, 0.1);
+            box-shadow: 0.1em 0.1em 3em rgba(255, 255, 255, 0.2);
+            cursor: pointer;
+        }
+    }
+
+    .FlexParagraphs {
+        display: flex;
+
+        color: white;
+
+        p {
+            background-color: transparent;
+        }
+        p:hover {
+            background-color: rgba(255, 255, 255, 0.045);
+            cursor: pointer;
+            box-shadow: 0.1em 0.1em 3em rgba(255, 255, 255, 0.2);
+        }
+    }
+}
+
+@media (min-width: 300px) {
+    .Header {
+        margin-left: 2em;
+        margin-top: 1.5em;
+
+        p {
+            font-size: 0.8em;
+        }
+        .MainLogo {
+            height: 2.5em;
+            width: auto;
+        }
+
+        .SearchBar {
+            width: 3ch;
+            height: 1.5em;
+            align-items: stretch;
+
+            border-radius: 0.3em;
+            .SearchButton {
+                margin-left: 0.2em;
+                height: 1.5em;
+                width: 1.5em;
+                img {
+                    height: 1.5em;
+                    width: 1.5em;
+                }
+            }
+
+            .SearchInput {
+                height: 2em;
+                width: 0px;
+                font-size: 0;
+            }
+        }
+
+        .UserStuff {
+            .UserCartFav {
+                padding: 0.3em;
+                p {
+                    font-size: 0;
+                }
+                .FavImg {
+                    width: 1.3em;
+                    height: 1.3em;
+                    margin-right: 0.6em;
+                }
+                .CartImg {
+                    width: 1.3em;
+                    height: 1.3em;
+
+                    margin-right: 0.6em;
+                }
+                .UserImg {
+                    width: 1.3em;
+                    height: 1.3em;
+
+                    margin-right: 0.6em;
+                }
+            }
+
+            #UserPage {
+                padding-right: 0px;
+            }
+        }
+    }
+    .Panel {
+        display: flex;
+        margin-top: 1.5em;
+        border-top: 0.1em solid black;
+        border-bottom: 0.1em solid black;
+        justify-content: space-between;
+        align-items: center;
+        border-color: rgba(0, 0, 0, 0.2);
+
+        #Inventory,
+        #Syrups,
+        #Alcohol,
+        #Glass,
+        #Literature {
+            display: none;
+        }
+
+        .PanelBlocks {
+            height: 3em;
+            width: auto;
+
+            font-size: 0.8em;
+        }
+        .PanelBlocks:hover {
+            cursor: pointer;
+
+            p {
+                color: $SoftRed;
+                transition: 200ms;
+            }
+        }
+        img {
+            margin-left: 2em;
+            width: 1.5em;
+            height: 1.5em;
+        }
+        #last {
+            margin-right: 4.5em;
+        }
+    }
+
+    .BigAdPanel {
+        height: auto;
+        width: 100%;
+        margin-top: 1em;
+        .Promotion:hover {
+            cursor: pointer;
+        }
+        .Promotion {
+            width: 24em;
+            height: 27em;
+            background: url(../Promotions/StarterKitSmall.png) no-repeat;
+            background-size: contain;
+        }
+        .Arrow {
+            display: none;
+            height: 2em;
+        }
+    }
+
+    %GoodsRoll {
+        display: flex;
+        flex-direction: column;
+        margin-top: 2em;
+        gap: 3em;
+        .Item {
+            display: flex;
+            flex-direction: column;
+            width: 15em;
+            border-radius: 2em;
+            background-color: rgba(255, 255, 255, 0.1);
+            overflow: hidden;
+            padding: 2em;
+            box-shadow: 0.1em 0.1em 3em rgba(0, 0, 0, 0.2);
+            border-top: 1px solid rgba(255, 255, 255, 0.5);
+            border-left: 1px solid rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(8px);
+
+            img {
+                height: 15em;
+                width: 15em;
+            }
+
+            .Price {
+                color: $SoftRed;
+                font-size: 1.5em;
+                margin-top: 0.6em;
+            }
+            .Price::after {
+                content: " ₽";
+            }
+            .Description {
+                font-size: 1.25em;
+                width: 12em;
+            }
+            .CartNHeart {
+                display: flex;
+                column-gap: 0.25em;
+                width: auto;
+                .MoveToCart {
+                    display: flex;
+                    font-size: 1.25em;
+                    background-color: $SoftBlue;
+                    width: 7.5em;
+                    justify-content: center;
+                    margin-top: 0.6em;
+                    border-top-left-radius: 0.6em;
+                    border-bottom-left-radius: 0.6em;
+                    color: white;
+                    outline: none;
+                    border: none;
+                    height: 2em;
+                }
+                .MvToFavorites {
+                    display: flex;
+                    font-size: 20px;
+                    background-color: $SoftBlue;
+                    width: 2em;
+                    justify-content: center;
+                    margin-top: 0.6em;
+                    border-top-right-radius: 0.6em;
+                    border-bottom-right-radius: 0.6em;
+                    color: white;
+                    outline: none;
+                    border: none;
+                    height: 2em;
+                    img {
+                        height: 1.25em;
+                        width: 1.25em;
+                        margin: 7px;
+                    }
+                }
+                .MvToFavorites:hover {
+                    transform: scaleX(1.15) scaleY(1.1);
+                    transition: 200ms;
+                    background-color: $SoftBlue;
+                }
+                input:hover {
+                    transform: scale(1.05);
+                    transition: 200ms;
+                    background-color: $SoftBlue;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+    %Section {
+        display: grid;
+        grid-template-columns: auto auto;
+        margin-left: 2em;
+        margin-top: 5em;
+        width: 85%;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+        align-items: center;
+        p {
+            font-family: Roboto-Thin;
+            font-size: 1em;
+        }
+        .Arrows {
+            justify-self: flex-end;
+        }
+        img {
+            height: 1em;
+            opacity: 0.7;
+        }
+        .FLeftArrow {
+            transform: rotate(180deg);
+            margin-right: 1.25em;
+        }
+    }
+
+    .OffersRoll {
+        margin-top: 1em;
+        display: grid;
+        place-items: center;
+        row-gap: 1em;
+
+        width: 100%;
+
+        grid-template-columns: auto;
+        img {
+            height: auto;
+            width: 20em;
+        }
+    }
+
+    footer {
+        margin-top: 2em;
+        height: auto;
+        padding-left: 2em;
+        padding-top: 2em;
+
+        grid-template-columns: auto;
+
+        .subscribeText {
+            font-size: 1em;
+        }
+        .SubWrapper {
+            row-gap: 1em;
+            margin-bottom: 3.5em;
+            .subscribeBlock {
+                border-bottom: solid 1px white;
+                width: 35ch;
+                height: 4ch;
+
+                input {
+                    border: 0px;
+                    font-size: 1.2em;
+                    width: 23ch;
+                    height: 2.7ch;
+                }
+
+                img {
+                    height: 1em;
+                }
+            }
+        }
+
+        .SocialNetworks {
+            column-gap: 1em;
+
+            .SocialWrapper {
+                margin-bottom: 3.5em;
+                width: 4em;
+                height: 4em;
+                border-radius: 50%;
+                img {
+                    width: 1.5em;
+                    height: 1.5em;
+                }
+            }
+        }
+
+        .FlexParagraphs {
+            margin-bottom: 3.5em;
+            column-gap: 1em;
+            font-size: 1em;
+            p {
+                width: 40cx;
+            }
+        }
+    }
+}
+
+@media (min-width: 500px) {
+    .Header {
+        .SearchBar {
+            align-items: center;
+            width: 25ch;
+            height: 2.5em;
+            border: 0.1em solid rgba(0, 0, 0, 0.3);
+            border-radius: 0.3em;
+
+            .SearchInput {
+                margin-left: 0.5em;
+                width: 15ch;
+                font-size: 1.2em;
+            }
+        }
+    }
+    .Panel {
+        #Literature {
+            display: flex;
+        }
+    }
+
+    .BigAdPanel {
+
+        .Promotion {
+            width: 25em;
+            height: 29em;
+            background: url(../Promotions/StarterKitSmall.png) no-repeat;
+            background-size: contain;
+        }
+        .Arrow {
+            display: block;
+            height: 2em;
+        }
+    }
+}
+
+@media (min-width: 700px) {
+    .Header {
+        img {
+            transform: scale(1);
+        }
+        .SearchBar {
+            width: 45ch;
+            height: 2.5em;
+            border: 0.1em solid rgba(0, 0, 0, 0.3);
+            border-radius: 0.3em;
+        }
+    }
+    .Panel {
+        #Glass {
+            display: flex;
+        }
+    }
+    .BigAdPanel {
+        height: 30em;
+        width: 100%;
+        margin-top: 1em;
+        .Promotion {
+            width: 26em;
+            height: 30em;
+            background: url(../Promotions/StarterKitSmall.png) no-repeat;
+            background-size: contain;
+        }
+        .Arrow {
+            height: 3em;
+        }
+        #LeftArrow {
+            margin-right: 5em;
+        }
+        #RightArrow {
+            margin-left: 5em;
+        }
+    }
+
+    %Section {
+        p {
+            font-size: 2em;
+        }
+    }
+
+    .OffersRoll {
+        grid-template-columns: auto auto;
+        row-gap: 2em;
+    }
+    img {
+        transform: scale(0.9);
+    }
+}
+
+@media (min-width: 800px) {
+    .Header {
+        .SearchBar {
+            width: 55ch;
+
+            .SearchInput {
+                width: 20ch;
+                font-size: 1.2em;
+            }
+        }
+    }
+
+    .Panel {
+        #Syrups {
+            display: flex;
+        }
+    }
+    %Section {
+        margin-left: 5em;
+    }
+    %GoodsRoll {
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-template-rows: auto auto;
+        row-gap: 2em;
+        column-gap: 4em;
+    }
+
+    .OffersRoll {
+        img {
+            transform: scale(1);
+        }
+    }
+
+    footer {
+        grid-template-columns: auto auto;
+    }
+}
+
+@media (min-width: 1150px) {
+    .Header {
+        margin-left: 6em;
+        margin-right: 6em;
+        margin-top: 1.5em;
+
+        .MainLogo {
+            height: 3em;
+            width: auto;
+        }
+
+        .SearchBar {
+            width: 30ch;
+            height: 3em;
+            border: 0.1em solid rgba(0, 0, 0, 0.3);
+            border-radius: 0.3em;
+
+            .SearchButton {
+                margin-left: 0.5em;
+                height: 2.5em;
+                width: 2.5em;
+
+                img {
+                    height: 2em;
+                    width: 2em;
+                }
+            }
+
+            .SearchInput {
+                height: 2em;
+                width: 10ch;
+                font-size: 1.2em;
+            }
+        }
+
+        .UserStuff {
+            justify-self: flex-end;
+            .UserCartFav {
+                margin-left: 2.5em;
+                padding: 0.3em;
+
+                p {
+                    font-size: 1em;
+                }
+
+                .FavImg {
+                    width: 1.7em;
+                    height: 1.7em;
+                    margin-right: 0.6em;
+                }
+                .CartImg {
+                    width: 1.7em;
+                    height: 1.7em;
+
+                    margin-right: 0.6em;
+                }
+                .UserImg {
+                    width: 1.7em;
+                    height: 1.7em;
+                    margin-right: 0.6em;
+                }
+            }
+
+            #UserPage {
+                padding-right: 0px;
+            }
+        }
+    }
+    .Panel {
+        border-color: rgba(0, 0, 0, 0.2);
+
+        .PanelBlocks {
+            font-size: 1em;
+            height: 3.75em;
+        }
+        .PanelBlocks:hover {
+            cursor: pointer;
+
+            p {
+                color: $SoftRed;
+                transition: 200ms;
+            }
+        }
+        img {
+            margin-left: 6em;
+            width: 2em;
+            height: 2em;
+        }
+        #last {
+            margin-right: 6em;
+        }
+    }
+
+    .BigAdPanel {
+        height: 15em;
+        margin-top: 1em;
+        .Promotion {
+            width: 50em;
+            height: 15em;
+            background: url(../Promotions/test.png) no-repeat;
+            background-size: contain;
+        }
+    }
+
+    %GoodsRoll {
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-template-rows: auto auto;
+        row-gap: 2em;
+        column-gap: 4em;
+    }
+
+    %Section {
+        width: 90%;
+    }
+
+    .OffersRoll {
+        margin-top: 2em;
+        img {
+            transform: scale(1.2);
+        }
+    }
+
+    footer {
+        grid-template-columns: auto auto auto;
+    }
+}
+
+@media (min-width: 1400px) {
+    .Header {
+        .SearchBar {
+            width: 50ch;
+           
+            .SearchInput {
+                height: 2em;
+                width: 50ch;
+                font-size: 1.2em;
+            }
+        }
+
+        .UserStuff {
+            .UserCartFav {
+                p {
+                    font-size: 1.2em;
+                }
+            }
+        }
+    }
+    .Panel {
+        font-size: 1.2em;
+    }
+
+
+    .BigAdPanel {
+        height: 22em;
+        margin-top: 1em;
+        .Promotion {
+            width: 65em;
+            height: 20em;
+            background: url(../Promotions/test.png) no-repeat;
+            background-size: contain;
+        }
+    }
+
+    .OffersRoll {
+        margin-top: 8em;
+        margin-bottom: 8em;
+        gap: 14em;
+        grid-template-columns: auto;
+        img {
+            transform: scale(2.2);
+        }
+    }
+
+    footer {
+        margin-top: 2em;
+        height: auto;
+        padding-left: 2em;
+        padding-top: 2em;
+
+        grid-template-columns: auto auto auto;
+
+        .subscribeText {
+            font-size: 1.5em;
+        }
+        .SubWrapper {
+            row-gap: 1em;
+            margin-bottom: 3.5em;
+            .subscribeBlock {
+                border-bottom: solid 1px white;
+                width: 35ch;
+                height: 4ch;
+
+                input {
+                    border: 0px;
+                    font-size: 1.2em;
+                    width: 23ch;
+                    height: 2.7ch;
+                }
+
+                img {
+                    height: 1em;
+                }
+            }
+        }
+
+        .SocialNetworks {
+            column-gap: 1em;
+
+            .SocialWrapper {
+                margin-bottom: 3.5em;
+                width: 7em;
+                height: 7em;
+                border-radius: 50%;
+                img {
+                    width: 3em;
+                    height: 3em;
+                }
+            }
+        }
+
+        .FlexParagraphs {
+            margin-bottom: 3.5em;
+            column-gap: 1em;
+            font-size: 1.5em;
+            p {
+                width: 40cx;
+            }
+        }
+    }
+}
+
+@media (min-width: 1600px) {
+    .Header {
+        .SearchBar {
+            width: 70ch;
+            
+        }
+    }
+    .Panel {
+        #Alcohol,
+        #Inventory,
+        #Glass {
+            display: flex;
+        }
+    }
+    %GoodsRoll {
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+
+        row-gap: 2em;
+        column-gap: 4em;
+    }
+
+    .OffersRoll {
+        margin-top: 8em;
+        margin-bottom: 8em;
+        grid-template-columns: auto auto;
+        gap: 6em;
+        img {
+            transform: scale(2.2);
+        }
+    }
+
+    %Section {
+        margin-left: 8em;
+        width: 85%;
+    }
+}
+
+@media (min-width: 1800px) {
+    .Header {
+        margin-left: 12.5em;
+        margin-right: 10.5em;
+        margin-top: 1.5em;
+
+        .SearchBar {
+            width: 80ch;
+
+            .SearchInput {
+                height: 2em;
+                width: 75ch;
+                font-size: 1.2em;
+            }
+        }
+
+        .UserStuff {
+            .UserCartFav {
+                margin-left: 2.5em;
+                padding: 0.3em;
+                p {
+                    font-size: 1.2em;
+                }
+            }
+        }
+    }
+    .Panel {
+        p {
+            font-size: 1em;
+        }
+        .PanelBlocks {
+            height: 4em;
+            padding-right: 2.5em;
+            padding-left: 2.5em;
+        }
+
+        img {
+            margin-left: 10.5em;
+            width: 2em;
+            height: 2em;
+        }
+    }
+
+    .BigAdPanel {
+        height: 24em;
+        margin-top: 1em;
+        .Promotion {
+            width: 90em;
+            height: 30em;
+            background: url(../Promotions/test.png) no-repeat;
+            background-size: contain;
+        }
+        margin-bottom: 12em;
+    }
+
+    %GoodsRoll {
+        margin-top: 2em;
+        gap: 3em;
+        .Item {
+            width: 20em;
+            height: 30em;
+
+            img {
+                height: 20em;
+                width: 20em;
+            }
+
+            .Price {
+                color: $SoftRed;
+                font-size: 1.7em;
+                margin-top: 0.6em;
+            }
+            .Price::after {
+                content: " ₽";
+            }
+            .Description {
+                font-size: 1.5em;
+                width: 12em;
+            }
+            .CartNHeart {
+                display: flex;
+                column-gap: 0.25em;
+                width: auto;
+                .MoveToCart {
+                    display: flex;
+                    font-size: 1.25em;
+                    background-color: $SoftBlue;
+                    width: 7.5em;
+                    justify-content: center;
+                    margin-top: 0.6em;
+                    border-top-left-radius: 0.6em;
+                    border-bottom-left-radius: 0.6em;
+                    color: white;
+                    outline: none;
+                    border: none;
+                    height: 2em;
+                }
+                .MvToFavorites {
+                    display: flex;
+                    font-size: 20px;
+                    background-color: $SoftBlue;
+                    width: 2em;
+                    justify-content: center;
+                    margin-top: 0.6em;
+                    border-top-right-radius: 0.6em;
+                    border-bottom-right-radius: 0.6em;
+                    color: white;
+                    outline: none;
+                    border: none;
+                    height: 2em;
+                    img {
+                        height: 1.25em;
+                        width: 1.25em;
+                        margin: 7px;
+                    }
+                }
+                .MvToFavorites:hover {
+                    transform: scaleX(1.15) scaleY(1.1);
+                    transition: 200ms;
+                    background-color: $SoftBlue;
+                }
+                input:hover {
+                    transform: scale(1.03);
+                    transition: 200ms;
+                    background-color: $SoftBlue;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+    .OffersRoll{
+
+        img{
+
+            transform: scale(2)
+        }
+    }
+}
+
+.NewGoodsRoll {
+    @extend %GoodsRoll;
+}
+
+.RecGoodsRoll {
+    @extend %GoodsRoll;
+}
+
+.Item:hover {
+    box-shadow: 0.1em 0.1em 3em rgba(0, 0, 0, 0.3);
+}

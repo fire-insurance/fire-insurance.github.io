@@ -1,0 +1,322 @@
+* {
+    margin: 0;
+}
+
+$SoftRed: #ff3d3d;
+
+$SoftBlue: #007eff;
+
+@font-face {
+    font-family: Roboto-Thin;
+    src: url(/Fonts/Roboto-Thin.ttf);
+}
+
+@font-face {
+    font-family: Roboto-Light;
+    src: url(/Fonts/Roboto-Light.ttf);
+}
+
+@font-face {
+    font-family: Roboto-Regular;
+    src: url(/Fonts/Roboto-Regular.ttf);
+}
+
+html {
+    font-family: Roboto-Regular;
+}
+
+body {
+    display: grid;
+    place-items: center;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient($SoftRed, $SoftBlue);
+    clip-path: circle(15% at 30% 25%);
+}
+
+body::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient($SoftRed, $SoftBlue);
+    clip-path: circle(15% at 65% 75%);
+    z-index: -1;
+}
+
+.Wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 2em;
+    background-color: rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    padding: 2em;
+    box-shadow: 1em 1em 2em rgba(0, 0, 0, 0.5);
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(1em);
+
+    img {
+        height: 4em;
+    }
+
+    .LoginRegister {
+        margin-top: 1em;
+        display: flex;
+        margin-top: 3em;
+        margin-bottom: 2em;
+
+        .NotRegistered {
+            padding: 0.5em;
+            border: none;
+            border-bottom: solid rgb(168, 168, 168) 2px;
+            border-right: solid rgb(168, 168, 168) 2px;
+            font-size: 1.1em;
+            color: rgb(119, 119, 119);
+            background-color: transparent;
+        }
+
+        .NotRegistered:hover,
+        .AlreadyRegistered:hover {
+            background-color: rgba(168, 168, 168, 0.3);
+            transition: 200ms;
+            cursor: pointer;
+        }
+
+        .AlreadyRegistered {
+            padding: 0.5em;
+            background-color: transparent;
+            border: none;
+            border-top: solid rgb(168, 168, 168) 2px;
+            font-size: 1.1em;
+        }
+    }
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.LoginForm input[type="text"],
+.LoginForm input[type="password"],
+.LoginForm input[type="email"] {
+    border: 0;
+    background: none;
+    display: block;
+    margin: 1em auto;
+    color: black;
+    text-align: center;
+    border: rgb(168, 168, 168) solid 2px;
+    padding: 1em 1em;
+    outline: none;
+    border-radius: 1.5em;
+    transition: 250ms;
+    width: 25ch;
+    font-family: Roboto-Regular;
+    font-size: 1.1em;
+}
+
+.LoginForm input[type="text"]:focus,
+.LoginForm input[type="password"]:focus,
+.LoginForm input[type="email"]:focus {
+    width: 35ch;
+    border-color: $SoftRed;
+}
+
+.LoginForm input[type="text"]:focus::placeholder,
+.LoginForm input[type="password"]:focus::placeholder,
+.LoginForm input[type="email"]:focus::placeholder {
+    color: transparent;
+}
+
+.LoginForm input[type="submit"] {
+    border: 0;
+    background: none;
+    display: block;
+    margin: 1em auto;
+    color: black;
+    text-align: center;
+    border: $SoftRed solid 2px;
+    padding: 1em 1em;
+    outline: none;
+    border-radius: 1.5em;
+    transition: 250ms;
+    width: 15ch;
+    background: none;
+    font-family: Roboto-Regular;
+    font-size: 1.1em;
+}
+
+.LoginForm input[type="submit"]:hover {
+    background: $SoftRed;
+}
+
+
+
+@media (min-width: 280px) {
+    .LoginForm input[type="text"]:focus,
+    .LoginForm input[type="password"]:focus,
+    .LoginForm input[type="email"]:focus {
+        width: 22ch;
+    }
+
+    .LoginForm input[type="text"],
+    .LoginForm input[type="password"],
+    .LoginForm input[type="email"] {
+        width: 18ch;
+        font-size: 1em;
+    }
+
+    .LoginForm input[type="submit"]{
+        font-size: 1em;
+    }
+
+    .Wrapper {
+        width: 200px;
+        height: 450px;
+        img {
+            height: 3em;
+        }
+    }
+
+    button {
+        font-size: 1em !important;
+    }
+}
+
+@media (min-width: 450px) {
+    .LoginForm input[type="text"]:focus,
+    .LoginForm input[type="password"]:focus,
+    .LoginForm input[type="email"]:focus {
+        width: 30ch;
+        border-color: $SoftRed;
+    }
+
+    .LoginForm input[type="text"],
+    .LoginForm input[type="password"],
+    .LoginForm input[type="email"] {
+        width: 25ch;
+        font-size: 1.1em;
+    }
+
+    .LoginForm input[type="submit"]{
+        font-size: 1.1em;
+    }
+
+    .Wrapper {
+        width: 300px;
+        height: 500px;
+        img {
+            height: 4em;
+        }
+    }
+
+}
+
+@media (min-width: 1700px) {
+
+
+    .LoginForm input[type="text"],
+    .LoginForm input[type="password"],
+    .LoginForm input[type="email"] {
+        font-size: 1.3em;
+    }
+
+    .LoginForm input[type="submit"]{
+        font-size: 1.3em;
+    }
+
+    .Wrapper {
+        width: 400px;
+        height: 600px;
+        img {
+            height: 5em;
+        }
+    }
+
+    button {
+        font-size: 1.3em !important;
+    }
+
+}
+
+
+@media (min-width: 2300px) {
+    .LoginForm input[type="text"],
+    .LoginForm input[type="password"],
+    .LoginForm input[type="email"] {
+        width: 25ch;
+        font-size: 1.5em;
+    }
+
+    .LoginForm input[type="submit"]{
+        font-size: 1.5em;
+    }
+
+    .Wrapper {
+        width: 500px;
+        height: 700px;
+        img {
+            height: 6em;
+        }
+    }
+
+    button {
+        font-size: 1.3em !important;
+    }
+
+}
+
+
+
+@media (min-width: 3000px) {
+    .LoginForm input[type="text"]:focus,
+    .LoginForm input[type="password"]:focus,
+    .LoginForm input[type="email"]:focus {
+        width: 30ch;
+        border-color: $SoftRed;
+    }
+
+    .LoginForm input[type="text"],
+    .LoginForm input[type="password"],
+    .LoginForm input[type="email"] {
+        width: 25ch;
+        font-size: 3em;
+    }
+
+    .LoginForm input[type="submit"]{
+        font-size: 3em;
+    }
+
+    .Wrapper {
+        width: 1000px;
+        height: 1500px;
+        border-radius: 5em;
+        img {
+            height: 10em;
+            margin-bottom: 100px;
+        }
+    }
+
+    button {
+        font-size: 3em !important;
+    }
+
+}

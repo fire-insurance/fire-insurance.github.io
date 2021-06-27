@@ -509,8 +509,12 @@ nav span:hover {
   .About {
         grid-template-areas: "Rocketship" "Whoami" "Skills" "Contacts";
     width: 60ch;
-    row-gap: 4em;
-    place-items: center;
+    row-gap: 3em;
+    -webkit-column-gap: 0em;
+            column-gap: 0em;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    justify-items: center;
   }
   .Rocketship {
     -ms-grid-row: 1;
@@ -542,6 +546,24 @@ nav span:hover {
 @media (max-width: 560px) {
   .Greetings {
     font-size: 4em;
+  }
+  .About .Rocketship {
+    width: 34ch;
+  }
+  .About .Rocketship .Fire {
+    width: 105px;
+    height: 110px;
+    left: 5.2em;
+    bottom: 6.9em;
+  }
+  .Card {
+    width: 30ch;
+  }
+  .Whoami {
+    height: 31em;
+  }
+  .Project .ProjectInfo .Description {
+    width: 28ch;
   }
 }
 

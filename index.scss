@@ -1,7 +1,7 @@
 * {
     margin: 0;
 }
-html{
+html {
     scroll-behavior: smooth;
 }
 
@@ -276,7 +276,7 @@ nav {
     margin-top: 10em;
 }
 
-.Projects{
+.Projects {
     display: grid;
     gap: 3em;
     place-items: center;
@@ -347,12 +347,12 @@ nav {
     }
 }
 
-.Project:hover{
-    .Preview{
+.Project:hover {
+    .Preview {
         opacity: 0;
         transform: translateY(150px);
     }
-    .ProjectInfo{
+    .ProjectInfo {
         opacity: 1;
         transform: translateY(0);
     }
@@ -409,8 +409,10 @@ nav {
             "Skills"
             "Contacts";
         width: 60ch;
-        row-gap: 4em;
-        place-items: center;
+        row-gap: 3em;
+        column-gap: 0em;
+        align-content: center;
+        justify-items: center;
     }
 
     .Rocketship {
@@ -426,14 +428,37 @@ nav {
     .Contacts {
         grid-area: Contacts;
     }
-    .Projects{
+    .Projects {
         grid-template-columns: auto;
     }
 }
-@media (max-width: 560px)
-{
-    .Greetings{
+@media (max-width: 560px) {
+    .Greetings {
         font-size: 4em;
+    }
+    .About {
+        .Rocketship {
+            width: 34ch;
+            .Fire {
+                width: 105px;
+                height: 110px;
+                left: 5.2em;
+                bottom: 6.9em;
+            }
+        }
+    }
+    .Card {
+        width: 30ch;
+    }
+    .Whoami {
+        height: 31em;
+    }
+    .Project {
+        .ProjectInfo {
+            .Description {
+                width: 28ch;
+            }
+        }
     }
 }
 
