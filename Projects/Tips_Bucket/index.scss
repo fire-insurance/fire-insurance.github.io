@@ -45,6 +45,7 @@ main {
     place-items: center;
     img {
         height: 100vh;
+        width: 100vw;
         position: absolute;
         top: 0;
         left: 0;
@@ -70,14 +71,14 @@ main {
     border-radius: 5ch;
     backdrop-filter: blur(5px);
     z-index: 10;
-    padding: 2em;
+    padding: 1.9em;
     display: flex;
     flex-direction: column;
     gap: 0;
     .Title {
         text-align: center;
         font-family: "OpenSans-SemiBold";
-        font-size: 3em;
+        font-size: 2.8em;
     }
     .About {
         width: 27ch;
@@ -86,17 +87,16 @@ main {
         font-family: "Roboto-Regular";
         text-align:center;
         margin-top: 1em;
-        
-        
+        font-size: 0.9em;
     }
 
     .PS {
         align-self: center;
         width: 27ch;
         font-family: "Roboto-ThinItalic";
-        margin-top: 2em;
+        margin-top: 1.9em;
         text-align: center;
-        font-size: 1em;
+        font-size: 0.9em;
     }
 
     a,
@@ -108,7 +108,7 @@ main {
         text-align: center;
         line-height: 4em;
         margin-top: 2em;
-        height: 4em;
+        height: 3.8em;
         width: 27ch;
         font-size: 1em;
         // background-color: rgba(45, 99, 199, 0.5);
