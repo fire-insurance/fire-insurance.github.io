@@ -8,12 +8,12 @@
     <title>Портфолио | Дуда Дмитрий</title>
     <link rel="shortcut icon" href="Pictures/TinyLogo.png" type="image/x-icon">
     <link rel="stylesheet" href="index.css">
-
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
 <body>
 
-    <nav>
+    <nav id="navbar">
         <section>
             <a href="#Home"><span>Домой</span></a>
             <a href="#AboutPage"><span>Обо мне</span></a>
@@ -25,7 +25,8 @@
             <span class="txt-type" data-wait="3000" data-words='["Привет!", "Hello!", "¡Hola!", "你好!", "Ciao!"]'></span>
         </section>
         <div class="Filler" id="AboutPage">
-            <section class="About">
+            <section data-aos="fade-up"
+             data-aos-duration="1700" class="About">
                 <div class="Rocketship">
                     <img src="Pictures/rocket.png" alt="Cute vector rocket">
                     <img class="Fire" src="Pictures/fire.png" alt="ignition fire">
@@ -126,7 +127,8 @@
             </section>
         </div>
         <div class="Filler" id="EndPage">
-            <section class="Projects">
+            <section class="Projects" data-aos="fade-up"
+             data-aos-duration="1000">
                 <article class="Card Project">
                     <div class="Preview">
                         <p class="ProjectName">barx2</p>
@@ -168,26 +170,50 @@
                         </div>
                     </div>
                 </article>
+                <article class="Card Project">
+                    <div class="Preview">
+                        <p class="ProjectName">Tips Bucket</p>
+                        <img src="Pictures/Projects/Tips_Bucket.png" alt="A miniature img of a project"
+                            class="ProjectMiniature">
+                    </div>
+                    <div class="ProjectInfo">
+                        <p class="Description">
+                            Простой одностраничник с рекквизитами банковской карты.
+                        </p>
+                        <p class="Description">
+                            Создан для размещения на моем старом месте работы – гриль бар "Шашлыкoff".
+                        </p>
+                        <p class="Description">
+                            Посетитель бара должен был отсканировать QR-код на буклете для того, чтобы перейти на сайт.
+                        </p>
+                        <div class="Links">
+                            <a href="Projects/Tips_Bucket/index.html" class="LinkButton">Посетить</a>
+                            <a href="https://github.com/fire-insurance/Tips_Bucket" class="LinkButton">Код</a>
+                        </div>
+                    </div>
+                </article>
             </section>
         </div>
 
     </main>
 
 
-
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/hide-on-scroll.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="js/main.js"></script>
     <script src="js/copy-to-buffer.js"></script>
-    <script src="js/scroll.js"></script>
+    <!--<script src="js/scroll.js"></script>--> 
     <script type="text/javascript" src="js/vanilla-tilt.js"></script>
     <script type="text/javascript">
         VanillaTilt.init(document.querySelectorAll(".Card"), {
-            max: 20,
+            max: 10,
             speed: 200,
             glare: true,
         });
     </script>
+ 
 
 </body>
 

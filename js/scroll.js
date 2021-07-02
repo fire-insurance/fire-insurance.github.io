@@ -8,72 +8,119 @@ function scrollThere(offset, speed) {
     ); // end animate
 } // end scrollThere function definition
 
-const HomePage = document.querySelector('#Home');
-const AboutPage = document.querySelector('#AboutPage');
-const Projects = document.querySelector('#EndPage');
+
+function preventDefault(e) {
+    e.preventDefault();
+  }
+  
+  function preventDefaultForScrollKeys(e) {
+    if (keys[e.keyCode]) {
+      preventDefault(e);
+      return false;
+    }
+  }
+
+  var wheelOpt = supportsPassive ? { passive: false } : false;
+var wheelEvent = 'onwheel' in document.createElement('div') ? 'wheel' : 'mousewheel';
+var supportsPassive = false;
+
+function disableScroll() {
+    window.addEventListener('DOMMouseScroll', preventDefault, false); // older FF
+    window.addEventListener(wheelEvent, preventDefault, wheelOpt); // modern desktop
+    window.addEventListener('touchmove', preventDefault, wheelOpt); // mobile
+    window.addEventListener('keydown', preventDefaultForScrollKeys, false);
+  }
+  
+  // call this to Enable
+  function enableScroll() {
+    window.removeEventListener('DOMMouseScroll', preventDefault, false);
+    window.removeEventListener(wheelEvent, preventDefault, wheelOpt); 
+    window.removeEventListener('touchmove', preventDefault, wheelOpt);
+    window.removeEventListener('keydown', preventDefaultForScrollKeys, false);
+  }
+
+const HomePage = '#Home';
+const AboutPage ='#AboutPage';
+const Projects = '#EndPage';
 var bodyRect = document.body.getBoundingClientRect();
-let coords = HomePage.getBoundingClientRect();
+let coords = document.querySelector(HomePage).getBoundingClientRect();
 const HomeTop = coords.top - bodyRect.top;
-let coords2 = AboutPage.getBoundingClientRect();
+let coords2 = document.querySelector(AboutPage).getBoundingClientRect();
 const AboutTop = coords2.top - bodyRect.top;
-let coords3 = Projects.getBoundingClientRect();
+let coords3 = document.querySelector(Projects).getBoundingClientRect();
 const ProjectTop = coords3.top - bodyRect.top;
 let ticking = false;
 
-var scrollPos;
 var scrollDirection;
 var targetUp,
     targetDown,
     targetElement;
 
+var prevprevScrollpos = window.pageYOffset;
+window.onscroll = function () {
+    var time = Date.now();
+    disableScroll();
+    scrollTo();
+    return function() {
+      if ((time + 10000 - Date.now()) < 0) {
+          console.log("Time passed!");
 
+        time = Date.now();
+      }
+    }
+  }
 
-$(window).on('mousewheel', function (e) {
+var scrollTo = function () {
+    var currentprevScrollpos = window.pageYOffset;
+    if (prevprevScrollpos > currentprevScrollpos) {
+        scrollDirection = "Up";
+    } else {
+        scrollDirection = "Down";
+    }
+    prevprevScrollpos = currentprevScrollpos;
+    
 
-    if ( e.deltaY > 0 ) {
-        scrollDirection = 'up';
-      } else if ( e.deltaY <= 0 ) {
-        scrollDirection = 'down';
-      } // end if
-console.log(scrollDirection);
     // condition: determine the previous and next divs to scroll to, based on lastScrollTop:
-    if (scrollPos == HomeTop) {
+    if (prevprevScrollpos === HomeTop) {
         targetUp = HomeTop;
         targetDown = AboutTop;
 
 
-    } else if (scrollPos == AboutTop) {
-        targetUp = HomeTop;
-        targetDown = ProjectTop;
-    } else if (scrollPos == ProjectTop) {
-        targetUp = AboutTop;
-        targetDown = ProjectTop;
-    } else if (scrollPos < AboutTop) {
-        targetUp = HomeTop;
-        targetDown = AboutTop;
-    } else if (scrollPos < ProjectTop) {
-        targetUp = AboutTop;
-        targetDown = ProjectTop;
+    } else if (prevScrollpos === AboutTop) {
+        targetUp = HomePage;
+        targetDown = Projects;
+    } else if (prevScrollpos === ProjectTop) {
+        targetUp = AboutPage;
+        targetDown = Projects;
+    } else if (prevScrollpos < AboutTop) {
+        targetUp = HomePage;
+        targetDown = AboutPage;
+    } else if (prevScrollpos < ProjectTop) {
+        targetUp = AboutPage;
+        targetDown = Projects;
     }
-    else if (scrollPos > AboutTop) {
-        targetUp = AboutTop;
-        targetDown = ProjectTop;
+    else if (prevScrollpos > AboutTop) {
+        targetUp = AboutPage;
+        targetDown = Projects;
     }
-    else if (scrollPos > ProjectTop) {
-        targetUp = AboutTop;
-        console.log(JSON.stringify("targetup: " + targetUp));
-        targetDown = ProjectTop;
+    else if (prevScrollpos > ProjectTop) {
+        targetUp = AboutPage;
     } // end else if
 
     // condition: determine which of targetUp or targetDown to scroll to, based on scrollDirection:
-    if (scrollDirection == 'down') {
+    if (scrollDirection === 'Down') {
         targetElement = targetDown;
 
-    } else if (scrollDirection == 'up') {
+    } else if (scrollDirection === 'Up') {
         targetElement = targetUp;
 
     } // end else if
-
+    console.log("Direction" + scrollDirection);
+    if(targetElement!=0)
+    {
+    document.querySelector(targetElement).scrollIntoView(true);
+   
+    }
     // scroll smoothly to the target element:
-    scrollThere(targetElement, 400);
-});
+    
+}

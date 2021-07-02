@@ -54,7 +54,7 @@ nav {
     width: 100%;
     height: auto;
     margin-top: 2em;
-
+    transition: 700ms;
     display: grid;
     position: fixed;
     z-index: 1000;
@@ -65,7 +65,12 @@ nav {
         justify-content: space-around;
         justify-self: right;
         margin-right: 7em;
+        a{
+            width: 12ch;
+            text-align: center;
+        }
     }
+
 
     span {
         color: white;
@@ -106,11 +111,12 @@ nav {
     width: 100%;
     display: grid;
     place-items: center;
+    margin-top: 35vh;
 }
 
 .About {
     padding-bottom: 15vh;
-    margin-top: 25vh;
+    
     column-gap: 3em;
     display: grid;
     grid-template-columns: auto auto auto auto;
@@ -274,6 +280,8 @@ nav {
 #EndPage {
     margin-bottom: 20em;
     margin-top: 10em;
+    justify-items: center;
+    align-content: center;
 }
 
 .Projects {
@@ -388,7 +396,6 @@ nav {
 
     .Rocketship {
         grid-area: Rocketship;
-        margin-left: -2em;
     }
     .Whoami {
         grid-area: Whoami;
@@ -403,6 +410,7 @@ nav {
 
 @media (max-width: 1050px) {
     .About {
+        grid-template-columns: auto;
         grid-template-areas:
             "Rocketship"
             "Whoami"
@@ -435,15 +443,20 @@ nav {
 @media (max-width: 560px) {
     .Greetings {
         font-size: 4em;
+        
+    }
+    .Filler{
+        max-width: 375px;
     }
     .About {
-        .Rocketship {
-            width: 34ch;
-            .Fire {
-                width: 105px;
-                height: 110px;
-                left: 5.2em;
-                bottom: 6.9em;
+        .Rocketship{
+            width: 50ch;
+            height: auto;
+            .Fire{
+                width: 110px;
+                height: 130px;
+                bottom: 10em;
+                left: 9em;
             }
         }
     }
@@ -464,6 +477,7 @@ nav {
 
 @media (min-width: 251px) and (max-width: 750px) {
     nav {
+        
         section {
             justify-self: center;
         }

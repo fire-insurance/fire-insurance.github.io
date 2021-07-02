@@ -1,0 +1,319 @@
+* {
+  margin: 0;
+}
+
+body {
+  background-image: url("Pics/background.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@font-face {
+  font-family: OpenSans-SemiBold;
+  src: url(Fonts/OpenSans-SemiBold.ttf);
+}
+
+@font-face {
+  font-family: Roboto-Regular;
+  src: url(Fonts/Roboto-Regular.ttf);
+}
+
+@font-face {
+  font-family: Roboto-Light;
+  src: url(Fonts/Roboto-Light.ttf);
+}
+
+@font-face {
+  font-family: Roboto-ThinItalic;
+  src: url(Fonts/Roboto-ThinItalic.ttf);
+}
+
+@font-face {
+  font-family: OpenSans-Bold;
+  src: url(Fonts/OpenSans-Bold.ttf);
+}
+
+main {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+}
+
+main img {
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  will-change: transform;
+}
+
+main .First {
+  -webkit-animation: SlidingDownF 10s linear infinite;
+          animation: SlidingDownF 10s linear infinite;
+}
+
+main .Second {
+  -webkit-animation: SlidingDownS 10s linear infinite;
+          animation: SlidingDownS 10s linear infinite;
+}
+
+.Card {
+  color: white;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  background-color: rgba(41, 41, 41, 0.8);
+  border-radius: 5ch;
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  z-index: 10;
+  padding: 2em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 0;
+}
+
+.Card .Title {
+  text-align: center;
+  font-family: "OpenSans-SemiBold";
+  font-size: 3em;
+}
+
+.Card .About {
+  width: 27ch;
+  text-indent: 2ch;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  font-family: "Roboto-Regular";
+  text-align: center;
+  margin-top: 1em;
+}
+
+.Card .PS {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  width: 27ch;
+  font-family: "Roboto-ThinItalic";
+  margin-top: 2em;
+  text-align: center;
+  font-size: 1em;
+}
+
+.Card a,
+.Card button {
+  color: white;
+  text-decoration: none;
+  font-family: "Roboto-Regular";
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  text-align: center;
+  line-height: 4em;
+  margin-top: 2em;
+  height: 4em;
+  width: 27ch;
+  font-size: 1em;
+  background-color: rgba(199, 26, 69, 0.5);
+  -webkit-animation: BorderFlow 2s linear infinite;
+          animation: BorderFlow 2s linear infinite;
+  -webkit-transition: 200ms;
+  transition: 200ms;
+}
+
+.Card button {
+  outline: none;
+  border: none;
+}
+
+.Card a:focus {
+  background-color: rgba(100, 17, 38, 0.5);
+}
+
+.OtherBankWindow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  -webkit-backdrop-filter: blur(0.5em);
+          backdrop-filter: blur(0.5em);
+  width: 100vw;
+  height: 100vh;
+  z-index: 20;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  display: none;
+}
+
+.OtherBankWindow .Info {
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  -ms-grid-row-align: center;
+      align-self: center;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  display: -ms-grid;
+  display: grid;
+  gap: 2em;
+  width: 100vw;
+  justify-items: center;
+  text-justify: distribute;
+}
+
+.OtherBankWindow h1 {
+  color: white;
+  font-family: "OpenSans-Bold";
+  text-align: center;
+  font-size: 2em;
+  width: 10ch;
+}
+
+.OtherBankWindow p {
+  color: white;
+  width: 30ch;
+  font-family: "Roboto-Regular";
+  text-align: center;
+}
+
+.OtherBankWindow .NumberButton {
+  color: white;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  font-size: 1.8em;
+  background-color: #eb7120;
+  padding: 0.8em;
+  font-family: "Roboto-Regular";
+  border-radius: 1ch;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+.OtherBankWindow .CopyTip {
+  font-family: "Roboto-ThinItalic";
+  text-align: center;
+}
+
+.OtherBankWindow .CloseButton {
+  border: none;
+  outline: none;
+  width: 30px;
+  height: 30px;
+  opacity: 0.5;
+  position: absolute;
+  left: 88%;
+  top: 2%;
+  background-color: transparent;
+  background-image: url(Pics/close.png);
+  background-size: cover;
+}
+
+@-webkit-keyframes SlidingDownF {
+  from {
+    -webkit-transform: translateY(0%) translate3d(0, 0, 0);
+            transform: translateY(0%) translate3d(0, 0, 0);
+  }
+  to {
+    -webkit-transform: translateY(100%) translate3d(0, 0, 0);
+            transform: translateY(100%) translate3d(0, 0, 0);
+  }
+}
+
+@keyframes SlidingDownF {
+  from {
+    -webkit-transform: translateY(0%) translate3d(0, 0, 0);
+            transform: translateY(0%) translate3d(0, 0, 0);
+  }
+  to {
+    -webkit-transform: translateY(100%) translate3d(0, 0, 0);
+            transform: translateY(100%) translate3d(0, 0, 0);
+  }
+}
+
+@-webkit-keyframes SlidingDownS {
+  from {
+    -webkit-transform: translateY(-100%) translate3d(0, 0, 0);
+            transform: translateY(-100%) translate3d(0, 0, 0);
+  }
+  to {
+    -webkit-transform: translateY(0%) translate3d(0, 0, 0);
+            transform: translateY(0%) translate3d(0, 0, 0);
+  }
+}
+
+@keyframes SlidingDownS {
+  from {
+    -webkit-transform: translateY(-100%) translate3d(0, 0, 0);
+            transform: translateY(-100%) translate3d(0, 0, 0);
+  }
+  to {
+    -webkit-transform: translateY(0%) translate3d(0, 0, 0);
+            transform: translateY(0%) translate3d(0, 0, 0);
+  }
+}
+
+@-webkit-keyframes BorderFlow {
+  0% {
+    border-radius: 0 0 0 0;
+  }
+  50% {
+    border-radius: 3ch 3ch 3ch 3ch;
+  }
+  100% {
+    border-radius: 0 0 0 0;
+  }
+}
+
+@keyframes BorderFlow {
+  0% {
+    border-radius: 0 0 0 0;
+  }
+  50% {
+    border-radius: 3ch 3ch 3ch 3ch;
+  }
+  100% {
+    border-radius: 0 0 0 0;
+  }
+}
+
+@-webkit-keyframes WindowInAndOut {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+  }
+}
+
+@keyframes WindowInAndOut {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+  }
+}
+/*# sourceMappingURL=index.css.map */

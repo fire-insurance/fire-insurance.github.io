@@ -56,6 +56,8 @@ nav {
   width: 100%;
   height: auto;
   margin-top: 2em;
+  -webkit-transition: 700ms;
+  transition: 700ms;
   display: -ms-grid;
   display: grid;
   position: fixed;
@@ -71,6 +73,11 @@ nav section {
       justify-content: space-around;
   justify-self: right;
   margin-right: 7em;
+}
+
+nav section a {
+  width: 12ch;
+  text-align: center;
 }
 
 nav span {
@@ -120,11 +127,11 @@ nav span:hover {
   display: -ms-grid;
   display: grid;
   place-items: center;
+  margin-top: 35vh;
 }
 
 .About {
   padding-bottom: 15vh;
-  margin-top: 25vh;
   -webkit-column-gap: 3em;
           column-gap: 3em;
   display: -ms-grid;
@@ -341,6 +348,9 @@ nav span:hover {
 #EndPage {
   margin-bottom: 20em;
   margin-top: 10em;
+  justify-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
 }
 
 .Projects {
@@ -486,7 +496,6 @@ nav span:hover {
     -ms-grid-row: 1;
     -ms-grid-column: 1;
     grid-area: Rocketship;
-    margin-left: -2em;
   }
   .Whoami {
     -ms-grid-row: 1;
@@ -507,6 +516,8 @@ nav span:hover {
 
 @media (max-width: 1050px) {
   .About {
+    -ms-grid-columns: auto;
+        grid-template-columns: auto;
         grid-template-areas: "Rocketship" "Whoami" "Skills" "Contacts";
     width: 60ch;
     row-gap: 3em;
@@ -547,14 +558,18 @@ nav span:hover {
   .Greetings {
     font-size: 4em;
   }
+  .Filler {
+    max-width: 375px;
+  }
   .About .Rocketship {
-    width: 34ch;
+    width: 50ch;
+    height: auto;
   }
   .About .Rocketship .Fire {
-    width: 105px;
-    height: 110px;
-    left: 5.2em;
-    bottom: 6.9em;
+    width: 110px;
+    height: 130px;
+    bottom: 10em;
+    left: 9em;
   }
   .Card {
     width: 30ch;

@@ -1,0 +1,235 @@
+* {
+    margin: 0;
+}
+
+body {
+    background-image: url("Pics/background.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@font-face {
+    font-family: OpenSans-SemiBold;
+    src: url(Fonts/OpenSans-SemiBold.ttf);
+}
+
+@font-face {
+    font-family: Roboto-Regular;
+    src: url(Fonts/Roboto-Regular.ttf);
+}
+
+@font-face {
+    font-family: Roboto-Light;
+    src: url(Fonts/Roboto-Light.ttf);
+}
+
+@font-face {
+    font-family: Roboto-ThinItalic;
+    src: url(Fonts/Roboto-ThinItalic.ttf);
+}
+
+@font-face {
+    font-family: OpenSans-Bold;
+    src: url(Fonts/OpenSans-Bold.ttf);
+}
+
+main {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+
+    display: grid;
+    place-items: center;
+    img {
+        height: 100vh;
+        position: absolute;
+        top: 0;
+        left: 0;
+        will-change: transform;
+    }
+
+    $AnimationTime: 10s;
+
+    .First {
+        animation: SlidingDownF $AnimationTime linear infinite;
+    }
+    .Second {
+        animation: SlidingDownS $AnimationTime linear infinite;
+    }
+}
+
+.Card {
+    color: white;
+    height: max-content;
+    width: max-content;
+    //background-color: rgba(41, 119, 129,0.8);
+    background-color: rgba(41, 41, 41, 0.8);
+    border-radius: 5ch;
+    backdrop-filter: blur(5px);
+    z-index: 10;
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    .Title {
+        text-align: center;
+        font-family: "OpenSans-SemiBold";
+        font-size: 3em;
+    }
+    .About {
+        width: 27ch;
+        text-indent: 2ch;
+        align-self: center;
+        font-family: "Roboto-Regular";
+        text-align:center;
+        margin-top: 1em;
+        
+        
+    }
+
+    .PS {
+        align-self: center;
+        width: 27ch;
+        font-family: "Roboto-ThinItalic";
+        margin-top: 2em;
+        text-align: center;
+        font-size: 1em;
+    }
+
+    a,
+    button {
+        color: white;
+        text-decoration: none;
+        font-family: "Roboto-Regular";
+        align-self: center;
+        text-align: center;
+        line-height: 4em;
+        margin-top: 2em;
+        height: 4em;
+        width: 27ch;
+        font-size: 1em;
+        // background-color: rgba(45, 99, 199, 0.5);
+        background-color: rgba(199, 26, 69, 0.5);
+        animation: BorderFlow 2s linear infinite;
+        transition: 200ms;
+    }
+    button {
+        outline: none;
+        border: none;
+    }
+    a:focus {
+        background-color: rgba(100, 17, 38, 0.5);
+    }
+}
+
+.OtherBankWindow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+
+    backdrop-filter: blur(0.5em);
+    width: 100vw;
+    height: 100vh;
+    z-index: 20;
+    display: flex;
+    display: none;
+    .Info {
+        height: max-content;
+        width: max-content;
+        align-self: center;
+        justify-self: center;
+        display: grid;
+        gap: 2em;
+        width: 100vw;
+        justify-items: center;
+        text-justify: distribute;
+    }
+
+    h1 {
+        color: white;
+        font-family: "OpenSans-Bold";
+        text-align: center;
+        font-size: 2em;
+        width: 10ch;
+    }
+    p {
+        color: white;
+        width: 30ch;
+        font-family: "Roboto-Regular";
+        text-align: center;
+    }
+    .NumberButton {
+        color: white;
+        width: max-content;
+        height: max-content;
+        font-size: 1.8em;
+        background-color: rgb(235, 113, 32);
+        padding: 0.8em;
+        font-family: "Roboto-Regular";
+        border-radius: 1ch;
+        transition: 1s;
+    }
+    .CopyTip {
+        font-family: "Roboto-ThinItalic";
+        text-align: center;
+    }
+    .CloseButton {
+        border: none;
+        outline: none;
+        width: 30px;
+        height: 30px;
+        opacity: 0.5;
+        position: absolute;
+        left: 88%;
+        top: 2%;
+        background-color: transparent;
+        background-image: url(Pics/close.png);
+        background-size: cover;
+    }
+}
+
+@keyframes SlidingDownF {
+    from {
+        transform: translateY(0%) translate3d(0, 0, 0);
+    }
+    to {
+        transform: translateY(100%) translate3d(0, 0, 0);
+    }
+}
+
+@keyframes SlidingDownS {
+    from {
+        transform: translateY(-100%) translate3d(0, 0, 0);
+    }
+    to {
+        transform: translateY(0%) translate3d(0, 0, 0);
+    }
+}
+
+@keyframes BorderFlow {
+    0% {
+        border-radius: 0 0 0 0;
+    }
+
+    50% {
+        border-radius: 3ch 3ch 3ch 3ch;
+    }
+    100% {
+        border-radius: 0 0 0 0;
+    }
+}
+
+@keyframes WindowInAndOut {
+    from {
+        opacity: 0%;
+        
+    }
+    to {
+        opacity: 100%;
+    }
+}
+
