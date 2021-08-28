@@ -8,7 +8,8 @@
     <title>Портфолио | Дуда Дмитрий</title>
     <link rel="shortcut icon" href="Pictures/TinyLogo.png" type="image/x-icon">
     <link rel="stylesheet" href="index.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">-->
 </head>
 
 <body>
@@ -20,16 +21,14 @@
             <a href="#EndPage"><span>Проекты</span></a>
         </section>
     </nav>
-    <main>
-        <section class="Greetings" id="Home">
+    <div id="fullPage">
+        <section class="section Greetings" id="Home">
             <span class="txt-type" data-wait="3000" data-words='["Привет!", "Hello!", "¡Hola!", "你好!", "Ciao!"]'></span>
         </section>
-        <div class="Filler" id="AboutPage">
-            <section data-aos="fade-up"
-             data-aos-duration="1700" class="About">
-                <div class="Rocketship">
-                    <img src="Pictures/rocket.png" alt="Cute vector rocket">
-                    <img class="Fire" src="Pictures/fire.png" alt="ignition fire">
+        <div class="section Filler" id="AboutPage">
+            <section class="About">
+                <div class="Polaroid">
+                    <img src="Pictures/Avatar.png" alt="A polaroid type photo card">
                 </div>
 
                 <article class="Card Whoami">
@@ -126,9 +125,8 @@
 
             </section>
         </div>
-        <div class="Filler" id="EndPage">
-            <section class="Projects" data-aos="fade-up"
-             data-aos-duration="1000">
+        <div class="section Filler" id="EndPage">
+            <section class="Projects">
                 <article class="Card Project">
                     <div class="Preview">
                         <p class="ProjectName">barx2</p>
@@ -195,26 +193,47 @@
             </section>
         </div>
 
-    </main>
+    </div>
 
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="js/hide-on-scroll.js"></script>
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="js/main.js"></script>
     <script src="js/copy-to-buffer.js"></script>
-    <!--<script src="js/scroll.js"></script>--> 
+    <script src="js/hide-on-scroll.js"></script>
+
     <script type="text/javascript" src="js/vanilla-tilt.js"></script>
     <script type="text/javascript">
         VanillaTilt.init(document.querySelectorAll(".Card"), {
             max: 10,
             speed: 200,
             glare: true,
+            "max-glare": 0.3,
         });
     </script>
- 
+    <script type="text/javascript">
+        VanillaTilt.init(document.querySelectorAll(".Polaroid"), {
+            max: 10,
+            speed: 200,
+            glare: true,
+            "max-glare": 0.8,
+        });
+    </script>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.min.js"
+        integrity="sha512-gSf3NCgs6wWEdztl1e6vUqtRP884ONnCNzCpomdoQ0xXsk06lrxJsR7jX5yM/qAGkPGsps+4bLV5IEjhOZX+gg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
+    <script>
+        new fullpage('#fullPage', {
+            //options here
+            autoScrolling: true,
+            anchors:['Home', 'Greetings', 'Projects'],
+            paddingTop:'10em'
+        });
+    </script>
+    --> 
 </body>
 
 </html>

@@ -101,7 +101,7 @@ nav span:hover {
 }
 
 .Greetings {
-  height: 80vh;
+  height: 100vh;
   display: -ms-grid;
   display: grid;
   place-items: center;
@@ -127,11 +127,11 @@ nav span:hover {
   display: -ms-grid;
   display: grid;
   place-items: center;
-  margin-top: 35vh;
 }
 
 .About {
   padding-bottom: 15vh;
+  margin-top: 10em;
   -webkit-column-gap: 3em;
           column-gap: 3em;
   display: -ms-grid;
@@ -140,26 +140,26 @@ nav span:hover {
       grid-template-columns: auto auto auto auto;
 }
 
-.About .Rocketship {
-  pointer-events: none;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  width: 60ch;
+.About .Polaroid {
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+  -webkit-box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+          box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.About .Rocketship .Fire {
-  position: relative;
-  width: 179px;
-  height: 191px;
-  left: 9.5em;
-  bottom: 11.7em;
-  -webkit-animation: ignition 220ms alternate infinite;
-          animation: ignition 220ms alternate infinite;
+.About .Polaroid img {
+  width: 40ch;
+  height: auto;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .Card {
@@ -330,6 +330,8 @@ nav span:hover {
       align-self: center;
   -ms-grid-column-align: center;
       justify-self: center;
+  -webkit-transition: 50ms;
+  transition: 50ms;
 }
 
 .Contacts .ContactWrapper:hover {
@@ -358,8 +360,8 @@ nav span:hover {
   display: grid;
   gap: 3em;
   place-items: center;
-  -ms-grid-columns: auto auto;
-      grid-template-columns: auto auto;
+  -ms-grid-columns: auto auto auto;
+      grid-template-columns: auto auto auto;
 }
 
 .Project {
@@ -463,13 +465,13 @@ nav span:hover {
 
 @media (min-width: 1501px) and (max-width: 1850px) {
   .About {
-        grid-template-areas: "Rocketship Whoami Skills" "Rocketship   .   Contacts";
+        grid-template-areas: "Polaroid Whoami Skills" ".   .   Contacts";
+    grid-row-gap: 5em;
   }
-  .Rocketship {
+  .Polaroid {
     -ms-grid-row: 1;
-    -ms-grid-row-span: 2;
     -ms-grid-column: 1;
-    grid-area: Rocketship;
+    grid-area: Polaroid;
   }
   .Whoami {
     -ms-grid-row: 1;
@@ -490,12 +492,13 @@ nav span:hover {
 
 @media (min-width: 1051px) and (max-width: 1500px) {
   .About {
-        grid-template-areas: "Rocketship Whoami " "   Skills   Contacts";
+        grid-template-areas: "Polaroid Whoami " "   Skills   Contacts";
+    grid-row-gap: 5em;
   }
-  .Rocketship {
+  .Polaroid {
     -ms-grid-row: 1;
     -ms-grid-column: 1;
-    grid-area: Rocketship;
+    grid-area: Polaroid;
   }
   .Whoami {
     -ms-grid-row: 1;

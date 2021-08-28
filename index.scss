@@ -89,7 +89,7 @@ nav {
 }
 
 .Greetings {
-    height: 80vh;
+    height: 100vh;
     display: grid;
     place-items: center;
 
@@ -97,6 +97,7 @@ nav {
     font-size: 12em;
     font-family: OpenSans-Semibold;
     user-select: none;
+
 }
 
 //Cursor effect (typewriter)
@@ -111,29 +112,29 @@ nav {
     width: 100%;
     display: grid;
     place-items: center;
-    margin-top: 35vh;
 }
+
 
 .About {
     padding-bottom: 15vh;
-    
+    margin-top: 10em;
     column-gap: 3em;
     display: grid;
     grid-template-columns: auto auto auto auto;
-    .Rocketship {
-        pointer-events: none;
-        display: flex;
-        flex-direction: column;
-        width: 60ch;
-        .Fire {
-            position: relative;
-            width: 179px;
-            height: 191px;
-            left: 9.5em;
-            bottom: 11.7em;
-            animation: ignition 220ms alternate infinite;
+   
+    .Polaroid{
+        height: min-content;
+        width: min-content;
+        img{
+            width: 40ch;
+            height: auto;
+            user-select: none;
         }
+        box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+    border-left: 1px solid rgba(255, 255, 255, 0.2);
     }
+
 }
 
 .Card {
@@ -264,6 +265,7 @@ nav {
         place-items: center;
         align-self: center;
         justify-self: center;
+        transition: 50ms;
     }
     .ContactWrapper:hover {
         box-shadow: 0px 0px 30px rgba(255, 255, 255, 0.61);
@@ -288,7 +290,7 @@ nav {
     display: grid;
     gap: 3em;
     place-items: center;
-    grid-template-columns: auto auto;
+    grid-template-columns: auto auto auto;
 }
 
 .Project {
@@ -369,12 +371,15 @@ nav {
 @media (min-width: 1501px) and (max-width: 1850px) {
     .About {
         grid-template-areas:
-            "Rocketship Whoami Skills"
-            "Rocketship   .   Contacts";
+            "Polaroid Whoami Skills"
+            ".   .   Contacts";
+            grid-row-gap: 5em;
     }
 
-    .Rocketship {
-        grid-area: Rocketship;
+
+
+    .Polaroid {
+        grid-area: Polaroid;
     }
     .Whoami {
         grid-area: Whoami;
@@ -390,12 +395,13 @@ nav {
 @media (min-width: 1051px) and (max-width: 1500px) {
     .About {
         grid-template-areas:
-            "Rocketship Whoami "
+            "Polaroid Whoami "
             "   Skills   Contacts";
+            grid-row-gap: 5em;
     }
 
-    .Rocketship {
-        grid-area: Rocketship;
+    .Polaroid {
+        grid-area: Polaroid;
     }
     .Whoami {
         grid-area: Whoami;

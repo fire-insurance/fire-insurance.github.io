@@ -1,4 +1,4 @@
-AOS.init();
+
 const TypeWriter = function (txtElement, words, delay = 3000) {
     this.txtElement = txtElement;
     this.words = words;
