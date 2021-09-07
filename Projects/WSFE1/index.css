@@ -1,0 +1,358 @@
+* {
+  margin: 0;
+}
+
+.Logo line,
+.Logo circle,
+.Logo path {
+  stroke: #caa892;
+  -webkit-transition: 300ms;
+  transition: 300ms;
+}
+
+.LogoAndName:hover {
+  cursor: pointer;
+}
+
+.LogoAndName:hover line,
+.LogoAndName:hover circle,
+.LogoAndName:hover path {
+  stroke: #37806b;
+}
+
+.LogoAndName:hover .Name p {
+  color: black;
+}
+
+@font-face {
+  font-family: Roboto-Thin;
+  src: url(/Fonts/Roboto-Thin.ttf);
+}
+
+@font-face {
+  font-family: Roboto-Light;
+  src: url(/Fonts/Roboto-Light.ttf);
+}
+
+@font-face {
+  font-family: Roboto-Regular;
+  src: url(/Fonts/Roboto-Regular.ttf);
+}
+
+@font-face {
+  font-family: Roboto-Medium;
+  src: url(/Fonts/Roboto-Medium.ttf);
+}
+
+@font-face {
+  font-family: Roboto-Black;
+  src: url(Fonts/Roboto-Black.ttf);
+}
+
+@font-face {
+  font-family: Roboto-Bold;
+  src: url(Fonts/Roboto-Bold.ttf);
+}
+
+@font-face {
+  font-family: OleoScript-Regular;
+  src: url(Fonts/OleoScript-Regular.ttf);
+}
+
+@font-face {
+  font-family: Benne;
+  src: url(Fonts/Benne-Regular.ttf);
+}
+
+header {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto auto;
+      grid-template-columns: auto auto;
+  margin: 1.5em 15% 0 15%;
+}
+
+.LogoAndName {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.LogoAndName p {
+  margin-left: 1ch;
+  font-family: "Roboto-Regular";
+  color: #37806b;
+  font-size: 1.8em;
+  -webkit-transition: 300ms;
+  transition: 300ms;
+}
+
+nav button, main .Info button {
+  font-size: 1.3em;
+  background-color: #caa892;
+  color: white;
+  padding: 0.5em 1em 0.5em 1em;
+  border: none;
+  border-top-left-radius: 2ch;
+  border-bottom-right-radius: 2ch;
+  -webkit-transition: 300ms;
+  transition: 300ms;
+}
+
+nav button:hover, main .Info button:hover {
+  background-color: #37806b;
+  cursor: pointer;
+  border-top-left-radius: 0ch;
+  border-bottom-right-radius: 0ch;
+  border-bottom-left-radius: 2ch;
+  border-top-right-radius: 2ch;
+}
+
+nav {
+  -ms-flex-item-align: center;
+      align-self: center;
+  justify-self: right;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-gap: 5ch;
+          column-gap: 5ch;
+}
+
+nav p {
+  font-family: "Roboto-Regular";
+  font-size: 1.3em;
+  -webkit-transition: 300ms;
+  transition: 300ms;
+}
+
+nav .Navlink {
+  font-family: "Roboto-Regular";
+  font-size: 1.3em;
+  -webkit-transition: 300ms;
+  transition: 300ms;
+}
+
+nav .Home {
+  opacity: 70%;
+}
+
+nav .Navlink:hover {
+  color: #37806b;
+  cursor: pointer;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+.Title {
+  font-family: Roboto-Medium;
+  font-size: 1.2em;
+  color: #646464;
+}
+
+.AdditionalInfo {
+  width: 60ch;
+  font-size: 1.1em;
+  font-family: Roboto-Light;
+}
+
+main {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto auto;
+      grid-template-columns: auto auto;
+  place-items: center;
+  margin: 7em 15% 0 15%;
+}
+
+main img {
+  width: 717px;
+  height: 626px;
+}
+
+main .Info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 0.5em;
+}
+
+main .Info .MainText {
+  font-family: Roboto-Black;
+  font-weight: 900;
+  font-size: 4.8em;
+  width: 13ch;
+}
+
+main .Info button {
+  margin-top: 2em;
+  background-color: #37806b;
+  width: 12ch;
+}
+
+main .ImgContainer {
+  position: relative;
+}
+
+main .ImgContainer img {
+  position: absolute;
+  bottom: 2.5em;
+  right: 2.5em;
+  width: 653px;
+  height: 550px;
+  border-top-left-radius: 10em;
+  border-bottom-right-radius: 10em;
+}
+
+main .ImgContainer .FancyBorder {
+  width: 653px;
+  height: 550px;
+  border: 2px solid #b0855b;
+  border-top-left-radius: 10em;
+  border-bottom-right-radius: 10em;
+}
+
+.WhatWeDo {
+  margin: 7em 15.5% 0 15%;
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: "Title Arrows" "Cards Cards ";
+}
+
+.WhatWeDo .Service {
+  font-size: 3em;
+  font-family: Roboto-Bold;
+}
+
+.WhatWeDo .TitleContainer {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: Title;
+}
+
+.WhatWeDo .ArrowContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: Arrows;
+  -webkit-column-gap: 1.5em;
+          column-gap: 1.5em;
+  margin-top: 2.5em;
+  justify-self: right;
+}
+
+.WhatWeDo .ArrowContainer .Arrow {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  width: 2em;
+  height: 2em;
+  border-radius: 100%;
+  -webkit-box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+          box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+  -webkit-transition: 300ms;
+  transition: 300ms;
+}
+
+.WhatWeDo .ArrowContainer #left > svg {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.WhatWeDo .ArrowContainer .Arrow:hover {
+  cursor: pointer;
+  background-color: #37806b;
+}
+
+.WhatWeDo .ArrowContainer .Arrow:hover svg path {
+  stroke: white;
+}
+
+.WhatWeDo .CardContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: Cards;
+  margin-top: 2em;
+  width: 100%;
+}
+
+.WhatWeDo .CardContainer .Card {
+  position: relative;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  -ms-grid-columns: auto auto;
+      grid-template-columns: auto auto;
+  -webkit-box-shadow: 4px 4px 30px rgba(0, 0, 0, 0.2);
+          box-shadow: 4px 4px 30px rgba(0, 0, 0, 0.2);
+  border-top-left-radius: 3.8em;
+  border-bottom-right-radius: 3.8em;
+  height: 7em;
+  width: 48ch;
+  padding: 1em;
+  padding-top: 2em;
+  padding-bottom: 2em;
+  -webkit-transition: 300ms;
+  transition: 300ms;
+}
+
+.WhatWeDo .CardContainer .Card img {
+  -o-object-fit: none;
+     object-fit: none;
+  -ms-flex-item-align: baseline;
+      align-self: baseline;
+  margin-left: 10px;
+  margin-top: 12px;
+}
+
+.WhatWeDo .CardContainer .Card .CardTitle {
+  font-family: Roboto-Bold;
+  font-size: 1.5em;
+  margin-bottom: 0.8em;
+}
+
+.WhatWeDo .CardContainer .Card .AdditionalInfo {
+  width: 30ch;
+}
+
+.WhatWeDo .Card:hover {
+  cursor: pointer;
+  background-color: #caa892;
+  border-top-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 3.8em;
+  border-top-right-radius: 3.8em;
+}
+
+.WhatWeDo .Card:hover p {
+  color: white;
+}
+
+.WhatWeDo .Card:hover img {
+  -webkit-filter: invert(1);
+          filter: invert(1);
+}
+
+.Filler {
+  background-color: white;
+  height: 10em;
+}
+/*# sourceMappingURL=index.css.map */

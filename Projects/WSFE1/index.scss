@@ -1,0 +1,311 @@
+$HayColor: #caa892;
+$GreenishColor: #37806b;
+
+* {
+    margin: 0;
+}
+
+.Logo {
+    line,
+    circle,
+    path {
+        stroke: $HayColor;
+        transition: 300ms;
+    }
+}
+
+.LogoAndName:hover {
+    //Чисто по приколу добавил UX-анимацию при наведении на логотип
+    line,
+    circle,
+    path {
+        stroke: $GreenishColor;
+    }
+    cursor: pointer;
+    .Name {
+        p {
+            color: black;
+        }
+    }
+}
+
+@font-face {
+    font-family: Roboto-Thin;
+    src: url(/Fonts/Roboto-Thin.ttf);
+}
+
+@font-face {
+    font-family: Roboto-Light;
+    src: url(/Fonts/Roboto-Light.ttf);
+}
+
+@font-face {
+    font-family: Roboto-Regular;
+    src: url(/Fonts/Roboto-Regular.ttf);
+}
+
+@font-face {
+    font-family: Roboto-Medium;
+    src: url(/Fonts/Roboto-Medium.ttf);
+}
+
+@font-face {
+    font-family: Roboto-Black;
+    src: url(Fonts/Roboto-Black.ttf);
+}
+
+@font-face {
+    font-family: Roboto-Bold;
+    src: url(Fonts/Roboto-Bold.ttf);
+}
+
+@font-face {
+    font-family: OleoScript-Regular;
+    src: url(Fonts/OleoScript-Regular.ttf);
+}
+
+@font-face {
+    font-family: Benne;
+    src: url(Fonts/Benne-Regular.ttf);
+}
+
+header {
+    display: grid;
+    grid-template-columns: auto auto;
+    margin: 1.5em 15% 0 15%;
+}
+
+.LogoAndName {
+    display: flex;
+    align-items: center;
+    p {
+        margin-left: 1ch;
+        font-family: "Roboto-Regular";
+        color: $GreenishColor;
+        font-size: 1.8em;
+        transition: 300ms;
+    }
+}
+
+%NeatButton {
+    button {
+        font-size: 1.3em;
+        background-color: $HayColor;
+        color: white;
+        padding: 0.5em 1em 0.5em 1em;
+        border: none;
+        border-top-left-radius: 2ch;
+        border-bottom-right-radius: 2ch;
+        transition: 300ms;
+    }
+    button:hover {
+        background-color: $GreenishColor;
+        cursor: pointer;
+        border-top-left-radius: 0ch;
+        border-bottom-right-radius: 0ch;
+        border-bottom-left-radius: 2ch;
+        border-top-right-radius: 2ch;
+    }
+}
+
+nav {
+    p {
+        font-family: "Roboto-Regular";
+        font-size: 1.3em;
+        transition: 300ms;
+    }
+    align-self: center;
+    justify-self: right;
+    display: flex;
+    align-items: center;
+    column-gap: 5ch;
+
+    .Navlink {
+        font-family: "Roboto-Regular";
+        font-size: 1.3em;
+        transition: 300ms;
+    }
+    .Home {
+        opacity: 70%;
+    }
+
+    .Navlink:hover {
+        color: $GreenishColor;
+        cursor: pointer;
+        text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    @extend %NeatButton;
+}
+
+.Title {
+    font-family: Roboto-Medium;
+    font-size: 1.2em;
+    color: #646464;
+}
+
+.AdditionalInfo {
+    width: 60ch;
+    font-size: 1.1em;
+    font-family: Roboto-Light;
+}
+
+main {
+    display: grid;
+    grid-template-columns: auto auto;
+    place-items: center;
+    margin: 7em 15% 0 15%;
+    img {
+        width: 717px;
+        height: 626px;
+    }
+    .Info {
+        display: flex;
+        flex-direction: column;
+        row-gap: 0.5em;
+        .MainText {
+            font-family: Roboto-Black;
+            font-weight: 900;
+            font-size: 4.8em;
+            width: 13ch;
+        }
+
+        @extend %NeatButton;
+        button {
+            margin-top: 2em;
+            background-color: $GreenishColor;
+            width: 12ch;
+        }
+    }
+
+    .ImgContainer {
+        $ImgWidth: 653px;
+        $ImgHeight: 550px;
+        position: relative;
+        img {
+            position: absolute;
+            bottom: 2.5em;
+            right: 2.5em;
+            width: $ImgWidth;
+            height: $ImgHeight;
+            border-top-left-radius: 10em;
+            border-bottom-right-radius: 10em;
+        }
+        .FancyBorder {
+            width: $ImgWidth;
+            height: $ImgHeight;
+            border: 2px solid #b0855b;
+            border-top-left-radius: 10em;
+            border-bottom-right-radius: 10em;
+        }
+    }
+}
+
+.WhatWeDo {
+    margin: 7em 15.5% 0 15%;
+    display: grid;
+    grid-template-areas:
+        "Title Arrows"
+        "Cards Cards ";
+
+    .Service {
+        font-size: 3em;
+        font-family: Roboto-Bold;
+    }
+
+    .TitleContainer {
+        grid-area: Title;
+    }
+
+    .ArrowContainer {
+        display: flex;
+        grid-area: Arrows;
+        column-gap: 1.5em;
+        margin-top: 2.5em;
+        justify-self: right;
+
+        .Arrow {
+            display: grid;
+            place-items: center;
+            width: 2em;
+            height: 2em;
+            border-radius: 100%;
+            box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+            transition: 300ms;
+        }
+
+        #left > svg {
+            transform: rotate(180deg);
+        }
+
+        .Arrow:hover {
+            cursor: pointer;
+            background-color: $GreenishColor;
+            svg {
+                path {
+                    stroke: white;
+                }
+            }
+        }
+    }
+
+    .CardContainer {
+        display: flex;
+        justify-content: space-between;
+        grid-area: Cards;
+        margin-top: 2em;
+        width: 100%;
+
+        .Card {
+            position: relative;
+            display: grid;
+            place-items: center;
+            grid-template-columns: auto auto;
+            box-shadow: 4px 4px 30px rgba(0, 0, 0, 0.2);
+            border-top-left-radius: 3.8em;
+            border-bottom-right-radius: 3.8em;
+            height: 7em;
+            width: 48ch;
+            padding: 1em;
+            padding-top: 2em;
+            padding-bottom: 2em;
+            transition: 300ms;
+
+            img {
+                object-fit: none;
+                align-self: baseline;
+                margin-left: 10px;
+                margin-top: 12px;
+            }
+
+            .CardTitle {
+                font-family: Roboto-Bold;
+                font-size: 1.5em;
+                margin-bottom: 0.8em;
+            }
+
+            .AdditionalInfo {
+                width: 30ch;
+            }
+        }
+    }
+    .Card:hover {
+        cursor: pointer;
+        background-color: $HayColor;
+        border-top-left-radius: 0;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 3.8em;
+        border-top-right-radius: 3.8em;
+        p {
+            color: white;
+        }
+        img {
+            filter: invert(1);
+        }
+    }
+}
+
+.Filler {
+    background-color: white;
+    height: 10em;
+}
