@@ -211,7 +211,7 @@ nav span:hover {
 }
 
 .Whoami {
-  height: 29em;
+  height: 32em;
 }
 
 .Skills {
@@ -398,8 +398,10 @@ nav span:hover {
 .Project .ProjectMiniature {
   margin-top: 3ch;
   opacity: 0.8;
-  width: 35ch;
-  height: 35ch;
+  width: 85%;
+  height: 85%;
+  max-width: 35ch;
+  max-height: 35ch;
 }
 
 .Project .ProjectInfo {
@@ -408,9 +410,14 @@ nav span:hover {
   opacity: 0;
 }
 
+.Project .ProjectInfo p {
+  word-wrap: break-word;
+}
+
 .Project .ProjectInfo .Description {
   text-indent: 1ch;
-  width: 30ch;
+  max-width: 30ch;
+  width: 80%;
   margin-top: 2ch;
 }
 
@@ -490,6 +497,13 @@ nav span:hover {
   }
 }
 
+@media (max-width: 1350px) {
+  .Projects {
+    -ms-grid-columns: auto auto;
+        grid-template-columns: auto auto;
+  }
+}
+
 @media (min-width: 1051px) and (max-width: 1500px) {
   .About {
         grid-template-areas: "Polaroid Whoami " "   Skills   Contacts";
@@ -557,44 +571,88 @@ nav span:hover {
   }
 }
 
-@media (max-width: 560px) {
-  .Greetings {
-    font-size: 4em;
-  }
-  .Filler {
-    max-width: 375px;
-  }
-  .About .Rocketship {
-    width: 50ch;
-    height: auto;
-  }
-  .About .Rocketship .Fire {
-    width: 110px;
-    height: 130px;
-    bottom: 10em;
-    left: 9em;
-  }
-  .Card {
-    width: 30ch;
-  }
-  .Whoami {
-    height: 31em;
-  }
-  .Project .ProjectInfo .Description {
-    width: 28ch;
-  }
+/*@media (min-width: 560px) {
+    .Greetings {
+        font-size: 4em;
+    }
+    .Filler {
+        max-width: 375px;
+    }
+    .About {
+        .Rocketship {
+            width: 50ch;
+            height: auto;
+            .Fire {
+                width: 110px;
+                height: 130px;
+                bottom: 10em;
+                left: 9em;
+            }
+        }
+    }
+    .Card {
+        width: 30ch;
+    }
+    .Whoami {
+        height: 31em;
+    }
+    .Project {
+        .ProjectInfo {
+            .Description {
+                width: 28ch;
+            }
+        }
+    }
 }
-
-@media (min-width: 251px) and (max-width: 750px) {
+*/
+@media (min-width: 251px) and (max-width: 550px) {
   nav section {
     -ms-grid-column-align: center;
         justify-self: center;
+    width: 80%;
+    margin-right: 0;
   }
   nav span {
     font-size: 1em;
   }
   .Greetings {
-    font-size: 6em;
+    font-size: 5.5em;
+    display: -ms-grid;
+    display: grid;
+    place-items: center;
+    width: 100%;
+    -ms-flex-negative: 1;
+        flex-shrink: 1;
+  }
+  .Greetings .txt-type {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+  .About {
+    width: 100%;
+  }
+  .About .Card {
+    width: 60%;
+  }
+  .Projects {
+    width: 100%;
+  }
+  .Projects .Card {
+    width: 60%;
+    height: 26em;
+  }
+  .Project .ProjectInfo .Links {
+    gap: 4ch;
+  }
+  .Project .ProjectInfo .LinkButton {
+    width: 8ch;
+  }
+}
+
+@media (max-width: 350px) {
+  .About .Polaroid img {
+    width: 33ch;
   }
 }
 

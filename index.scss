@@ -65,12 +65,11 @@ nav {
         justify-content: space-around;
         justify-self: right;
         margin-right: 7em;
-        a{
+        a {
             width: 12ch;
             text-align: center;
         }
     }
-
 
     span {
         color: white;
@@ -97,7 +96,6 @@ nav {
     font-size: 12em;
     font-family: OpenSans-Semibold;
     user-select: none;
-
 }
 
 //Cursor effect (typewriter)
@@ -114,27 +112,25 @@ nav {
     place-items: center;
 }
 
-
 .About {
     padding-bottom: 15vh;
     margin-top: 10em;
     column-gap: 3em;
     display: grid;
     grid-template-columns: auto auto auto auto;
-   
-    .Polaroid{
+
+    .Polaroid {
         height: min-content;
         width: min-content;
-        img{
+        img {
             width: 40ch;
             height: auto;
             user-select: none;
         }
         box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
         border-top: 1px solid rgba(255, 255, 255, 0.2);
-    border-left: 1px solid rgba(255, 255, 255, 0.2);
+        border-left: 1px solid rgba(255, 255, 255, 0.2);
     }
-
 }
 
 .Card {
@@ -170,7 +166,7 @@ nav {
 }
 
 .Whoami {
-    height: 29em;
+    height: 32em;
 }
 
 .Skills {
@@ -319,16 +315,23 @@ nav {
     .ProjectMiniature {
         margin-top: 3ch;
         opacity: 0.8;
-        width: 35ch;
-        height: 35ch;
+        width: 85%;
+        height: 85%;
+        max-width: 35ch;
+        max-height: 35ch;
     }
     .ProjectInfo {
         transform: translateY(150px);
         opacity: 0;
 
+        p {
+            word-wrap: break-word;
+        }
+
         .Description {
             text-indent: 1ch;
-            width: 30ch;
+            max-width: 30ch;
+            width: 80%;
             margin-top: 2ch;
         }
 
@@ -373,10 +376,8 @@ nav {
         grid-template-areas:
             "Polaroid Whoami Skills"
             ".   .   Contacts";
-            grid-row-gap: 5em;
+        grid-row-gap: 5em;
     }
-
-
 
     .Polaroid {
         grid-area: Polaroid;
@@ -392,12 +393,18 @@ nav {
     }
 }
 
+@media (max-width: 1350px) {
+    .Projects {
+        grid-template-columns: auto auto;
+    }
+}
+
 @media (min-width: 1051px) and (max-width: 1500px) {
     .About {
         grid-template-areas:
             "Polaroid Whoami "
             "   Skills   Contacts";
-            grid-row-gap: 5em;
+        grid-row-gap: 5em;
     }
 
     .Polaroid {
@@ -446,19 +453,18 @@ nav {
         grid-template-columns: auto;
     }
 }
-@media (max-width: 560px) {
+/*@media (min-width: 560px) {
     .Greetings {
         font-size: 4em;
-        
     }
-    .Filler{
+    .Filler {
         max-width: 375px;
     }
     .About {
-        .Rocketship{
+        .Rocketship {
             width: 50ch;
             height: auto;
-            .Fire{
+            .Fire {
                 width: 110px;
                 height: 130px;
                 bottom: 10em;
@@ -480,19 +486,60 @@ nav {
         }
     }
 }
-
-@media (min-width: 251px) and (max-width: 750px) {
+*/
+@media (min-width: 251px) and (max-width: 550px) {
     nav {
-        
         section {
             justify-self: center;
+            width: 80%;
+            margin-right: 0;
         }
         span {
             font-size: 1em;
         }
     }
     .Greetings {
-        font-size: 6em;
+        font-size: 5.5em;
+        display: grid;
+        place-items: center;
+        width: 100%;
+        flex-shrink: 1;
+        .txt-type {
+            width: fit-content;
+        }
+    }
+    .About {
+        width: 100%;
+        .Card {
+            width: 60%;
+        }
+    }
+    .Projects {
+        width: 100%;
+        .Card {
+            width: 60%;
+            height: 26em;
+        }
+    }
+    .Project {
+        .ProjectInfo {
+            .Links {
+                gap: 4ch;
+            }
+            .LinkButton {
+                width: 8ch;
+            }
+        }
+    }
+}
+
+@media (max-width: 350px) {
+    .About {
+        .Polaroid {
+            img {
+                width: 33ch;
+            }
+        }
     }
 }
 
