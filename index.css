@@ -399,7 +399,7 @@ nav span:hover {
   margin-top: 3ch;
   opacity: 0.8;
   width: 85%;
-  height: 85%;
+  height: auto;
   max-width: 35ch;
   max-height: 35ch;
 }
