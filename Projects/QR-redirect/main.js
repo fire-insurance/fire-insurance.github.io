@@ -1,0 +1,1 @@
+window.location.replace("https://www.gosuslugi.ru/covid-cert/verify/9270000025844130?lang=ru&ck=850ebd0028393f2044e924691b8db443")
