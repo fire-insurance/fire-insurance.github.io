@@ -1,4 +1,4 @@
-const writeBtn = document.querySelector('.MailTo');
+const writeBtn = document.querySelector('#MailTo');
 const copiedTip = document.querySelector('.CopiedTip');
 
 writeBtn.addEventListener('click', () => {

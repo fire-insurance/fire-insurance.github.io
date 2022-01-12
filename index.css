@@ -472,8 +472,7 @@ nav span:hover {
 
 @media (min-width: 1501px) and (max-width: 1850px) {
   .About {
-        grid-template-areas: "Polaroid Whoami Skills"
- ".   .   Contacts";
+        grid-template-areas: "Polaroid Whoami Skills" ".   .   Contacts";
     grid-row-gap: 5em;
   }
   .Polaroid {
@@ -507,8 +506,7 @@ nav span:hover {
 
 @media (min-width: 1051px) and (max-width: 1500px) {
   .About {
-        grid-template-areas: "Polaroid Whoami "
- "   Skills   Contacts";
+        grid-template-areas: "Polaroid Whoami " "   Skills   Contacts";
     grid-row-gap: 5em;
   }
   .Polaroid {
@@ -537,10 +535,7 @@ nav span:hover {
   .About {
     -ms-grid-columns: auto;
         grid-template-columns: auto;
-        grid-template-areas: "Rocketship"
- "Whoami"
- "Skills"
- "Contacts";
+        grid-template-areas: "Rocketship" "Whoami" "Skills" "Contacts";
     width: 60ch;
     row-gap: 3em;
     -webkit-column-gap: 0em;

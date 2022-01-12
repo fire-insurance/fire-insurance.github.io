@@ -606,6 +606,7 @@ footer .FlexParagraphs p:hover {
     height: auto;
     padding-left: 2em;
     padding-top: 2em;
+    background-color: black;
     -ms-grid-columns: auto;
         grid-template-columns: auto;
   }

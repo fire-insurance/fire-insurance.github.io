@@ -38,7 +38,7 @@ img:hover {
     display: flex;
     flex-direction: row;
     
-position: sticky;
+    position: sticky;
     align-items: center;
     justify-content: space-between;
 
@@ -528,7 +528,7 @@ footer {
         height: auto;
         padding-left: 2em;
         padding-top: 2em;
-
+        background-color: black;
         grid-template-columns: auto;
 
         .subscribeText {

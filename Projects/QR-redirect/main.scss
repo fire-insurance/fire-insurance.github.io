@@ -1,0 +1,54 @@
+* {
+    margin: 0px;
+}
+
+body {
+    background: radial-gradient(#4d4d4d, #252525);
+}
+
+.Main {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    grid-template-columns: auto;
+    &__Link {
+        width: 200px;
+        height: 150px;
+        position: relative;
+
+        &:hover{
+            svg {
+                opacity: 85%;
+            }
+        }
+
+        &__Text,
+        &__Blob {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+
+        }
+        &__Text {
+            color: white;
+            font-family: "Roboto", sans-serif;
+            font-size: 24px;
+            text-shadow: 0px 0px 10px white, 0px 0px 20px white;
+        }
+    }
+}
+
+#blob2 {
+    transform: scaleX(0.8) rotate(130deg);
+}
+
+#blob3 {
+    transform: scaleX(1.4) scaleY(1.1) rotate(270deg) translate(5px, -8px);
+}
+
+#blob4 {
+    transform: scaleX(1.6) translateX(-7px);
+}
