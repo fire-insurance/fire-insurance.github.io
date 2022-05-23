@@ -1,0 +1,704 @@
+/* ШРИФТ */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Oswald:wght@200;300;400;500;600;700&display=swap");
+
+:root {
+    font-family: "Montserrat", sans-serif;
+}
+
+/* ЦВЕТА */
+
+$dark-violet: #8a7b9f;
+$violet: #af94d6;
+$light-violet: #ceb0f9;
+$gray-violet: #d0cad9;
+$light-gray: #f2f2f2;
+$semi-transparent-blue: rgba(100, 164, 185, 0.1);
+
+/* LAYOUT */
+
+html {
+    overflow-x: hidden;
+}
+
+body {
+    position: relative;
+    overflow-x: hidden;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.container {
+    max-width: 1280px;
+    padding: 28px 32px 48px 32px;
+    width: 100%;
+}
+
+/* Модификаторы */
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+/* СБРОС СТИЛЕЙ */
+/* Указываем box sizing */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Убираем внутренние отступы */
+ul[class],
+ol[class] {
+    padding: 0;
+}
+
+/* Убираем внешние отступы */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+    margin: 0;
+}
+
+/* Выставляем основные настройки по-умолчанию для body */
+body {
+    min-height: 100vh;
+    scroll-behavior: smooth;
+    line-height: 1.5;
+}
+
+/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
+ul[class],
+ol[class] {
+    list-style: none;
+}
+
+/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+    text-decoration: none;
+    color: black;
+}
+
+/* Упрощаем работу с изображениями */
+img,
+svg {
+    max-width: 100%;
+    display: block;
+    height: auto;
+}
+
+/* Наследуем шрифты для инпутов и кнопок */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+    padding: 0;
+}
+
+/* Удаляем все анимации и переходы для людей, которые предпочитают их не использовать */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* Основной стиль кнопки в проекте */
+
+.project-button {
+    display: grid;
+    place-items: center;
+    border-radius: 20px;
+    height: 64px;
+    border: none;
+    padding: 0px 33px;
+
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    transition: all 0.25s;
+
+    &_color_dark-violet {
+        color: white;
+        background-color: $dark-violet;
+
+        &:hover {
+            background-color: $violet;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .project-button {
+        padding: 0px 24px;
+        font-size: 16px;
+        height: 54px;
+        border-radius: 16px;
+        line-height: 20px;
+    }
+}
+
+/* HEADER */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    width: calc(min(60%, 558px));
+    position: absolute;
+    z-index: 999;
+
+    .logo {
+        cursor: pointer;
+    }
+
+    .navigation {
+        display: flex;
+        column-gap: 48px;
+        align-items: center;
+
+        &__link {
+            font-family: "Montserrat";
+            font-style: normal;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 22px;
+            position: relative;
+            cursor: pointer;
+            transition: all 0.25s ease-in-out;
+            width: max-content;
+            color: black;
+
+            a::after {
+                content: attr(data-title);
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                display: flex;
+                justify-content: center;
+                text-align: center;
+                align-items: center;
+                color: transparent;
+                font-weight: 700;
+                transition: 0.25s;
+                transform: scale(0.9);
+                transform-origin: center center;
+            }
+
+            .underline {
+                background-color: black;
+                height: 1px;
+                width: 100%;
+                margin-top: 8px;
+                position: absolute;
+                opacity: 0;
+                transition: all 0.25s;
+            }
+
+            &_active,
+            &:hover {
+                a {
+                    color: transparent;
+                }
+
+                a::after {
+                    color: $dark-violet;
+                    transform: scale(1);
+                }
+
+                .underline {
+                    display: block;
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    .burger {
+        display: flex;
+        flex-direction: column;
+        row-gap: 11px;
+        align-self: center;
+        justify-self: end;
+        display: none;
+        cursor: pointer;
+        z-index: 9999;
+
+        div {
+            width: 33px;
+            height: 2px;
+            background-color: black;
+            border-radius: 1px;
+            transition: all 0.4s;
+        }
+
+        &_opened {
+            div:nth-child(1) {
+                transform: translateY(13px) rotate(-45deg);
+            }
+            div:nth-child(2) {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            div:nth-child(3) {
+                transform: translateY(-13px) rotate(45deg);
+            }
+        }
+    }
+
+    .modal-menu {
+        background-color: #fff;
+        height: 100vh;
+        width: 394px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 9998;
+        opacity: 0;
+        transition: 0.4s ease-in-out;
+        transform: translateX(100%);
+        margin: -45px -34px 0px 0px;
+
+        &_opened {
+            transform: translateX(0%);
+            opacity: 1;
+        }
+
+        &__container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 164px;
+        }
+
+        &__navigation {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            row-gap: 36px;
+            a {
+                font-size: 24px;
+            }
+        }
+
+        &__social-networks {
+            margin-top: 96px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .small-icons {
+                display: flex;
+                column-gap: 40px;
+                align-items: center;
+            }
+
+            #instagram-logo {
+                transform: rotate(90deg);
+                margin: 5px 0px 20px 0px;
+            }
+        }
+    }
+}
+
+.darkening {
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: -1;
+    opacity: 0;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: opacity 0.4s;
+
+    &_active {
+        opacity: 1;
+        z-index: 100;
+    }
+}
+
+// Не показывать затемнение и модальную навигацию при ширине экрана > 768px
+// (нужно при условии, что пользователь открыл меню через бургер и растянул экран)
+@media screen and (min-width: 768px) {
+    .modal-menu,
+    .darkening {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 45px 34px 48px 34px;
+    }
+
+    .header {
+        width: calc(100vw - 64px);
+        .navigation {
+            display: none;
+        }
+
+        .burger {
+            display: flex;
+        }
+
+        .logo {
+            height: 68px;
+        }
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .container {
+        padding: 0px 16px 48px 16px;
+    }
+
+    .header {
+        height: 64px;
+        width: 100%;
+        position: unset;
+        padding: 16px 0px;
+
+        .logo {
+            height: 32px;
+        }
+
+        .burger {
+            row-gap: 7px;
+
+            div {
+                width: 20px;
+                height: 1px;
+            }
+
+            &_opened {
+                div:nth-child(1) {
+                    transform: translateY(8px) rotate(-45deg);
+                }
+                div:nth-child(3) {
+                    transform: translateY(-8px) rotate(45deg);
+                }
+            }
+        }
+    }
+
+    .header {
+        .modal-menu {
+            width: 100vw;
+            height: fit-content;
+            margin: 64px 0px 0px 0px;
+
+            &__container {
+                padding: 24px 16px 42px 16px;
+            }
+
+            &__social-networks {
+                margin-top: 64px;
+
+                #instagram-logo {
+                    margin: 5px 0px 5px 0px;
+                }
+            }
+
+            .project-button {
+                width: 100%;
+            }
+        }
+
+        .navigation__link {
+            font-size: 20px;
+        }
+    }
+    .darkening {
+        margin-top: 64px;
+    }
+}
+
+/* ГЛАВНАЯ СТРАНИЦА */
+
+// Первый блок: портрет, контакты, встречающий текст
+
+.greeting-block {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    position: relative;
+
+    &__text {
+        position: absolute;
+        left: 0;
+        bottom: 32px;
+        z-index: 10;
+    }
+
+    &__blurred-circle {
+        position: absolute;
+        width: 619px;
+        height: 619px;
+        background-color: #eff6f8;
+        top: 146px;
+        left: -279px;
+        z-index: -1;
+        border-radius: 100%;
+        filter: blur(30px);
+    }
+
+    &__greeting-text {
+        font-family: "Oswald";
+        font-weight: 700;
+        font-size: 69px;
+        line-height: 64px;
+        letter-spacing: -0.04em;
+        text-transform: uppercase;
+        max-width: 15ch;
+        align-self: flex-end;
+    }
+
+    &__sub-text {
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 22px;
+        max-width: 24ch;
+        margin: 88px 0px 27px 0px;
+    }
+
+    &__portrait {
+        background-color: $light-gray;
+        margin: -28px -32px 0px 0px;
+        padding-top: 15px;
+        position: relative;
+        display: flex;
+        width: 50%;
+        justify-content: center;
+        .guzel-portrait {
+            height: 713px;
+            margin-top: 15px;
+        }
+    }
+
+    &__social-networks {
+        position: absolute;
+        top: 0;
+        right: 37px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100%;
+        justify-content: space-between;
+        padding-bottom: 32px;
+
+        .line {
+            background-color: black;
+            width: 1px;
+            height: 283px;
+        }
+    }
+
+    &__word-circle {
+        position: absolute;
+        top: 270px;
+        left: -20%;
+    }
+
+    .mobile-background,
+    .mobile-linear-gradient {
+        width: 100vw;
+        position: absolute;
+        margin-left: -50vw;
+        left: 50%;
+        display: none;
+    }
+
+    .mobile-background {
+        z-index: -1;
+        background-color: $light-gray;
+        height: 100%;
+    }
+
+    .mobile-linear-gradient {
+        background: linear-gradient(transparent, rgba(255, 255, 255, 0.8));
+        z-index: 10;
+        height: calc(100% - 120px);
+        position: absolute;
+        bottom: 0;
+    }
+}
+
+.social-network-icon {
+    cursor: pointer;
+    transition: all 0.25s;
+
+    &:hover {
+        filter: invert(57%) sepia(8%) saturate(1222%) hue-rotate(223deg) brightness(87%) contrast(85%);
+    }
+}
+
+@media screen and (max-width: 1150px) {
+    .greeting-block {
+        &__portrait {
+            min-width: 394px;
+            .guzel-portrait {
+                height: 576px;
+            }
+        }
+
+        &__greeting-text {
+            font-size: 55px;
+            line-height: 50px;
+            max-width: 15ch;
+        }
+
+        &__sub-text {
+            font-size: 16px;
+            line-height: 20px;
+            max-width: 24ch;
+            margin: 88px 0px 27px 0px;
+        }
+
+        &__word-circle {
+            width: 300px;
+            top: 270px;
+            left: -20%;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .greeting-block {
+        &__text {
+            bottom: 25px;
+        }
+
+        &__sub-text {
+            margin: 48px 0px 28px 0px;
+        }
+
+        &__word-circle {
+            display: none;
+        }
+
+        &__social-networks {
+            display: none;
+        }
+
+        &__portrait {
+            margin: -45px -34px 0px 0px;
+        }
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .greeting-block {
+        &__greeting-text {
+            font-size: 36px;
+            line-height: 33px;
+            max-width: 10ch;
+            align-self: baseline;
+        }
+    }
+}
+@media screen and (max-width: 550px) {
+    .greeting-block {
+        height: 464px;
+
+        &__text {
+            bottom: 55px;
+        }
+
+        &__sub-text {
+            align-self: center;
+            max-width: 25ch;
+            font-size: 14px;
+            line-height: 17px;
+            text-align: center;
+            margin: 59px 0px 36px 0px;
+        }
+
+        &__greeting-text {
+            font-size: 40px;
+            line-height: 38px;
+            max-width: 15ch;
+        }
+
+        &__portrait {
+            width: 100vw;
+            height: 100%;
+            margin: 0;
+            padding-top: 0px;
+            flex-direction: column;
+            background-color: transparent;
+            overflow: hidden;
+            margin-right: -16px;
+
+            .guzel-portrait {
+                height: 500px;
+                align-self: flex-end;
+                margin: 0px -30px 0px 0px;
+            }
+        }
+
+        &__blurred-circle {
+            display: none;
+        }
+
+        .mobile-background,
+        .mobile-linear-gradient {
+            display: block;
+        }
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .greeting-block {
+        &__text {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            bottom: 48px;
+        }
+
+        &__greeting-text {
+            font-size: 32px;
+            line-height: 30px;
+            max-width: 10ch;
+            align-self: baseline;
+        }
+    }
+}
+
+@media screen and (max-width: 330px) {
+    .greeting-block__portrait > .guzel-portrait {
+        margin: 0px -80px 0px 0px;
+    }
+}
