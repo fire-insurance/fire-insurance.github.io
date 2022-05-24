@@ -158,6 +158,35 @@ button {
     }
 }
 
+/* Заголовки */
+
+h1 {
+    font-family: "Oswald", sans-serif;
+    font-size: 69px;
+    line-height: 64px;
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+}
+
+h2 {
+    font-family: "Oswald";
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 64px;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+}
+
+h3 {
+    font-family: "Oswald";
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 30px;
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+}
+
 @media screen and (max-width: 768px) {
     .project-button {
         padding: 0px 24px;
@@ -165,6 +194,35 @@ button {
         height: 54px;
         border-radius: 16px;
         line-height: 20px;
+    }
+
+    h1,
+    h2 {
+        font-size: 55px;
+        line-height: 50px;
+    }
+
+    h3 {
+        font-size: 26px;
+        line-height: 30px;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .project-button {
+        font-size: 14px;
+        line-height: 17px;
+    }
+
+    h1,
+    h2 {
+        font-size: 32px;
+        line-height: 30px;
+    }
+
+    h3 {
+        font-size: 20px;
+        line-height: 22px;
     }
 }
 
@@ -288,11 +346,11 @@ button {
         opacity: 0;
         transition: 0.4s ease-in-out;
         transform: translateX(100%);
-        margin: -45px -34px 0px 0px;
 
         &_opened {
             transform: translateX(0%);
             opacity: 1;
+            position: fixed;
         }
 
         &__container {
@@ -330,6 +388,16 @@ button {
             }
         }
     }
+
+    .mobile-background {
+        width: 100vw;
+        height: 64px;
+        position: absolute;
+        left: -16px;
+        top: 0;
+        background-color: white;
+        z-index: -1;
+    }
 }
 
 .darkening {
@@ -346,6 +414,7 @@ button {
     &_active {
         opacity: 1;
         z-index: 100;
+        position: fixed;
     }
 }
 
@@ -365,6 +434,14 @@ button {
 
     .header {
         width: calc(100vw - 64px);
+
+        &_modal-opened {
+            .burger {
+                position: fixed;
+                right: 32px;
+            }
+        }
+
         .navigation {
             display: none;
         }
@@ -390,6 +467,15 @@ button {
         position: unset;
         padding: 16px 0px;
 
+        &_modal-opened {
+            position: fixed !important;
+            background-color: white;
+
+            .burger {
+                right: 16px;
+            }
+        }
+
         .logo {
             height: 32px;
         }
@@ -410,6 +496,10 @@ button {
                     transform: translateY(-8px) rotate(45deg);
                 }
             }
+        }
+
+        .mobile-background {
+            display: block;
         }
     }
 
@@ -700,5 +790,267 @@ button {
 @media screen and (max-width: 330px) {
     .greeting-block__portrait > .guzel-portrait {
         margin: 0px -80px 0px 0px;
+    }
+}
+
+// Второй блок: цитата
+
+.quote {
+    width: 100%;
+    display: grid;
+    place-items: center;
+    padding: 100px 0px 84px 0px;
+
+    &__container {
+        position: relative;
+    }
+
+    &__text {
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 24px;
+        max-width: 52ch;
+    }
+
+    &__quote-marks {
+        position: absolute;
+        left: 0;
+        top: -20px;
+        left: -20px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .quote {
+        padding: 68px 0px 78px 0px;
+
+        &__text {
+            font-size: 16px;
+            line-height: 20px;
+        }
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .quote {
+        padding: 73px 0px 35px 0px;
+
+        &__text {
+            font-size: 14px;
+            line-height: 17px;
+        }
+
+        &__quote-marks {
+            left: 50%;
+            top: -49px;
+            width: 36px;
+        }
+    }
+}
+
+// Обо мне | Проблемы с которыми работаю
+
+.about {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    column-gap: 30px;
+
+    .decorative-circle {
+        $circle_r: 420px;
+        width: $circle_r;
+        height: $circle_r;
+        position: absolute;
+        border: 1px solid black;
+        border-radius: 100%;
+        top: calc(#{$circle_r / (-2)});
+        right: calc(#{-32px + $circle_r / (-2)});
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        align-self: center;
+        font-size: 16px;
+        line-height: 28px;
+        width: 100%;
+        max-width: 494px;
+
+        .info-titles {
+            font-weight: 600;
+            display: grid;
+            justify-content: space-between;
+            grid-template-columns: repeat(2, auto);
+            margin: 60px 0px 32px 0px;
+        }
+
+        .founder-title {
+            max-width: 35ch;
+            margin-bottom: 86px;
+        }
+    }
+
+    &__problems {
+        background-color: $semi-transparent-blue;
+        padding: 60px 72px 57px 72px;
+        flex-grow: 1;
+        max-width: 592px;
+
+        h3 {
+            width: 20ch;
+        }
+
+        .problems-list {
+            margin-top: 55px;
+            display: flex;
+            flex-direction: column;
+            row-gap: 16px;
+            font-size: 16px;
+            line-height: 18px;
+            max-width: 40ch;
+        }
+    }
+
+    &__project-button {
+        width: fit-content;
+        p {
+            max-width: 17ch;
+        }
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .about {
+        .decorative-circle {
+            $circle_r: 355px;
+            width: $circle_r;
+            height: $circle_r;
+            top: calc(#{$circle_r / (-2)});
+            right: calc(#{-130px + $circle_r / (-2)});
+        }
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .about {
+        &__info {
+            .info-titles {
+                grid-template-columns: auto;
+                margin: 38px 0px 14px 0px;
+            }
+
+            .founder-title {
+                margin-bottom: 33px;
+            }
+        }
+
+        &__problems {
+            padding: 37px 32px 48px 32px;
+            width: fit-content;
+
+            .problems-list {
+                margin-top: 46px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .about {
+        &__info {
+            .info-titles {
+                justify-content: space-between;
+                grid-template-columns: auto;
+                margin: 38px 0px 14px 0px;
+            }
+
+            .founder-title {
+                max-width: 27ch;
+            }
+        }
+
+        &__project-button {
+            width: fit-content;
+            padding: 17px 24px;
+            height: fit-content;
+        }
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .about {
+        .decorative-circle {
+            $circle_r: 248px;
+            width: $circle_r;
+            height: $circle_r;
+            top: calc(#{$circle_r / (-2)});
+            right: calc(#{-110px + $circle_r / (-2)});
+        }
+
+        flex-direction: column;
+        row-gap: 40px;
+        align-items: center;
+
+        &__info {
+            max-width: unset;
+
+            .info-titles {
+                grid-template-columns: repeat(2, auto);
+            }
+
+            .founder-title {
+                max-width: unset;
+            }
+        }
+
+        &__problems {
+            width: 100%;
+            max-width: unset;
+
+            .problems-list {
+                max-width: unset;
+            }
+        }
+
+        &__project-button {
+            width: 100%;
+
+            p {
+                max-width: unset;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .about {
+        .decorative-circle {
+            $circle_r: 248px;
+            width: $circle_r;
+            height: $circle_r;
+            top: calc(#{80px + $circle_r / (-2)});
+            right: calc(#{-80px + $circle_r / (-2)});
+        }
+
+        flex-direction: column;
+        row-gap: 40px;
+        align-items: center;
+
+        &__info {
+            font-size: 14px;
+            line-height: 26px;
+            .info-titles {
+                grid-template-columns: auto;
+            }
+        }
+
+        &__problems {
+            padding: 25px 20px 30px 20px;
+            .problems-list {
+                font-size: 14px;
+                line-height: 18px;
+                margin-top: 24px;
+            }
+        }
     }
 }
