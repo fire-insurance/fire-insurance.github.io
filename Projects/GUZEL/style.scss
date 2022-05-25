@@ -3,6 +3,11 @@
 
 :root {
     font-family: "Montserrat", sans-serif;
+    --container-padding: 32px;
+
+    --swiper-theme-color: #8a7b9f;
+    --swiper-pagination-bullet-horizontal-gap: 10px;
+    --swiper-pagination-bullet-size: 11px;
 }
 
 /* ЦВЕТА */
@@ -30,7 +35,7 @@ body {
 
 .container {
     max-width: 1280px;
-    padding: 28px 32px 48px 32px;
+    padding: 28px var(--container-padding) 48px var(--container-padding);
     width: 100%;
 }
 
@@ -187,6 +192,12 @@ h3 {
     text-transform: uppercase;
 }
 
+.project-paragraph {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+}
+
 @media screen and (max-width: 768px) {
     .project-button {
         padding: 0px 24px;
@@ -209,7 +220,8 @@ h3 {
 }
 
 @media screen and (max-width: 550px) {
-    .project-button {
+    .project-button,
+    .project-paragraph {
         font-size: 14px;
         line-height: 17px;
     }
@@ -397,6 +409,7 @@ h3 {
         top: 0;
         background-color: white;
         z-index: -1;
+        display: none;
     }
 }
 
@@ -428,8 +441,8 @@ h3 {
 }
 
 @media screen and (max-width: 768px) {
-    .container {
-        padding: 45px 34px 48px 34px;
+    :root {
+        --container-padding: 34px;
     }
 
     .header {
@@ -438,7 +451,7 @@ h3 {
         &_modal-opened {
             .burger {
                 position: fixed;
-                right: 32px;
+                right: var(--container-padding);
             }
         }
 
@@ -457,8 +470,15 @@ h3 {
 }
 
 @media screen and (max-width: 550px) {
+    :root {
+        --container-padding: 16px;
+
+        --swiper-pagination-bullet-horizontal-gap: 6px;
+        --swiper-pagination-bullet-size: 7px;
+    }
+
     .container {
-        padding: 0px 16px 48px 16px;
+        padding-top: 0px;
     }
 
     .header {
@@ -1050,6 +1070,267 @@ h3 {
                 font-size: 14px;
                 line-height: 18px;
                 margin-top: 24px;
+            }
+        }
+    }
+}
+
+// Образование и опыт работы
+
+.education {
+    position: relative;
+
+    img {
+        max-width: 300px;
+    }
+
+    padding: 90px 106px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__title {
+        display: flex;
+        align-items: center;
+        column-gap: 42px;
+        margin-bottom: 43px;
+
+        .title {
+            font-family: "Oswald";
+            font-weight: 700;
+            font-size: 50px;
+            line-height: 64px;
+            letter-spacing: -0.04em;
+            text-transform: uppercase;
+
+            &-violet {
+                color: $dark-violet;
+            }
+
+            &-gray {
+                color: $light-gray;
+            }
+        }
+
+        .separation-line {
+            width: 1px;
+            height: 73px;
+            background-color: black;
+        }
+    }
+
+    .swiper-pagination {
+        display: none;
+    }
+
+    // Слайд с этапом образования
+    &__slide {
+        position: relative;
+
+        .year {
+            font-family: "Oswald";
+            font-weight: 600;
+            font-size: 28px;
+            line-height: 41px;
+            margin-bottom: 85px;
+
+            &::after {
+                content: " г.";
+            }
+        }
+
+        .type {
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 20px;
+            max-width: 20ch;
+            position: absolute;
+            top: 50px;
+        }
+
+        .slide-line {
+            display: flex;
+            align-items: center;
+
+            .circle {
+                background-color: black;
+                width: 11px;
+                height: 11px;
+                border-radius: 11px;
+            }
+
+            .line {
+                background-color: black;
+                width: 100%;
+                height: 1px;
+            }
+        }
+
+        .place {
+            font-weight: 400;
+            margin-top: 37px;
+            padding-right: 30px;
+        }
+    }
+
+    // Контейнер слайдера и стрелок
+    &__swiper-container {
+        width: 100%;
+        display: flex;
+        column-gap: 60px;
+        justify-content: center;
+
+        .educ-swiper-slides {
+            max-width: 936px;
+            overflow: hidden;
+        }
+
+        // Замена стрелок и сброс стилей
+        .swiper-button-next,
+        .swiper-button-prev {
+            background-image: url(./assets/img/arrow_r.svg);
+            background-repeat: no-repeat;
+            background-size: 100% auto;
+            background-position: center;
+            position: unset;
+            width: 14px;
+
+            &::after {
+                display: none;
+            }
+        }
+
+        .swiper-button-prev {
+            transform: rotate(180deg);
+        }
+
+        .swiper-arrows {
+            display: flex;
+            flex-direction: column;
+            row-gap: 48px;
+            justify-content: center;
+        }
+    }
+
+    .decorative-circle {
+        $circle_r: 452px;
+        width: $circle_r;
+        height: $circle_r;
+        position: absolute;
+        border: 1px solid black;
+        border-radius: 100%;
+        top: 260px;
+        left: -400px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .education {
+        padding: 90px 0px;
+
+        .decorative-circle {
+            $circle_r: 328px;
+            width: $circle_r;
+            height: $circle_r;
+            position: absolute;
+            border: 1px solid black;
+            border-radius: 100%;
+            top: 340px;
+            left: -330px;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .education {
+        padding: 60px 0px;
+
+        .swiper-pagination {
+            display: block;
+            position: unset;
+            margin-top: 30px;
+        }
+
+        &__title {
+            column-gap: 27px;
+
+            .title {
+                font-size: 37px;
+            }
+
+            .separation-line {
+                height: 46px;
+            }
+        }
+
+        &__swiper-container {
+            .educ-swiper-slides {
+                max-width: calc(100vw - 68px);
+                overflow: visible;
+            }
+
+            .swiper-arrows {
+                display: none;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .education {
+        padding: 47px 0px;
+
+        &__slide {
+            .year {
+                margin-bottom: 57px;
+                font-size: 20px;
+                line-height: 30px;
+            }
+
+            .type {
+                font-size: 14px;
+                line-height: 17px;
+                top: 30px;
+            }
+
+            .place {
+                margin-top: 24px;
+                padding-right: 22px;
+            }
+        }
+
+        &__title {
+            column-gap: 16px;
+
+            .title {
+                font-size: 29px;
+            }
+
+            .separation-line {
+                height: 34px;
+            }
+        }
+
+        &__swiper-container {
+            .educ-swiper-slides {
+                max-width: calc(100vw - 32px);
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .education {
+        padding: 35px 0px;
+
+        &__title {
+            margin-bottom: 15px;
+            .title {
+                font-size: 20px;
+            }
+
+            .separation-line {
+                height: 24px;
             }
         }
     }
