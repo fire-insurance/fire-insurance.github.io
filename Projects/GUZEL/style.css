@@ -1154,6 +1154,16 @@ h3 {
   }
 }
 
+@media screen and (min-width: 650px) {
+  .about #desktop-btn {
+    display: -ms-grid;
+    display: grid;
+  }
+  .about #mobile-btn {
+    display: none;
+  }
+}
+
 @media screen and (max-width: 650px) {
   .about {
     -webkit-box-orient: vertical;
@@ -1164,6 +1174,9 @@ h3 {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+  }
+  .about #desktop-btn {
+    display: none;
   }
   .about .decorative-circle {
     width: 248px;
@@ -1180,6 +1193,7 @@ h3 {
   }
   .about__info .founder-title {
     max-width: unset;
+    margin-bottom: 0px;
   }
   .about__problems {
     width: 100%;
@@ -1202,7 +1216,7 @@ h3 {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    row-gap: 40px;
+    row-gap: 30px;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
@@ -1783,6 +1797,9 @@ h3 {
   .services__swiper-arrows {
     display: none;
   }
+  .services__swiper-container {
+    margin-top: 30px;
+  }
   .services__slide .text-content .title {
     font-size: 16px;
     line-height: 20px;
@@ -2024,7 +2041,6 @@ h3 {
 
 @media screen and (max-width: 650px) {
   .treatment-results {
-    margin-top: 125px;
     padding: 123px 0px 0px 0px;
   }
   .treatment-results h1 {
@@ -2041,6 +2057,7 @@ h3 {
 @media screen and (max-width: 550px) {
   .treatment-results {
     padding-top: 150px;
+    margin-top: 75px;
   }
   .treatment-results__container {
     padding: 0px 100px 80px 100px;
@@ -2072,6 +2089,12 @@ h3 {
   .treatment-results .swiper-backface-hidden .swiper-slide-active img {
     height: 216px;
     width: 210px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .treatment-results__swiper-arrows {
+    display: none;
   }
 }
 /*# sourceMappingURL=style.css.map */
