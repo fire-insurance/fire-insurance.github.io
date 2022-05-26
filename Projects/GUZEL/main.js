@@ -99,6 +99,7 @@ $(document).ready(() => {
             },
             1100: {
                 slidesPerView: 1.4,
+                spaceBetween: 0,
             }
         }
 
