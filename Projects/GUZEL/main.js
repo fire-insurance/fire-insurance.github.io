@@ -17,17 +17,20 @@ $(document).ready(() => {
     burger.on('click', () => toggleBurger())
     darkenBackground.on('click', () => toggleBurger())
 
+
+
+
     // Слайдер с образованием и опытом работы
 
-    var swiper = new Swiper(".educ-swiper-slides", {
+    const educ_swiper = new Swiper(".educ-swiper-slides", {
         slidesPerView: 1.7,
         navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
+            nextEl: '.educ__swiper-button-next',
+            prevEl: '.educ__swiper-button-prev',
         },
 
         pagination: {
-            el: '.swiper-pagination',
+            el: '.educ-swiper-pagination',
             clickable: true,
         },
 
@@ -40,5 +43,36 @@ $(document).ready(() => {
             }
         }
     });
+
+
+
+    // Слайдер с приемами
+    const services_swiper = new Swiper(".services-swiper-slides", {
+        slidesPerView: 1,
+        spaceBetween: 100,
+
+        pagination: {
+            el: '.services__swiper-pagination',
+            clickable: true,
+        },
+
+        navigation: {
+            nextEl: '.services__swiper-button-next',
+            prevEl: '.services__swiper-button-prev',
+        },
+
+    });
+
+    const services_pagination_bullets = $('.services__swiper-pagination .swiper-pagination-bullet')
+    const services_slides_titles = $('.services__slide .text-content__title')
+    // Задаем имена кнопкам навигации
+    for (key in services_slides_titles) {
+
+        let paragraph = document.createElement('p')
+        paragraph.textContent = services_slides_titles[key].textContent
+        paragraph.setAttribute('class', 'bullet-name')
+        services_pagination_bullets[key]?.appendChild(paragraph)
+    }
+
 
 });

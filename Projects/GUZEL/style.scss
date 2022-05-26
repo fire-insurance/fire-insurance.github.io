@@ -137,6 +137,27 @@ button {
     }
 }
 
+//Замена стрелок слайдера
+
+// Замена стрелок и сброс стилей
+.swiper-button-next,
+.swiper-button-prev {
+    background-image: url(./assets/img/arrow_r.svg);
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: center;
+    position: unset;
+    width: 14px;
+
+    &::after {
+        display: none;
+    }
+}
+
+.swiper-button-prev {
+    transform: rotate(180deg);
+}
+
 /* Основной стиль кнопки в проекте */
 
 .project-button {
@@ -555,6 +576,14 @@ h3 {
     }
 }
 
+.blurred-circle {
+    position: absolute;
+    background-color: #eff6f8;
+    z-index: -1;
+    border-radius: 100%;
+    filter: blur(30px);
+}
+
 /* ГЛАВНАЯ СТРАНИЦА */
 
 // Первый блок: портрет, контакты, встречающий текст
@@ -573,15 +602,10 @@ h3 {
     }
 
     &__blurred-circle {
-        position: absolute;
         width: 619px;
         height: 619px;
-        background-color: #eff6f8;
         top: 146px;
         left: -279px;
-        z-index: -1;
-        border-radius: 100%;
-        filter: blur(30px);
     }
 
     &__greeting-text {
@@ -872,6 +896,7 @@ h3 {
 
 .about {
     display: flex;
+    width: 100%;
     justify-content: space-between;
     position: relative;
     column-gap: 30px;
@@ -1185,25 +1210,6 @@ h3 {
             overflow: hidden;
         }
 
-        // Замена стрелок и сброс стилей
-        .swiper-button-next,
-        .swiper-button-prev {
-            background-image: url(./assets/img/arrow_r.svg);
-            background-repeat: no-repeat;
-            background-size: 100% auto;
-            background-position: center;
-            position: unset;
-            width: 14px;
-
-            &::after {
-                display: none;
-            }
-        }
-
-        .swiper-button-prev {
-            transform: rotate(180deg);
-        }
-
         .swiper-arrows {
             display: flex;
             flex-direction: column;
@@ -1331,6 +1337,341 @@ h3 {
 
             .separation-line {
                 height: 24px;
+            }
+        }
+    }
+}
+
+// Приемы
+
+.services {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+
+    &__blurred-circle {
+        width: 771px;
+        height: 771px;
+        right: 50px;
+        bottom: 0px;
+    }
+
+    &__swiper-container {
+        display: flex;
+        width: 100%;
+        column-gap: 50px;
+        justify-content: space-between;
+        padding-top: 66px;
+        width: 100%;
+    }
+
+    .services-swiper-slides {
+        max-width: 834px;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    &__swiper-pagination {
+        max-height: 455px;
+    }
+
+    &__swiper-arrows {
+        display: none;
+    }
+
+    &__slide {
+        display: flex;
+        column-gap: 30px;
+        width: 100%;
+        justify-content: space-between;
+        height: fit-content;
+
+        .text-content {
+            display: flex;
+            flex-direction: column;
+            row-gap: 30px;
+            max-width: 295px;
+
+            &__title {
+                font-weight: 700;
+                font-size: 18px;
+                line-height: 22px;
+            }
+
+            &__line {
+                background-color: #000;
+                height: 1px;
+                width: 119px;
+            }
+
+            &__price-block {
+                display: flex;
+                flex-direction: column;
+                row-gap: 50px;
+
+                .price {
+                    font-family: "Oswald", sans-serif;
+                    font-weight: 700;
+                    font-size: 50px;
+                    line-height: 64px;
+                    letter-spacing: -0.04em;
+                    text-transform: uppercase;
+
+                    &::after {
+                        content: "  ₽";
+                    }
+                }
+            }
+        }
+
+        .slide-image-container {
+            width: 450px;
+            height: 450px;
+            min-height: 450px;
+            min-width: 450px;
+
+            border-radius: 20px;
+            overflow: hidden;
+            display: grid;
+            place-items: center;
+
+            .slide-image {
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .services {
+
+        &__blurred-circle {
+            width: 500px;
+            height: 500px;
+        }
+
+        &__slide {
+            .text-content {
+                row-gap: 20px;
+
+                &__price-block {
+                    row-gap: 20px;
+
+                    .price {
+                        font-size: 40px;
+                    }
+                }
+            }
+
+            .slide-image-container {
+                width: 355px;
+                height: 355px;
+                min-width: unset;
+                min-height: unset;
+            }
+        }
+
+        &__swiper-pagination {
+            max-height: 355px;
+        }
+    }
+}
+
+// При ширине экрана > 1000 px показывать скролл с пагинацией
+@media screen and (min-width: 1000px) {
+    .bullet-name {
+        display: block;
+    }
+
+    .services__swiper-pagination {
+        position: unset;
+        max-width: 305px;
+        display: flex;
+        flex-direction: column;
+        row-gap: 25px;
+        overflow-y: auto;
+        direction: ltr;
+        scrollbar-color: #d4aa70 #e4e4e4;
+        scrollbar-width: thin;
+        padding-right: 30px;
+        min-width: 210px;
+        flex-shrink: 3;
+
+        &::-webkit-scrollbar {
+            width: 9px;
+
+            &-track {
+                background: rgb(0, 0, 0);
+                border: 4px solid transparent;
+                background-clip: content-box;
+            }
+
+            &-thumb {
+                background: rgb(25, 25, 25);
+                border: 1px solid rgb(0, 0, 0);
+                border-radius: 20px;
+            }
+        }
+
+        .swiper-pagination-bullet {
+            background: none;
+            height: fit-content;
+            width: fit-content;
+            text-align: left;
+            font-size: 16px;
+            line-height: 20px;
+            color: black;
+            margin: 0 0 !important;
+            opacity: 1;
+
+            &-active {
+                color: rgba(0, 0, 0, 0.3);
+            }
+        }
+    }
+}
+
+// При ширине экрана > 1000 px показывать один слайд и стандартные буллеты
+@media screen and (max-width: 1000px) {
+    .bullet-name {
+        display: none;
+    }
+
+    .services {
+        &__swiper-container {
+            flex-direction: column;
+            row-gap: 50px;
+            align-items: center;
+            position: relative;
+        }
+
+        .services-swiper-slides {
+            padding: 0px 50px;
+        }
+
+        &__swiper-pagination {
+            bottom: -80px !important;
+        }
+
+        &__swiper-arrows {
+            display: flex;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .services {
+        &__blurred-circle {
+            display: none;
+        }
+
+        &__swiper-container {
+            max-width: 616px;
+        }
+
+        &__slide {
+            flex-direction: column-reverse;
+
+            .text-content {
+                display: flex;
+                flex-direction: column;
+                row-gap: 30px;
+                width: 100%;
+                max-width: unset;
+                margin-top: 34px;
+
+                &__line {
+                    width: 100%;
+                }
+
+                &__price-block {
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: space-between;
+                }
+            }
+
+            .slide-image-container {
+                width: 100%;
+                max-height: 200px;
+                border-radius: 16px;
+                position: relative;
+
+                .slide-image {
+                    height: auto;
+                    position: absolute;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .services {
+        &__swiper-pagination {
+            bottom: -40px !important;
+        }
+
+        &__swiper-arrows {
+            display: none;
+        }
+
+        &__slide {
+            .text-content {
+                .title {
+                    font-size: 16px;
+                    line-height: 20px;
+                }
+
+                &__price-block {
+                    .price {
+                        font-size: 32px;
+                        line-height: 64px;
+                    }
+                }
+            }
+        }
+
+        .services-swiper-slides {
+            padding: 0px;
+        }
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .services {
+        &__slide {
+            .text-content {
+                row-gap: 24px;
+                &__line {
+                    max-width: 226px;
+                }
+
+                &__price-block {
+                    flex-direction: column;
+                    row-gap: 10px;
+                    margin-top: -16px;
+                    .price {
+                        align-self: baseline;
+                    }
+
+                    .project-button {
+                        width: 100%;
+                    }
+                }
+            }
+
+            .slide-image-container {
+                max-height: calc((100vw - 32px) * 0.42);
+                border-radius: 14px;
             }
         }
     }
