@@ -71,8 +71,38 @@ $(document).ready(() => {
         let paragraph = document.createElement('p')
         paragraph.textContent = services_slides_titles[key].textContent
         paragraph.setAttribute('class', 'bullet-name')
-        services_pagination_bullets[key]?.appendChild(paragraph)
+        if (services_pagination_bullets[key] instanceof Element)
+            services_pagination_bullets[key]?.appendChild(paragraph)
     }
+
+
+    // Слайдер с результатами лечения
+    const treatment_results_swiper = new Swiper(".treatment-results-swiper-slides", {
+        slidesPerView: 1,
+        loop: true,
+        spaceBetween: 100,
+
+        navigation: {
+            nextEl: '.treatment-results__swiper-button-next',
+            prevEl: '.treatment-results__swiper-button-prev',
+        },
+
+        pagination: {
+            el: '.treatment-results__swiper-pagination',
+            clickable: true,
+        },
+
+        breakpoints: {
+            1000: {
+                slidesPerView: 1.5,
+                spaceBetween: 0,
+            },
+            1100: {
+                slidesPerView: 1.4,
+            }
+        }
+
+    });
 
 
 });
