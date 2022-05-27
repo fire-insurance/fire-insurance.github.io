@@ -39,6 +39,7 @@ body {
   width: 1px;
   height: 1px;
   margin: -1px;
+  margin-top: 0px !important;
   border: 0;
   padding: 0;
   white-space: nowrap;
@@ -1263,6 +1264,10 @@ h3 {
           align-items: center;
 }
 
+.education__sliders {
+  width: 100%;
+}
+
 .education img {
   max-width: 300px;
 }
@@ -1286,14 +1291,22 @@ h3 {
   line-height: 64px;
   letter-spacing: -0.04em;
   text-transform: uppercase;
+  color: #f2f2f2;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
 }
 
-.education__title .title-violet {
+.education__title .title:hover {
   color: #8a7b9f;
 }
 
-.education__title .title-gray {
-  color: #f2f2f2;
+.education__title .title-active {
+  color: #8a7b9f;
 }
 
 .education__title .separation-line {
@@ -1306,11 +1319,11 @@ h3 {
   display: none;
 }
 
-.education__slide {
+.education .swiper-slide {
   position: relative;
 }
 
-.education__slide .year {
+.education .swiper-slide .year {
   font-family: "Oswald";
   font-weight: 600;
   font-size: 28px;
@@ -1318,11 +1331,11 @@ h3 {
   margin-bottom: 85px;
 }
 
-.education__slide .year::after {
+.education .swiper-slide .year::after {
   content: " г.";
 }
 
-.education__slide .type {
+.education .swiper-slide .type {
   font-weight: 700;
   font-size: 16px;
   line-height: 20px;
@@ -1331,7 +1344,7 @@ h3 {
   top: 50px;
 }
 
-.education__slide .slide-line {
+.education .swiper-slide .slide-line {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1340,26 +1353,27 @@ h3 {
           align-items: center;
 }
 
-.education__slide .slide-line .circle {
+.education .swiper-slide .slide-line .circle {
   background-color: black;
   width: 11px;
   height: 11px;
   border-radius: 11px;
 }
 
-.education__slide .slide-line .line {
+.education .swiper-slide .slide-line .line {
   background-color: black;
   width: 100%;
   height: 1px;
 }
 
-.education__slide .place {
+.education .swiper-slide .place {
   font-weight: 400;
   margin-top: 37px;
   padding-right: 30px;
 }
 
-.education__swiper-container {
+.education__swiper-container,
+.education .exp__swiper-container {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1369,14 +1383,18 @@ h3 {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-transition: all 1s;
+  transition: all 1s;
 }
 
-.education__swiper-container .educ-swiper-slides {
+.education__swiper-container .swiper-slides,
+.education .exp__swiper-container .swiper-slides {
   max-width: 936px;
   overflow: hidden;
 }
 
-.education__swiper-container .swiper-arrows {
+.education__swiper-container .swiper-arrows,
+.education .exp__swiper-container .swiper-arrows {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1434,11 +1452,13 @@ h3 {
   .education__title .separation-line {
     height: 46px;
   }
-  .education__swiper-container .educ-swiper-slides {
+  .education__swiper-container .swiper-slides,
+  .education .exp__swiper-container .swiper-slides {
     max-width: calc(100vw - 68px);
     overflow: visible;
   }
-  .education__swiper-container .swiper-arrows {
+  .education__swiper-container .swiper-arrows,
+  .education .exp__swiper-container .swiper-arrows {
     display: none;
   }
 }
@@ -1447,17 +1467,17 @@ h3 {
   .education {
     padding: 47px 0px;
   }
-  .education__slide .year {
+  .education .swiper-slide .year {
     margin-bottom: 57px;
     font-size: 20px;
     line-height: 30px;
   }
-  .education__slide .type {
+  .education .swiper-slide .type {
     font-size: 14px;
     line-height: 17px;
     top: 30px;
   }
-  .education__slide .place {
+  .education .swiper-slide .place {
     margin-top: 24px;
     padding-right: 22px;
   }
@@ -1471,7 +1491,8 @@ h3 {
   .education__title .separation-line {
     height: 34px;
   }
-  .education__swiper-container .educ-swiper-slides {
+  .education__swiper-container .swiper-slides,
+  .education .exp__swiper-container .swiper-slides {
     max-width: calc(100vw - 32px);
   }
 }

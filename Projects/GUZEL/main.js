@@ -19,6 +19,26 @@ $(document).ready(() => {
 
 
 
+    // Обработка нажатия на табы Образование / Опыт работы
+
+    const educ_tab = $('.education__title .title:first-child');
+    const exp_tab = $('.education__title .title:last-child');
+
+    educ_tab.on('click', () => switchTabs(educ_tab))
+    exp_tab.on('click', () => switchTabs(exp_tab))
+
+    const switchTabs = (tab_title) => {
+        if(tab_title.attr('class') !== 'title title-active'){
+            educ_tab.toggleClass('title-active')
+            exp_tab.toggleClass('title-active')
+
+            $('.exp__swiper-container').toggleClass('visually-hidden')
+            $('.education__swiper-container').toggleClass('visually-hidden')
+            $('.educ-swiper-pagination').toggleClass('visually-hidden')
+            $('.exp-swiper-pagination').toggleClass('visually-hidden')
+            
+        }
+    }
 
     // Слайдер с образованием и опытом работы
 
@@ -44,6 +64,27 @@ $(document).ready(() => {
         }
     });
 
+    const exp_swiper = new Swiper(".exp-swiper-slides", {
+        slidesPerView: 1.7,
+        navigation: {
+            nextEl: '.exp__swiper-button-next',
+            prevEl: '.exp__swiper-button-prev',
+        },
+
+        pagination: {
+            el: '.exp-swiper-pagination',
+            clickable: true,
+        },
+
+        breakpoints: {
+            460: {
+                slidesPerView: 2.5
+            },
+            768: {
+                slidesPerView: 3
+            }
+        }
+    });
 
 
     // Слайдер с приемами

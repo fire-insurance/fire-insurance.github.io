@@ -46,6 +46,7 @@ body {
     width: 1px;
     height: 1px;
     margin: -1px;
+    margin-top: 0px !important;
     border: 0;
     padding: 0;
     white-space: nowrap;
@@ -1197,6 +1198,10 @@ h3 {
 .education {
     position: relative;
 
+    &__sliders {
+        width: 100%;
+    }
+
     img {
         max-width: 300px;
     }
@@ -1219,13 +1224,18 @@ h3 {
             line-height: 64px;
             letter-spacing: -0.04em;
             text-transform: uppercase;
+            color: $light-gray;
 
-            &-violet {
+            cursor: pointer;
+            user-select: none;
+            transition: 0.25s;
+
+            &:hover {
                 color: $dark-violet;
             }
 
-            &-gray {
-                color: $light-gray;
+            &-active {
+                color: $dark-violet;
             }
         }
 
@@ -1241,7 +1251,7 @@ h3 {
     }
 
     // Слайд с этапом образования
-    &__slide {
+    .swiper-slide {
         position: relative;
 
         .year {
@@ -1291,13 +1301,15 @@ h3 {
     }
 
     // Контейнер слайдера и стрелок
-    &__swiper-container {
+    &__swiper-container,
+    .exp__swiper-container {
         width: 100%;
         display: flex;
         column-gap: 60px;
         justify-content: center;
+        transition: all 1s;
 
-        .educ-swiper-slides {
+        .swiper-slides {
             max-width: 936px;
             overflow: hidden;
         }
@@ -1361,8 +1373,9 @@ h3 {
             }
         }
 
-        &__swiper-container {
-            .educ-swiper-slides {
+        &__swiper-container,
+        .exp__swiper-container {
+            .swiper-slides {
                 max-width: calc(100vw - 68px);
                 overflow: visible;
             }
@@ -1378,7 +1391,7 @@ h3 {
     .education {
         padding: 47px 0px;
 
-        &__slide {
+        .swiper-slide {
             .year {
                 margin-bottom: 57px;
                 font-size: 20px;
@@ -1409,8 +1422,9 @@ h3 {
             }
         }
 
-        &__swiper-container {
-            .educ-swiper-slides {
+        &__swiper-container,
+        .exp__swiper-container {
+            .swiper-slides {
                 max-width: calc(100vw - 32px);
             }
         }
