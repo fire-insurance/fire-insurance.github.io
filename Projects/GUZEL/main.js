@@ -28,7 +28,7 @@ $(document).ready(() => {
     exp_tab.on('click', () => switchTabs(exp_tab))
 
     const switchTabs = (tab_title) => {
-        if(tab_title.attr('class') !== 'title title-active'){
+        if (tab_title.attr('class') !== 'title title-active') {
             educ_tab.toggleClass('title-active')
             exp_tab.toggleClass('title-active')
 
@@ -36,7 +36,7 @@ $(document).ready(() => {
             $('.education__swiper-container').toggleClass('visually-hidden')
             $('.educ-swiper-pagination').toggleClass('visually-hidden')
             $('.exp-swiper-pagination').toggleClass('visually-hidden')
-            
+
         }
     }
 
@@ -145,6 +145,111 @@ $(document).ready(() => {
         }
 
     });
+
+
+
+
+    /* Страница "Статьи" */
+
+    const mediaQueryMobile = window.matchMedia('(max-width: 700px)')
+
+    const articles_list = $('.article-selector__article-scrollbar')
+    const articles_group = document.querySelectorAll('.article-group')
+    const articles_scrollbar_lists = document.querySelectorAll('.article-scrollbar-single')
+    const article_selector_block = $('.article-selector')
+    const mobile_scrollbar = $('#mobile-scrollbar')
+
+    let currentRow = 2;
+    let selectedArticleGroup = articles_group[0]
+    let selectedArticleGroupScrollbar = articles_scrollbar_lists[0]
+    let currentGroup = 'diet'
+
+    // При ширине экрана <= 700px переключить режим отображения
+    // списка статей
+
+    const append_mobile_scrollbar = (event) => {
+        if (event.matches) {
+            mobile_scrollbar[0].appendChild(articles_list[0])
+        }
+        else article_selector_block[0].appendChild(articles_list[0])
+
+    }
+
+    mediaQueryMobile.addListener(append_mobile_scrollbar)
+    append_mobile_scrollbar(mediaQueryMobile)
+
+    articles_group.forEach(group => {
+        group.addEventListener('click', (event) => handleArticleGroupClick(event))
+    })
+
+    const handleArticleGroupClick = (event) => {
+        if (event.currentTarget.className !== 'article-group article-group_active') {
+            selectedArticleGroup.classList.remove('article-group_active')
+            selectedArticleGroup = event.currentTarget
+            selectedArticleGroup.classList.add('article-group_active')
+
+            currentRow = selectedArticleGroup.getAttribute('data-row')
+            currentGroup = selectedArticleGroup.getAttribute('data-group')
+            mobile_scrollbar[0].setAttribute('style', `--row:${currentRow}`)
+
+            selectedArticleGroupScrollbar.classList.add('visually-hidden')
+
+            selectedArticleGroupScrollbar
+            articles_scrollbar_lists.forEach(scrollbar => {
+                if (scrollbar.getAttribute('data-group') === currentGroup) {
+                    selectedArticleGroupScrollbar = scrollbar
+
+                }
+            })
+
+            selectedArticleGroupScrollbar.classList.remove('visually-hidden')
+        }
+    }
+
+
+
+    // Укорачиваем длину превью-текста карточек статей
+
+    const articles_preview_text = $('.article__preview-text')
+    const articleMediaQueryTablet = window.matchMedia('(max-width: 1000px)')
+    const articleMediaQueryMobile = window.matchMedia('(max-width: 600px)')
+
+    const lettersToKeep = [40, 58, 107]
+
+    const initialArticlesText = []
+    for (const article_text of articles_preview_text) {
+        let text = article_text.textContent
+            .replace(/[\n\r]+|[\s]{2,}/g, ' ')
+            .trim();
+
+        initialArticlesText.push(text)
+    }
+
+    const trimPreviewText = (event) => {
+
+        let lettersToKeepIndex = event.media === '(max-width: 1000px)' ? 1 : 0
+        let ltk
+
+        if (event.matches) ltk = lettersToKeep[lettersToKeepIndex]
+        else ltk = lettersToKeep[lettersToKeepIndex + 1]
+
+        console.log(ltk)
+
+        let i = 0;
+        for (const article_text of articles_preview_text) {
+
+            text = initialArticlesText[i].slice(0, ltk)
+            article_text.textContent = text + '...'
+            i++
+        }
+
+    }
+
+    articleMediaQueryTablet.addListener(trimPreviewText)
+    trimPreviewText(articleMediaQueryTablet)
+    articleMediaQueryMobile.addListener(trimPreviewText)
+    trimPreviewText(articleMediaQueryMobile)
+
 
 
 });

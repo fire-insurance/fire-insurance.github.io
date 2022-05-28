@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css" type="text/css"
+        media="screen" />
+    <title>Гузель Евстигнеева</title>
+</head>
+
+<body>
+    <div class="container">
+
+        <!-- Затемнение экрана мод модальной навигацией -->
+        <div class="darkening"></div>
+
+        <!-- Хедер -->
+        <header class="header">
+            <a href="index.html">
+                <img class="logo" src="assets/img/logo.svg" alt="logo">
+            </a>
+            <!-- Навигационные ссылки -->
+            <nav class="navigation">
+                <div class="navigation__link ">
+                    <a href="index.html" data-title="Главная">Главная</a>
+                    <div class="underline"></div>
+                </div>
+                <div class="navigation__link navigation__link_active">
+                    <a href="articles.html" data-title="Статьи">Статьи</a>
+                    <div class="underline"></div>
+                </div>
+                <div class="navigation__link">
+                    <a href="#" data-title="Видео">Видео</a>
+                    <div class="underline"></div>
+                </div>
+            </nav>
+
+            <div class="burger">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+
+            <!-- Навигационное меню для мобильных устройств -->
+            <div class="modal-menu">
+
+                <div class="modal-menu__container">
+                    <nav class="modal-menu__navigation">
+                        <div class="navigation__link ">
+                            <a href="index.html" data-title="Главная">Главная</a>
+                        </div>
+                        <div class="navigation__link navigation__link_active">
+                            <a href="articles.html" data-title="Статьи">Статьи</a>
+                        </div>
+                        <div class="navigation__link">
+                            <a href="#" data-title="Видео">Видео</a>
+                        </div>
+                    </nav>
+                    <div class="modal-menu__social-networks">
+                        <div class="small-icons">
+                            <a href="#">
+                                <img class="social-network-icon" src="assets/img/telegram.svg" alt="telegram logo">
+                            </a>
+                            <a href="#">
+                                <img class="social-network-icon" src="assets/img/vk.svg" alt="vk logo">
+                            </a>
+                            <img class="social-network-icon" src="assets/img/whatsapp.svg" alt="whatsapp logo">
+                            </a>
+
+                        </div>
+                        <a href="#">
+                            <img class="social-network-icon" id="instagram-logo" src="assets/img/Instagram.svg"
+                                alt="Instagram logo">
+                        </a>
+                    </div>
+                    <button class="project-button project-button_color_dark-violet ">Записаться на
+                        прием</button>
+                </div>
+            </div>
+            <div class="mobile-background"></div>
+
+        </header>
+
+        <main>
+            <!-- Выбор раздела статей -->
+            <section class="article-selector">
+                <div class="article-selector__search-block">
+                    <h1>Статьи</h1>
+                    <div class="search-container">
+                        <div class="search-field">
+                            <button type="submit"><img src="assets/img/looking-glass.svg" alt="Search"></button>
+                            <input type="search" name="search-article" class="search-input"
+                                placeholder="Поиск по статье">
+                        </div>
+                        <button class="project-button project-button_color_gray-violet">Найти</button>
+                    </div>
+                </div>
+
+                <div class="article-selector__article-groups">
+                    <div class="article-group article-group_active" data-row="2" data-group="diet">
+                        <span class="article-group__size">5</span>
+                        <img src="assets/img/articles__article-groups/diet.svg" alt="" class="article-group__image">
+                        <span class="article-group__name">Диетология</span>
+                    </div>
+
+                    <div class="article-group" data-row="2" data-group="osteopathy">
+                        <span class="article-group__size">12</span>
+                        <img src="assets/img/articles__article-groups/osteopathy.svg" alt=""
+                            class="article-group__image">
+                        <span class="article-group__name">Остеопатия</span>
+                    </div>
+
+                    <div id="mobile-scrollbar" style="--row:2"></div>
+
+                    <div class="article-group" data-row="3" data-group="gastroenterology">
+                        <span class="article-group__size">28</span>
+                        <img src="assets/img/articles__article-groups/gastroenterology.svg" alt=""
+                            class="article-group__image">
+                        <span class="article-group__name">Гастроэнтеро&shy;логия</span>
+                    </div>
+
+                    <div class="article-group" data-row="3" data-group="diet">
+                        <span class="article-group__size">5</span>
+                        <img src="assets/img/articles__article-groups/diet.svg" alt="" class="article-group__image">
+                        <span class="article-group__name">Диетология</span>
+                    </div>
+
+
+                    <div class="article-group" data-row="4" data-group="diet">
+                        <span class="article-group__size">5</span>
+                        <img src="assets/img/articles__article-groups/diet.svg" alt="" class="article-group__image">
+                        <span class="article-group__name">Диетология</span>
+                    </div>
+
+                    <div class="article-group" data-row="4" data-group="gastroenterology">
+                        <span class="article-group__size">28</span>
+                        <img src="assets/img/articles__article-groups/gastroenterology.svg" alt=""
+                            class="article-group__image">
+                        <span class="article-group__name">Гастроэнтеро&shy;логия</span>
+                    </div>
+
+                    <div class="article-group" data-row="5" data-group="diet">
+                        <span class="article-group__size">5</span>
+                        <img src="assets/img/articles__article-groups/diet.svg" alt="" class="article-group__image">
+                        <span class="article-group__name">Диетология</span>
+                    </div>
+
+                    <div class="article-group" data-row="5" data-group="osteopathy">
+                        <span class="article-group__size">12</span>
+                        <img src="assets/img/articles__article-groups/osteopathy.svg" alt=""
+                            class="article-group__image">
+                        <span class="article-group__name">Остеопатия</span>
+                    </div>
+
+                    <div class="article-group" data-row="6" data-group="osteopathy">
+                        <span class="article-group__size">12</span>
+                        <img src="assets/img/articles__article-groups/osteopathy.svg" alt=""
+                            class="article-group__image">
+                        <span class="article-group__name">Остеопатия</span>
+                    </div>
+
+
+                    <div class="article-group" data-row="6" data-group="diet">
+                        <span class="article-group__size">5</span>
+                        <img src="assets/img/articles__article-groups/diet.svg" alt="" class="article-group__image">
+                        <span class="article-group__name">Диетология</span>
+                    </div>
+
+                    <div class="article-group" data-row="7" data-group="gastroenterology">
+                        <span class="article-group__size">28</span>
+                        <img src="assets/img/articles__article-groups/gastroenterology.svg" alt=""
+                            class="article-group__image">
+                        <span class="article-group__name" lang="ru">Гастроэнтеро&shy;логия</span>
+                    </div>
+                </div>
+
+                <div class="article-selector__article-scrollbar">
+
+                    <div class="article-scrollbar-single" data-group="diet">
+                        <div class="title">
+                            <img class="title__image" src="assets/img/articles__article-groups/diet.svg" alt="">
+                            <span class="title__text">Диетология</span>
+                        </div>
+
+                        <div class="links">
+                            <a href="#" class="article-link">Фрукты, повышающие давление</a>
+                            <a href="#" class="article-link">Творог на ночь польза или вред</a>
+                            <a href="#" class="article-link">Польза и вред хлебцев</a>
+                            <a href="#" class="article-link">Качество диетологической помощи</a>
+                            <a href="#" class="article-link">Стандарты диетотерапии при заболеваниях кожи</a>
+                            <a href="#" class="article-link">Фрукты, повышающие давление</a>
+                            <a href="#" class="article-link">Творог на ночь польза или вред</a>
+                            <a href="#" class="article-link">Польза и вред хлебцев</a>
+                            <a href="#" class="article-link">Качество диетологической помощи</a>
+                            <a href="#" class="article-link">Фрукты, повышающие давление</a>
+                            <a href="#" class="article-link">Творог на ночь польза или вред</a>
+                            <a href="#" class="article-link">Польза и вред хлебцев</a>
+                            <a href="#" class="article-link">Качество диетологической помощи</a>
+                            <a href="#" class="article-link">Стандарты диетотерапии при заболеваниях кожи</a>
+                        </div>
+                    </div>
+
+                    <div class="article-scrollbar-single visually-hidden" data-group="osteopathy">
+                        <div class="title">
+                            <img class="title__image" src="assets/img/articles__article-groups/osteopathy.svg" alt="">
+                            <span class="title__text">Остеопатия</span>
+                        </div>
+
+                        <div class="links">
+                            <a href="#" class="article-link">Фрукты, повышающие давление</a>
+                            <a href="#" class="article-link">Творог на ночь польза или вред</a>
+                            <a href="#" class="article-link">Польза и вред хлебцев</a>
+                            <a href="#" class="article-link">Качество диетологической помощи</a>
+                            <a href="#" class="article-link">Стандарты диетотерапии при заболеваниях кожи</a>
+                            <a href="#" class="article-link">Фрукты, повышающие давление</a>
+                            <a href="#" class="article-link">Польза и вред хлебцев</a>
+                            <a href="#" class="article-link">Качество диетологической помощи</a>
+                            <a href="#" class="article-link">Стандарты диетотерапии при заболеваниях кожи</a>
+                        </div>
+                    </div>
+
+                    <div class="article-scrollbar-single visually-hidden" data-group="gastroenterology">
+                        <div class="title">
+                            <img class="title__image" src="assets/img/articles__article-groups/gastroenterology.svg"
+                                alt="">
+                            <span class="title__text">Гастроэнтерология</span>
+                        </div>
+
+                        <div class="links">
+                            <a href="#" class="article-link">Фрукты, повышающие давление</a>
+                            <a href="#" class="article-link">Творог на ночь польза или вред</a>
+                            <a href="#" class="article-link">Польза и вред хлебцев</a>
+                            <a href="#" class="article-link">Качество диетологической помощи</a>
+                            <a href="#" class="article-link">Стандарты диетотерапии при заболеваниях кожи</a>
+                            <a href="#" class="article-link">Фрукты, повышающие давление</a>
+                            <a href="#" class="article-link">Творог на ночь польза или вред</a>
+                            <a href="#" class="article-link">Польза и вред хлебцев</a>
+                            <a href="#" class="article-link">Качество диетологической помощи</a>
+                            <a href="#" class="article-link">Фрукты, повышающие давление</a>
+                            <a href="#" class="article-link">Творог на ночь польза или вред</a>
+                            <a href="#" class="article-link">Польза и вред хлебцев</a>
+                            <a href="#" class="article-link">Качество диетологической помощи</a>
+                            <a href="#" class="article-link">Стандарты диетотерапии при заболеваниях кожи</a>
+                            <a href="#" class="article-link">Стандарты диетотерапии при заболеваниях кожи</a>
+                            <a href="#" class="article-link">Стандарты диетотерапии при заболеваниях кожи</a>
+                            <a href="#" class="article-link">Стандарты диетотерапии при заболеваниях кожи</a>
+                            <a href="#" class="article-link">Стандарты диетотерапии при заболеваниях кожи</a>
+                            <a href="#" class="article-link">Стандарты диетотерапии при заболеваниях кожи</a>
+                            <a href="#" class="article-link">Стандарты диетотерапии при заболеваниях кожи</a>
+                            <a href="#" class="article-link">Стандарты диетотерапии при заболеваниях кожи</a>
+                            <a href="#" class="article-link">Стандарты диетотерапии при заболеваниях кожи</a>
+                            <a href="#" class="article-link">Стандарты диетотерапии при заболеваниях кожи</a>
+                        </div>
+                    </div>
+
+                    <div class="background"></div>
+                </div>
+            </section>
+
+            <!-- Статьи по теме -->
+            <section class="articles-on-theme article-grid-section">
+                <h2>Статьи по теме</h2>
+
+                <div class="articles-on-theme__grid article-grid-section__grid">
+
+                    <a href="#" class="article article-grid-section__item">
+                        <div class="article__image-container">
+                            <div class="hover-effect">
+                                <img src="assets/img/articles__arrow.svg" alt="">
+                            </div>
+                            <img class="article__image"
+                                src="assets/img/articles__article-preview/Cбалансированная диета.png"
+                                alt="Превью статьи">
+                        </div>
+
+                        <p class="article__title project-paragraph">
+                            Сбалансирован&shy;ная диета и что это такое?
+                        </p>
+                        <p class="article__preview-text project-paragraph">
+                            Сбалансирован&shy;ная диета способствует
+                            укреплению иммунитета, повышает сопротивляемость организма, что особен Lorem ipsum dolor sit
+                            amet consectetur adipisicing elit.
+                        </p>
+                    </a>
+
+                    <a href="#" class="article article-grid-section__item">
+                        <div class="article__image-container">
+                            <div class="hover-effect">
+                                <img src="assets/img/articles__arrow.svg" alt="">
+                            </div>
+                            <img class="article__image"
+                                src="assets/img/articles__article-preview/Неоспоримые правила.png" alt="Превью статьи">
+                        </div>
+
+                        <p class="article__title project-paragraph">
+                            Неоспоримые правила здоровья
+                        </p>
+                        <p class="article__preview-text project-paragraph">
+                            Разумеется, правильно подобранная система питания позволит не только сохранить массу тела,
+                            но и избежать Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        </p>
+                    </a>
+
+                    <a href="#" class="article article-grid-section__item">
+                        <div class="article__image-container">
+                            <div class="hover-effect">
+                                <img src="assets/img/articles__arrow.svg" alt="">
+                            </div>
+                            <img class="article__image"
+                                src="assets/img/articles__article-preview/Профессиональная диетология.png"
+                                alt="Превью статьи">
+                        </div>
+
+                        <p class="article__title project-paragraph">
+                            Профилактическая диетология
+                        </p>
+                        <p class="article__preview-text project-paragraph">
+                            Если говорить о профилактической диетологии, то она определяет следующие основные правила,
+                            или принципы, питан Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        </p>
+                    </a>
+                </div>
+
+            </section>
+
+            <!-- Видео -->
+            <section class="videos-on-theme article-grid-section">
+                <h2>Видео по теме</h2>
+                <div class="videos-on-theme__grid article-grid-section__grid">
+                    <div class="video-preview article-grid-section__item">
+                        <a href="https://rutube.ru/play/embed/68f0ae8364124de136d0dcb3f1fc50c9" data-fancybox
+                            data-width="735" data-height="422" data-type="iframe">
+                            <div class="thumbnail-container">
+                                <div class="play-button">
+                                    <img src="assets/img/play-button.svg" alt="">
+                                </div>
+                                <img class="thumbnail" alt=""
+                                    src="assets/img/articles__video-previews/Rectangle 30.png" />
+                            </div>
+                        </a>
+                        <p class="project-paragraph video-title">О проблемах со здоровьем у женщин и детей, которые
+                            помогает решить остеопатия</p>
+                    </div>
+
+                    <div class="video-preview article-grid-section__item">
+                        <a href="https://rutube.ru/play/embed/68f0ae8364124de136d0dcb3f1fc50c9" data-fancybox
+                            data-width="735" data-height="422" data-type="iframe">
+                            <div class="thumbnail-container">
+                                <div class="play-button">
+                                    <img src="assets/img/play-button.svg" alt="">
+                                </div>
+                                <img class="thumbnail" alt=""
+                                    src="assets/img/articles__video-previews/Rectangle 31.png" />
+                            </div>
+                        </a>
+                        <p class="project-paragraph video-title">Курс эстетической остеопатии направлен на решение косметологиче&shy;ских проблем</p>
+                    </div>
+
+                    <div class="video-preview article-grid-section__item">
+                        <a href="https://rutube.ru/play/embed/68f0ae8364124de136d0dcb3f1fc50c9" data-fancybox
+                            data-width="735" data-height="422" data-type="iframe">
+                            <div class="thumbnail-container">
+                                <div class="play-button">
+                                    <img src="assets/img/play-button.svg" alt="">
+                                </div>
+                                <img class="thumbnail" alt=""
+                                    src="assets/img/articles__video-previews/Rectangle 32.png" />
+                            </div>
+                        </a>
+                        <p class="project-paragraph video-title">Курс эстетической остеопатии направлен на решение косметологиче&shy;ских проблем</p>
+                    </div>
+
+                    <div class="video-preview article-grid-section__item">
+                        <a href="https://rutube.ru/play/embed/68f0ae8364124de136d0dcb3f1fc50c9" data-fancybox
+                            data-width="735" data-height="422" data-type="iframe">
+                            <div class="thumbnail-container">
+                                <div class="play-button">
+                                    <img src="assets/img/play-button.svg" alt="">
+                                </div>
+                                <img class="thumbnail" alt=""
+                                    src="assets/img/articles__video-previews/Rectangle 32.png" />
+                            </div>
+                        </a>
+                        <p class="project-paragraph video-title">Курс эстетической остеопатии направлен на решение косметологиче&shy;ских проблем</p>
+                    </div>
+
+                    <div class="video-preview article-grid-section__item">
+                        <a href="https://rutube.ru/play/embed/68f0ae8364124de136d0dcb3f1fc50c9" data-fancybox
+                            data-width="735" data-height="422" data-type="iframe">
+                            <div class="thumbnail-container">
+                                <div class="play-button">
+                                    <img src="assets/img/play-button.svg" alt="">
+                                </div>
+                                <img class="thumbnail" alt=""
+                                    src="assets/img/articles__video-previews/Rectangle 30.png" />
+                            </div>
+                        </a>
+                        <p class="project-paragraph video-title">О проблемах со здоровьем у женщин и детей, которые
+                            помогает решить остеопатия</p>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="footer">
+            <div class="line"></div>
+            <nav class="footer__links">
+                <div class="navigation__link">
+                    <a href="index.html" data-title="Главная">Главная</a>
+                </div>
+                <div class="navigation__link">
+                    <a href="articles.html" data-title="Статьи">Статьи</a>
+                </div>
+                <div class="navigation__link">
+                    <a href="#" data-title="Видео">Видео</a>
+                </div>
+            </nav>
+
+            <p class="location">1-й Щипковский переулок, д .4
+                Клиника "Остеопоинт" (ООО "Витамед)</p>
+
+            <button class="project-button project-button_color_dark-violet">Записаться на прием</button>
+        </footer>
+    </div>
+
+    <script src="jquery-3.6.0.min.js"></script>
+    <script src="main.js"></script>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+</body>
+
+</html>
