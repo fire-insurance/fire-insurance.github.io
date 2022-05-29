@@ -2205,6 +2205,7 @@ h3 {
   -webkit-appearance: none;
   -moz-appearance: none;
        appearance: none;
+  background-color: transparent;
 }
 
 .article-selector__search-block .search-container .search-field .search-input::-webkit-input-placeholder {
