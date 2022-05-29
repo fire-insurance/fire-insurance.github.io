@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css" type="text/css"
+        media="screen" />
+    <title>Гузель Евстигнеева</title>
+</head>
+
+<body>
+    <div class="container">
+
+        <!-- Затемнение экрана мод модальной навигацией -->
+        <div class="darkening"></div>
+
+        <!-- Хедер -->
+        <header class="header">
+            <a href="index.html">
+                <img class="logo" src="assets/img/logo.svg" alt="logo">
+            </a>
+            <!-- Навигационные ссылки -->
+            <nav class="navigation">
+                <div class="navigation__link ">
+                    <a href="index.html" data-title="Главная">Главная</a>
+                    <div class="underline"></div>
+                </div>
+                <div class="navigation__link ">
+                    <a href="articles.html" data-title="Статьи">Статьи</a>
+                    <div class="underline"></div>
+                </div>
+                <div class="navigation__link navigation__link_active">
+                    <a href="videos.html" data-title="Видео">Видео</a>
+                    <div class="underline"></div>
+                </div>
+            </nav>
+
+            <div class="burger">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+
+            <!-- Навигационное меню для мобильных устройств -->
+            <div class="modal-menu">
+
+                <div class="modal-menu__container">
+                    <nav class="modal-menu__navigation">
+                        <div class="navigation__link ">
+                            <a href="index.html" data-title="Главная">Главная</a>
+                        </div>
+                        <div class="navigation__link ">
+                            <a href="articles.html" data-title="Статьи">Статьи</a>
+                        </div>
+                        <div class="navigation__link navigation__link_active">
+                            <a href="videos.html" data-title="Видео">Видео</a>
+                        </div>
+                    </nav>
+                    <div class="modal-menu__social-networks">
+                        <div class="small-icons">
+                            <a href="#">
+                                <img class="social-network-icon" src="assets/img/telegram.svg" alt="telegram logo">
+                            </a>
+                            <a href="#">
+                                <img class="social-network-icon" src="assets/img/vk.svg" alt="vk logo">
+                            </a>
+                            <img class="social-network-icon" src="assets/img/whatsapp.svg" alt="whatsapp logo">
+                            </a>
+
+                        </div>
+                        <a href="#">
+                            <img class="social-network-icon" id="instagram-logo" src="assets/img/Instagram.svg"
+                                alt="Instagram logo">
+                        </a>
+                    </div>
+                    <button class="project-button project-button_color_dark-violet ">Записаться на
+                        прием</button>
+                </div>
+            </div>
+            <div class="mobile-background"></div>
+
+        </header>
+
+        <main>
+
+            <!-- Видео -->
+            <section class="videos-on-theme article-grid-section">
+                <div class="videos-on-theme__head-panel">
+                    <h2>Видео</h2>
+                    <div class="selectors">
+                        <div class="video-type-selector video-type-selector_active">
+                            <img src="assets/img/arrow_r.svg" alt="">
+                            <button class="video-type project-paragraph">Все видео</button>
+
+                            <div class="video-menu video-type-menu">
+                                <p class="menu-item project-paragraph">Все видео</p>
+                                <p class="menu-item project-paragraph">Все видео1</p>
+                                <p class="menu-item project-paragraph">Все видео2</p>
+                            </div>
+                        </div>
+
+                        <div class="video-sort-selector">
+                            <button class="video-sort"> <img src="assets/img/double-arrows.svg" alt=""></button>
+                            <div class="video-menu video-sort-menu">
+                                <p class="menu-item project-paragraph">Сначала новые</p>
+                                <p class="menu-item project-paragraph">Сначала старые</p>
+                                <p class="menu-item project-paragraph">По количеству просмотров</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="videos-on-theme__grid article-grid-section__grid">
+                    <div class="video-preview article-grid-section__item">
+                        <a href="https://rutube.ru/play/embed/68f0ae8364124de136d0dcb3f1fc50c9" data-fancybox
+                            data-width="735" data-height="422" data-type="iframe">
+                            <div class="thumbnail-container">
+                                <div class="play-button">
+                                    <img src="assets/img/play-button.svg" alt="">
+                                </div>
+                                <img class="thumbnail" alt=""
+                                    src="assets/img/articles__video-previews/Rectangle 30.png" />
+                            </div>
+                        </a>
+                        <p class="project-paragraph video-title">О проблемах со здоровьем у женщин и детей, которые
+                            помогает решить остеопатия</p>
+                    </div>
+
+                    <div class="video-preview article-grid-section__item">
+                        <a href="https://rutube.ru/play/embed/68f0ae8364124de136d0dcb3f1fc50c9" data-fancybox
+                            data-width="735" data-height="422" data-type="iframe">
+                            <div class="thumbnail-container">
+                                <div class="play-button">
+                                    <img src="assets/img/play-button.svg" alt="">
+                                </div>
+                                <img class="thumbnail" alt=""
+                                    src="assets/img/articles__video-previews/Rectangle 31.png" />
+                            </div>
+                        </a>
+                        <p class="project-paragraph video-title">Курс эстетической остеопатии направлен на решение
+                            косметологиче&shy;ских проблем</p>
+                    </div>
+
+                    <div class="video-preview article-grid-section__item">
+                        <a href="https://rutube.ru/play/embed/68f0ae8364124de136d0dcb3f1fc50c9" data-fancybox
+                            data-width="735" data-height="422" data-type="iframe">
+                            <div class="thumbnail-container">
+                                <div class="play-button">
+                                    <img src="assets/img/play-button.svg" alt="">
+                                </div>
+                                <img class="thumbnail" alt=""
+                                    src="assets/img/articles__video-previews/Rectangle 32.png" />
+                            </div>
+                        </a>
+                        <p class="project-paragraph video-title">Курс эстетической остеопатии направлен на решение
+                            косметологиче&shy;ских проблем</p>
+                    </div>
+
+                    <div class="video-preview article-grid-section__item">
+                        <a href="https://rutube.ru/play/embed/68f0ae8364124de136d0dcb3f1fc50c9" data-fancybox
+                            data-width="735" data-height="422" data-type="iframe">
+                            <div class="thumbnail-container">
+                                <div class="play-button">
+                                    <img src="assets/img/play-button.svg" alt="">
+                                </div>
+                                <img class="thumbnail" alt=""
+                                    src="assets/img/articles__video-previews/Rectangle 32.png" />
+                            </div>
+                        </a>
+                        <p class="project-paragraph video-title">Курс эстетической остеопатии направлен на решение
+                            косметологиче&shy;ских проблем</p>
+                    </div>
+
+                    <div class="video-preview article-grid-section__item">
+                        <a href="https://rutube.ru/play/embed/68f0ae8364124de136d0dcb3f1fc50c9" data-fancybox
+                            data-width="735" data-height="422" data-type="iframe">
+                            <div class="thumbnail-container">
+                                <div class="play-button">
+                                    <img src="assets/img/play-button.svg" alt="">
+                                </div>
+                                <img class="thumbnail" alt=""
+                                    src="assets/img/articles__video-previews/Rectangle 30.png" />
+                            </div>
+                        </a>
+                        <p class="project-paragraph video-title">О проблемах со здоровьем у женщин и детей, которые
+                            помогает решить остеопатия</p>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="footer">
+            <div class="line"></div>
+            <nav class="footer__links">
+                <div class="navigation__link">
+                    <a href="index.html" data-title="Главная">Главная</a>
+                </div>
+                <div class="navigation__link">
+                    <a href="articles.html" data-title="Статьи">Статьи</a>
+                </div>
+                <div class="navigation__link">
+                    <a href="videos.html" data-title="Видео">Видео</a>
+                </div>
+            </nav>
+
+            <p class="location">1-й Щипковский переулок, д .4
+                Клиника "Остеопоинт" (ООО "Витамед)</p>
+
+            <button class="project-button project-button_color_dark-violet">Записаться на прием</button>
+        </footer>
+    </div>
+
+    <script src="jquery-3.6.0.min.js"></script>
+    <script src="main.js"></script>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+</body>
+
+</html>

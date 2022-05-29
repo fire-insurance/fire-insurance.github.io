@@ -159,19 +159,23 @@ $(document).ready(() => {
     const article_selector_block = $('.article-selector')
     const mobile_scrollbar = $('#mobile-scrollbar')
 
+
     let currentRow = 2;
     let selectedArticleGroup = articles_group[0]
     let selectedArticleGroupScrollbar = articles_scrollbar_lists[0]
-    let currentGroup = 'diet'
+
+    const query_group = new URL(window.location.href).searchParams.get('group')
+
+    let currentGroup = query_group ? query_group : 'diet'
 
     // При ширине экрана <= 700px переключить режим отображения
     // списка статей
 
     const append_mobile_scrollbar = (event) => {
         if (event.matches) {
-            mobile_scrollbar[0].appendChild(articles_list[0])
+            mobile_scrollbar[0]?.appendChild(articles_list[0])
         }
-        else article_selector_block[0].appendChild(articles_list[0])
+        else article_selector_block[0]?.appendChild(articles_list[0])
 
     }
 
@@ -233,7 +237,6 @@ $(document).ready(() => {
         if (event.matches) ltk = lettersToKeep[lettersToKeepIndex]
         else ltk = lettersToKeep[lettersToKeepIndex + 1]
 
-        console.log(ltk)
 
         let i = 0;
         for (const article_text of articles_preview_text) {
@@ -250,6 +253,38 @@ $(document).ready(() => {
     articleMediaQueryMobile.addListener(trimPreviewText)
     trimPreviewText(articleMediaQueryMobile)
 
+
+
+    // Страница "Видео"
+
+    const video_type_btn = $('.video-type-selector')
+    const video_sort_btn = $('.video-sort')
+    const video_type_selector = $('.video-type-menu')
+    const video_sort_selector = $('.video-sort-menu')
+
+    const video_type = $('.video-type')
+    const video_type_menu_item = document.querySelectorAll('.video-type-menu .menu-item')
+
+    console.log(video_type)
+
+    video_type_menu_item.forEach(menu_item => {
+        menu_item.addEventListener('click', () => {
+            video_type[0].textContent = menu_item.textContent
+        })
+    })
+
+    video_type_btn.on('click', () => {
+        video_type_btn.toggleClass('video-type-selector_active')
+        video_type_selector.toggleClass('video-menu_active')
+        if (video_sort_selector[0].className === 'video-menu video-sort-menu video-menu_active')
+            video_sort_selector.toggleClass('video-menu_active')
+    })
+
+    video_sort_btn.on('click', () => {
+        video_sort_selector.toggleClass('video-menu_active')
+        if (video_type_selector[0].className === 'video-menu video-type-menu video-menu_active')
+            video_type_selector.toggleClass('video-menu_active')
+    })
 
 
 });
