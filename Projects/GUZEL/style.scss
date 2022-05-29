@@ -63,6 +63,17 @@ body {
     box-sizing: border-box;
 }
 
+input[type="search"] {
+    -webkit-appearance: textfield;
+}
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  display: none;
+}
+
 /* Убираем внутренние отступы */
 ul[class],
 ol[class] {
@@ -3282,10 +3293,10 @@ h3 {
             z-index: 100;
             visibility: hidden;
 
-            .menu-item{
+            .menu-item {
                 transition: 0.25s;
 
-                &:hover{
+                &:hover {
                     color: $dark-violet;
                 }
             }
@@ -3297,7 +3308,7 @@ h3 {
             }
         }
 
-        .video-sort-menu{
+        .video-sort-menu {
             max-width: 200px;
             padding: 24px 31px 24px 31px;
 
@@ -3327,7 +3338,7 @@ h3 {
             flex-direction: column;
             row-gap: 33px;
 
-            .video-type-menu{
+            .video-type-menu {
                 left: 0;
             }
         }
