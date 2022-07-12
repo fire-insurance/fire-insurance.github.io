@@ -202,6 +202,11 @@ button {
   background-color: #af94d6;
 }
 
+.project-button:disabled {
+  background-color: #d0cad9;
+  cursor: not-allowed;
+}
+
 /* Заголовки */
 h1 {
   font-family: "Oswald", sans-serif;
@@ -1597,6 +1602,47 @@ h3 {
   height: fit-content;
 }
 
+.services__slide .slide-show-full-text-btn {
+  outline: none;
+  border: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: #8a7b9f;
+  font-weight: 500;
+  -webkit-column-gap: 7px;
+          column-gap: 7px;
+  background-color: transparent;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+  margin-top: -15px;
+}
+
+.services__slide .slide-show-full-text-btn span::before {
+  content: "Подробнее";
+}
+
+.services__slide .slide-show-full-text-btn img {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+  height: 13px;
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
+  -webkit-filter: invert(58%) sepia(9%) saturate(1057%) hue-rotate(223deg) brightness(86%) contrast(89%);
+          filter: invert(58%) sepia(9%) saturate(1057%) hue-rotate(223deg) brightness(86%) contrast(89%);
+}
+
+.services__slide .slide-show-full-text-btn_opened span::before {
+  content: "Скрыть";
+}
+
+.services__slide .slide-show-full-text-btn_opened img {
+  -webkit-transform: rotate(270deg);
+          transform: rotate(270deg);
+}
+
 .services__slide .text-content {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1609,10 +1655,28 @@ h3 {
   max-width: 295px;
 }
 
+.services__slide .text-content__overflow {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 1rem;
+  max-height: 150px;
+  overflow: hidden;
+}
+
+.services__slide .text-content__overflow-unset {
+  max-height: unset;
+}
+
 .services__slide .text-content__title {
   font-weight: 700;
   font-size: 18px;
   line-height: 22px;
+  margin-bottom: 10px;
 }
 
 .services__slide .text-content__line {
@@ -3006,18 +3070,23 @@ h3 {
   row-gap: var(--article-row-gap);
 }
 
-.article__quote {
+.article blockquote {
   position: relative;
   font-style: italic;
   color: #959595;
 }
 
-.article__quote .quote-marks {
-  position: absolute;
+.article blockquote::before {
+  background-image: url("assets/img/quote-marks.svg");
+  background-size: 28px 23px;
+  height: 23px;
+  min-width: 28px;
+  content: "";
   -webkit-filter: brightness(0) saturate(100%);
           filter: brightness(0) saturate(100%);
-  left: -77px;
-  top: 0;
+  position: absolute;
+  left: -60px;
+  top: 5px;
 }
 
 .article h3 {
@@ -3100,20 +3169,28 @@ h3 {
 }
 
 @media screen and (max-width: 1100px) {
-  .article__quote {
+  .article blockquote {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -webkit-column-gap: 33px;
             column-gap: 33px;
   }
-  .article__quote .quote-marks {
+  .article blockquote::before {
     position: unset;
+    margin-top: 5px;
   }
   .article h3 {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
     -webkit-column-gap: 19px;
             column-gap: 19px;
   }
@@ -3154,8 +3231,14 @@ h3 {
   .article {
     --article-row-gap: 20px;
   }
-  .article__quote .quote-marks {
-    width: 17px;
+  .article blockquote {
+    -webkit-column-gap: 18px;
+            column-gap: 18px;
+  }
+  .article blockquote::before {
+    background-size: 20px 17px;
+    height: 17px;
+    min-width: 20px;
   }
   .article h3 {
     margin-top: 10px;
@@ -3468,6 +3551,469 @@ h3 {
   }
   .videos-on-theme .selectors .video-sort-selector img {
     width: 21px;
+  }
+}
+
+.form-header {
+  -ms-grid-columns: auto;
+      grid-template-columns: auto;
+}
+
+.form-header__title-block {
+  row-gap: 40px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.appointment-form {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  -webkit-column-gap: 32px;
+          column-gap: 32px;
+  row-gap: 40px;
+  margin-top: 77px;
+  font-family: "Montserrat";
+}
+
+.appointment-form__input-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 20px;
+}
+
+.appointment-form__input-container .input-label {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.appointment-form__input-container .input-label_required::after {
+  content: " *";
+  color: #fd8181;
+}
+
+.appointment-form__text-input::-webkit-input-placeholder {
+  color: #d3d3d3;
+}
+
+.appointment-form__text-input:-ms-input-placeholder {
+  color: #d3d3d3;
+}
+
+.appointment-form__text-input::-ms-input-placeholder {
+  color: #d3d3d3;
+}
+
+.appointment-form__text-input::placeholder {
+  color: #d3d3d3;
+}
+
+.appointment-form .custom-selector {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  color: #d3d3d3;
+  cursor: pointer;
+  position: relative;
+  width: 100%;
+}
+
+.appointment-form .custom-selector__arrow {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+  width: 11px;
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
+}
+
+.appointment-form .custom-selector__value {
+  max-width: 23ch;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.appointment-form .custom-selector__menu {
+  position: absolute;
+  top: calc(100% + 15px);
+  left: 0;
+  background: #ffffff;
+  -webkit-box-shadow: 0px 7px 37px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 7px 37px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  padding: 24px 20px 30px 32px;
+  width: 100%;
+  visibility: hidden;
+}
+
+.appointment-form .custom-selector__menu .menu-list {
+  max-height: 250px;
+  overflow-y: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 16px;
+  padding-right: 12px;
+  scrollbar-width: thin;
+  color: rebeccapurple;
+}
+
+.appointment-form .custom-selector__menu .menu-list::-webkit-scrollbar {
+  width: 9px;
+}
+
+.appointment-form .custom-selector__menu .menu-list::-webkit-scrollbar-track {
+  background: black;
+  border: 4px solid transparent;
+  background-clip: content-box;
+}
+
+.appointment-form .custom-selector__menu .menu-list::-webkit-scrollbar-thumb {
+  background: #191919;
+  border: 1px solid black;
+  border-radius: 20px;
+}
+
+.appointment-form .custom-selector__menu p {
+  font-size: 16px;
+  line-height: 20px;
+  color: black;
+  -webkit-transition: 0.25s color;
+  transition: 0.25s color;
+}
+
+.appointment-form .custom-selector__menu p:hover {
+  color: #8a7b9f;
+}
+
+.appointment-form .custom-selector_opened .custom-selector__menu {
+  visibility: visible;
+}
+
+.appointment-form .custom-selector_opened .custom-selector__arrow {
+  -webkit-transform: rotate(270deg);
+          transform: rotate(270deg);
+}
+
+.appointment-form__text-input,
+.appointment-form .custom-selector {
+  padding: 26px 25px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  outline: none;
+  border: 1px solid #d3d3d3;
+  border-radius: 20px;
+  -webkit-transition: 0.25s border;
+  transition: 0.25s border;
+}
+
+.appointment-form__text-input:focus,
+.appointment-form .custom-selector:focus {
+  border: 1px solid #8a7b9f;
+}
+
+.appointment-form__text-input_filled,
+.appointment-form .custom-selector_filled {
+  border: 1px solid black;
+  color: black;
+}
+
+.appointment-form__textarea {
+  grid-column: span 2;
+  -ms-grid-row-span: 2;
+      grid-row-end: span 2;
+}
+
+.appointment-form__textarea textarea {
+  min-height: 160px;
+  max-height: 400px;
+  height: 100%;
+  background: url("assets/img/custom-resizer.svg") no-repeat right 12px bottom 12px;
+}
+
+.appointment-form__textarea textarea::-webkit-resizer {
+  display: none;
+}
+
+.appointment-form__promocode {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  width: 100%;
+}
+
+.appointment-form__promocode .input-label {
+  font-weight: 600;
+}
+
+.appointment-form__promocode .custom-checkbox-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-gap: 12px;
+          column-gap: 12px;
+}
+
+.appointment-form__promocode .custom-checkbox {
+  width: 32px;
+  height: 32px;
+  border-radius: 9px;
+  border: 1px solid #d3d3d3;
+  cursor: pointer;
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
+  position: relative;
+}
+
+.appointment-form__promocode .custom-checkbox img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.appointment-form__promocode .custom-checkbox_checked {
+  background-color: #8a7b9f;
+}
+
+.appointment-form__promocode .custom-checkbox:hover {
+  border: 1px solid #8a7b9f;
+}
+
+.appointment-form__promocode #promocode {
+  margin-top: 14px;
+  width: 100%;
+}
+
+.appointment-form__info {
+  grid-column: 1/-1;
+  margin-top: 14px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 16px;
+}
+
+.appointment-form__info .form-info-text {
+  max-width: 75ch;
+  font-size: 14px;
+  line-height: 120%;
+}
+
+.appointment-form__info .form-info-text:first-child::before {
+  content: "* ";
+  color: #fd8181;
+  font-weight: 700;
+}
+
+.appointment-form__info .form-info-link {
+  color: #8a7b9f;
+}
+
+.appointment-form__project-button {
+  margin-top: 22px;
+  padding: 21px 80px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+@media screen and (max-width: 900px) {
+  .appointment-form {
+    -ms-grid-columns: (calc(100% / 2))[2];
+        grid-template-columns: repeat(2, calc(100% / 2));
+    -webkit-column-gap: 18px;
+            column-gap: 18px;
+    row-gap: 40px;
+    margin-top: 65px;
+  }
+  .appointment-form__input-container {
+    row-gap: 14px;
+  }
+  .appointment-form__textarea textarea {
+    min-height: 191px;
+  }
+  .appointment-form .custom-selector__value {
+    max-width: calc(100% - 30px);
+  }
+  .appointment-form__text-input,
+  .appointment-form .custom-selector {
+    padding: 17px 25px;
+    border-radius: 16px;
+  }
+  .appointment-form__project-button {
+    margin-top: 28px;
+    padding: 17px 66px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .appointment-form {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    row-gap: 30px;
+    margin-top: 31px;
+  }
+  .appointment-form__input-container {
+    row-gap: 15px;
+  }
+  .appointment-form__input-container .input-label {
+    font-size: 14px;
+    line-height: 17px;
+  }
+  .appointment-form__text-input,
+  .appointment-form .custom-selector {
+    padding: 17px 17px;
+    border-radius: 14px;
+    font-size: 14px;
+    line-height: 17px;
+  }
+  .appointment-form .custom-selector__arrow {
+    width: 9px;
+  }
+  .appointment-form__textarea {
+    -ms-grid-column: 1;
+    grid-column: 1;
+  }
+  .appointment-form__textarea textarea {
+    min-height: 150px;
+    background: url("assets/img/custom-resizer.svg") no-repeat right 8px bottom 8px;
+    background-size: 12px;
+  }
+  .appointment-form__info {
+    grid-column: 1/-1;
+    margin-top: 10px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    row-gap: 20px;
+  }
+  .appointment-form__info .form-info-text {
+    font-size: 12px;
+  }
+  .appointment-form__project-button {
+    margin-top: 15px;
+    padding: 17px 0px;
+    width: 100%;
+  }
+}
+
+.success-text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 45px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 43px;
+  position: relative;
+}
+
+.success-text__info {
+  font-size: 18px;
+  line-height: 133%;
+  text-align: center;
+}
+
+.success-text .check-mark-container {
+  width: 136px;
+  height: 136px;
+  position: relative;
+  background-color: #c0e6ba;
+  border-radius: 50%;
+  margin-top: 11px;
+}
+
+.success-text .check-mark-container img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.success-text .decorative-circle {
+  position: absolute;
+  top: 50%;
+  right: 0%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 770px;
+  height: 770px;
+  border-radius: 50%;
+  background-color: #eff6f8;
+  z-index: -1;
+  -webkit-filter: blur(70px);
+          filter: blur(70px);
+}
+
+@media screen and (max-width: 768px) {
+  .success-text__info {
+    font-size: 16px;
+  }
+  .success-text .check-mark-container {
+    width: 110px;
+    height: 110px;
+  }
+  .success-text .decorative-circle {
+    width: 470px;
+    height: 470px;
+    -webkit-filter: blur(40px);
+            filter: blur(40px);
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .success-text {
+    row-gap: 35px;
+    height: 60vh;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .success-text__info {
+    font-size: 14px;
+  }
+  .success-text .check-mark-container {
+    width: 100px;
+    height: 100px;
+  }
+  .success-text .decorative-circle {
+    width: 370px;
+    height: 370px;
+    -webkit-filter: blur(30px);
+            filter: blur(30px);
   }
 }
 /*# sourceMappingURL=style.css.map */

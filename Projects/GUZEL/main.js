@@ -104,8 +104,28 @@ $(document).ready(() => {
 
     });
 
+    const expand_slide_text_btn = $('.slide-show-full-text-btn')
+    const slidesTextContent = $('.text-content__overflow')
+
+    for (let i = 0; i < slidesTextContent.length; i++) {
+        if(slidesTextContent.eq(i)[0].clientHeight < 150){
+            console.log('less')
+            expand_slide_text_btn.eq(i).addClass('visually-hidden')
+        }
+    }
+
+    for (let i = 0; i < expand_slide_text_btn.length; i++) {
+        expand_slide_text_btn.eq(i).on('click', () => handleExpandBtnClick(expand_slide_text_btn.eq(i)))
+    }
+
+    function handleExpandBtnClick(exp_btn) {
+        exp_btn.toggleClass('slide-show-full-text-btn_opened')
+        exp_btn.parent().children('.text-content__overflow').toggleClass('text-content__overflow-unset')
+    }
+
     const services_pagination_bullets = $('.services__swiper-pagination .swiper-pagination-bullet')
     const services_slides_titles = $('.services__slide .text-content__title')
+
     // Задаем имена кнопкам навигации
     for (key in services_slides_titles) {
 
@@ -158,15 +178,44 @@ $(document).ready(() => {
     const articles_scrollbar_lists = document.querySelectorAll('.article-scrollbar-single')
     const article_selector_block = $('.article-selector')
     const mobile_scrollbar = $('#mobile-scrollbar')
-
-
-    let currentRow = 2;
-    let selectedArticleGroup = articles_group[0]
-    let selectedArticleGroupScrollbar = articles_scrollbar_lists[0]
+    const articles_ontheme = document.querySelectorAll('.articles-on-theme')
+    const videos_ontheme = document.querySelectorAll('.videos-on-theme')
 
     const query_group = new URL(window.location.href).searchParams.get('group')
 
     let currentGroup = query_group ? query_group : 'diet'
+
+    let currentRow = 2;
+    let selectedArticleGroup
+    let selectedArticleGroupScrollbar
+    let selectedArticlesOnThemeSection
+    let selectedVideosOnThemeSection
+
+    articles_group.forEach(block => {
+        if (block.getAttribute('data-group') === currentGroup) {
+            selectedArticleGroup = block
+        }
+    })
+
+    articles_scrollbar_lists.forEach(block => {
+        if (block.getAttribute('data-group') === currentGroup) {
+            selectedArticleGroupScrollbar = block
+        }
+    })
+
+    articles_ontheme.forEach(block => {
+        if (block.getAttribute('data-group') === currentGroup) {
+            selectedArticlesOnThemeSection = block
+        }
+    })
+
+    videos_ontheme.forEach(block => {
+        if (block.getAttribute('data-group') === currentGroup) {
+            selectedVideosOnThemeSection = block
+        }
+    })
+
+    changeCurrentGroup(currentGroup)
 
     // При ширине экрана <= 700px переключить режим отображения
     // списка статей
@@ -177,6 +226,15 @@ $(document).ready(() => {
         }
         else article_selector_block[0]?.appendChild(articles_list[0])
 
+    }
+
+    function lazyLoadImgsInNode(node, image_selector, load) {
+        const node_images = node.querySelectorAll(image_selector)
+        for (const image of node_images) {
+            let new_src = load ? image.getAttribute('data-img-src') : ''
+
+            image.setAttribute('src', new_src)
+        }
     }
 
     mediaQueryMobile.addListener(append_mobile_scrollbar)
@@ -190,24 +248,56 @@ $(document).ready(() => {
         if (event.currentTarget.className !== 'article-group article-group_active') {
             selectedArticleGroup.classList.remove('article-group_active')
             selectedArticleGroup = event.currentTarget
-            selectedArticleGroup.classList.add('article-group_active')
-
-            currentRow = selectedArticleGroup.getAttribute('data-row')
             currentGroup = selectedArticleGroup.getAttribute('data-group')
-            mobile_scrollbar[0].setAttribute('style', `--row:${currentRow}`)
-
-            selectedArticleGroupScrollbar.classList.add('visually-hidden')
-
-            selectedArticleGroupScrollbar
-            articles_scrollbar_lists.forEach(scrollbar => {
-                if (scrollbar.getAttribute('data-group') === currentGroup) {
-                    selectedArticleGroupScrollbar = scrollbar
-
-                }
-            })
-
-            selectedArticleGroupScrollbar.classList.remove('visually-hidden')
+            changeCurrentGroup(currentGroup)
         }
+    }
+
+    function changeCurrentGroup(group_name) {
+        currentGroup = group_name
+        selectedArticleGroup.classList.add('article-group_active')
+        currentRow = selectedArticleGroup.getAttribute('data-row')
+
+        mobile_scrollbar[0].setAttribute('style', `--row:${currentRow}`)
+
+        // Производим выборку списка статей
+        selectedArticleGroupScrollbar.classList.add('visually-hidden')
+
+        articles_scrollbar_lists.forEach(scrollbar => {
+            if (scrollbar.getAttribute('data-group') === currentGroup) {
+                selectedArticleGroupScrollbar = scrollbar
+            }
+        })
+
+        selectedArticleGroupScrollbar.classList.remove('visually-hidden')
+
+        // Производим выборку списка статей по теме
+
+        selectedArticlesOnThemeSection.classList.add('visually-hidden')
+        lazyLoadImgsInNode(selectedArticlesOnThemeSection, '.article__image', false)
+
+        articles_ontheme.forEach(block => {
+            if (block.getAttribute('data-group') === currentGroup) {
+                selectedArticlesOnThemeSection = block
+            }
+        })
+
+        selectedArticlesOnThemeSection.classList.remove('visually-hidden')
+        lazyLoadImgsInNode(selectedArticlesOnThemeSection, '.article__image', true)
+
+        // Производим выборку списка видео по теме
+
+        selectedVideosOnThemeSection.classList.add('visually-hidden')
+        lazyLoadImgsInNode(selectedVideosOnThemeSection, '.videos-on-theme .thumbnail', false)
+
+        videos_ontheme.forEach(block => {
+            if (block.getAttribute('data-group') === currentGroup) {
+                selectedVideosOnThemeSection = block
+            }
+        })
+
+        selectedVideosOnThemeSection.classList.remove('visually-hidden')
+        lazyLoadImgsInNode(selectedVideosOnThemeSection, '.videos-on-theme .thumbnail', true)
     }
 
 
@@ -254,6 +344,18 @@ $(document).ready(() => {
     trimPreviewText(articleMediaQueryMobile)
 
 
+    // Статья
+
+    const article_subheaders = document.querySelectorAll('.article h3')
+    let header_index = 1;
+    for (const header of article_subheaders) {
+        let header_numeration = document.createElement('span')
+        header_numeration.setAttribute('class', 'header-numeration')
+        header_numeration.textContent = `0${header_index}.`
+        header_index++;
+        header.appendChild(header_numeration)
+    }
+
 
     // Страница "Видео"
 
@@ -265,7 +367,6 @@ $(document).ready(() => {
     const video_type = $('.video-type')
     const video_type_menu_item = document.querySelectorAll('.video-type-menu .menu-item')
 
-    console.log(video_type)
 
     video_type_menu_item.forEach(menu_item => {
         menu_item.addEventListener('click', () => {
@@ -286,5 +387,87 @@ $(document).ready(() => {
             video_type_selector.toggleClass('video-menu_active')
     })
 
+
+
+    // Форма записи
+
+    const service_selector = $('.custom-selector')
+    const service_selector_input = $('#service-selector')
+    const service_selector_menu_items = document.querySelectorAll('.selector-menu-item')
+
+    // Открытие селектора выбора услуги
+    service_selector.on('click', () => {
+        service_selector.toggleClass('custom-selector_opened')
+    })
+
+    // Обработка нажатия на услугу
+    service_selector_menu_items.forEach(menu_item => {
+        menu_item.addEventListener('click', () => {
+            service_selector.children().first()[0].textContent = menu_item.textContent
+            service_selector_input[0].value = menu_item.textContent
+            service_selector.addClass('custom-selector_filled')
+            filled_required_inputs['Услуга'] = true
+            checkForCorrectFormFill()
+        })
+    })
+
+    // Если любой из инпутов заполнен, меняем его border на черный цвет
+    const service_form_inputs = document.querySelectorAll('.appointment-form__text-input')
+    service_form_inputs.forEach(input => {
+        input.addEventListener('input', () => {
+            input.value ?
+                input.classList.add('appointment-form__text-input_filled')
+                :
+                input.classList.remove('appointment-form__text-input_filled')
+
+            if (input.getAttribute('required') === '') {
+                const input_name = input.getAttribute('name')
+                input.value !== '' ? filled_required_inputs[input_name] = true : filled_required_inputs[input_name] = false
+                checkForCorrectFormFill()
+            }
+        })
+    })
+
+    const filled_required_inputs = {
+        'Услуга': false,
+        'ФИО': false,
+        'Телефон': false,
+        'e-mail': false
+    }
+
+
+    // Обработка нажатия на кастомный чекбокс
+
+    const custom_checkbox = $('.custom-checkbox')
+    const promocode_input = $('#promocode')
+
+    custom_checkbox.on('click', () => {
+        custom_checkbox.toggleClass('custom-checkbox_checked')
+        promocode_input.toggleClass('visually-hidden')
+    })
+
+    const submit_button = $('.appointment-form__project-button')
+
+    // Проверка на заполнение required полей формы
+    const checkForCorrectFormFill = () => {
+        let form_filled_correctly = true
+
+        for (const key in filled_required_inputs) {
+            form_filled_correctly = form_filled_correctly & filled_required_inputs[key]
+        }
+
+        form_filled_correctly ? submit_button.attr('disabled', false) : submit_button.attr('disabled', true)
+    }
+
+    const appointment_form = $('.appointment-form')[0]
+
+    appointment_form.addEventListener('submit', (event) => {
+        event.preventDefault()
+        const formData = new FormData(appointment_form)
+
+        // Дальше formData отправляем куда надо 
+
+        window.location.replace('/Projects/GUZEL/successful-form-submit.html')
+    })
 
 });

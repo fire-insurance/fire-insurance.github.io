@@ -6,9 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="style.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css" type="text/css"
         media="screen" />
+
     <title>Гузель Евстигнеева</title>
 </head>
 
@@ -101,7 +104,7 @@
                 </div>
 
                 <div class="article-selector__article-groups">
-                    <div class="article-group article-group_active" data-row="2" data-group="diet">
+                    <div class="article-group" data-row="2" data-group="diet">
                         <span class="article-group__size">5</span>
                         <img src="assets/img/articles__article-groups/diet.svg" alt="" class="article-group__image">
                         <span class="article-group__name">Диетология</span>
@@ -180,7 +183,7 @@
 
                 <div class="article-selector__article-scrollbar">
 
-                    <div class="article-scrollbar-single" data-group="diet">
+                    <div class="article-scrollbar-single visually-hidden" data-group="diet">
                         <div class="title">
                             <img class="title__image" src="assets/img/articles__article-groups/diet.svg" alt="">
                             <span class="title__text">Диетология</span>
@@ -262,7 +265,7 @@
             </section>
 
             <!-- Статьи по теме -->
-            <section class="articles-on-theme article-grid-section">
+            <section class="articles-on-theme article-grid-section visually-hidden" data-group="diet">
                 <h2>Статьи по теме</h2>
 
                 <div class="articles-on-theme__grid article-grid-section__grid">
@@ -272,8 +275,8 @@
                             <div class="hover-effect">
                                 <img src="assets/img/articles__arrow.svg" alt="">
                             </div>
-                            <img class="article__image"
-                                src="assets/img/articles__article-preview/Cбалансированная диета.png"
+                            <img class="article__image" src=""
+                                data-img-src="assets/img/articles__article-preview/Cбалансированная диета.png"
                                 alt="Превью статьи">
                         </div>
 
@@ -292,8 +295,9 @@
                             <div class="hover-effect">
                                 <img src="assets/img/articles__arrow.svg" alt="">
                             </div>
-                            <img class="article__image"
-                                src="assets/img/articles__article-preview/Неоспоримые правила.png" alt="Превью статьи">
+                            <img class="article__image" src=""
+                                data-img-src="assets/img/articles__article-preview/Неоспоримые правила.png"
+                                alt="Превью статьи">
                         </div>
 
                         <p class="article__title project-paragraph">
@@ -310,8 +314,140 @@
                             <div class="hover-effect">
                                 <img src="assets/img/articles__arrow.svg" alt="">
                             </div>
-                            <img class="article__image"
-                                src="assets/img/articles__article-preview/Профессиональная диетология.png"
+                            <img class="article__image" src=""
+                                data-img-src="assets/img/articles__article-preview/Профессиональная диетология.png"
+                                alt="Превью статьи">
+                        </div>
+
+                        <p class="article__title project-paragraph">
+                            Профилактическая диетология
+                        </p>
+                        <p class="article__preview-text project-paragraph">
+                            Если говорить о профилактической диетологии, то она определяет следующие основные правила,
+                            или принципы, питан Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        </p>
+                    </a>
+                </div>
+
+            </section>
+
+            <section class="articles-on-theme article-grid-section visually-hidden" data-group="osteopathy">
+                <h2>Статьи по теме1</h2>
+
+                <div class="articles-on-theme__grid article-grid-section__grid">
+
+                    <a href="article.html" class="article article-grid-section__item">
+                        <div class="article__image-container">
+                            <div class="hover-effect">
+                                <img src="assets/img/articles__arrow.svg" alt="">
+                            </div>
+                            <img class="article__image" src=""
+                                data-img-src="assets/img/articles__article-preview/Cбалансированная диета.png"
+                                alt="Превью статьи">
+                        </div>
+
+                        <p class="article__title project-paragraph">
+                            Сбалансирован&shy;ная диета и что это такое?
+                        </p>
+                        <p class="article__preview-text project-paragraph">
+                            Сбалансирован&shy;ная диета способствует
+                            укреплению иммунитета, повышает сопротивляемость организма, что особен Lorem ipsum dolor sit
+                            amet consectetur adipisicing elit.
+                        </p>
+                    </a>
+
+                    <a href="article.html" class="article article-grid-section__item">
+                        <div class="article__image-container">
+                            <div class="hover-effect">
+                                <img src="assets/img/articles__arrow.svg" alt="">
+                            </div>
+                            <img class="article__image" src=""
+                                data-img-src="assets/img/articles__article-preview/Неоспоримые правила.png"
+                                alt="Превью статьи">
+                        </div>
+
+                        <p class="article__title project-paragraph">
+                            Неоспоримые правила здоровья
+                        </p>
+                        <p class="article__preview-text project-paragraph">
+                            Разумеется, правильно подобранная система питания позволит не только сохранить массу тела,
+                            но и избежать Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        </p>
+                    </a>
+
+                    <a href="article.html" class="article article-grid-section__item">
+                        <div class="article__image-container">
+                            <div class="hover-effect">
+                                <img src="assets/img/articles__arrow.svg" alt="">
+                            </div>
+                            <img class="article__image" src=""
+                                data-img-src="assets/img/articles__article-preview/Профессиональная диетология.png"
+                                alt="Превью статьи">
+                        </div>
+
+                        <p class="article__title project-paragraph">
+                            Профилактическая диетология
+                        </p>
+                        <p class="article__preview-text project-paragraph">
+                            Если говорить о профилактической диетологии, то она определяет следующие основные правила,
+                            или принципы, питан Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        </p>
+                    </a>
+                </div>
+
+            </section>
+
+            <section class="articles-on-theme article-grid-section visually-hidden" data-group="gastroenterology">
+                <h2>Статьи по теме2</h2>
+
+                <div class="articles-on-theme__grid article-grid-section__grid">
+
+                    <a href="article.html" class="article article-grid-section__item">
+                        <div class="article__image-container">
+                            <div class="hover-effect">
+                                <img src="assets/img/articles__arrow.svg" alt="">
+                            </div>
+                            <img class="article__image" src=""
+                                data-img-src="assets/img/articles__article-preview/Cбалансированная диета.png"
+                                alt="Превью статьи">
+                        </div>
+
+                        <p class="article__title project-paragraph">
+                            Сбалансирован&shy;ная диета и что это такое?
+                        </p>
+                        <p class="article__preview-text project-paragraph">
+                            Сбалансирован&shy;ная диета способствует
+                            укреплению иммунитета, повышает сопротивляемость организма, что особен Lorem ipsum dolor sit
+                            amet consectetur adipisicing elit.
+                        </p>
+                    </a>
+
+                    <a href="article.html" class="article article-grid-section__item">
+                        <div class="article__image-container">
+                            <div class="hover-effect">
+                                <img src="assets/img/articles__arrow.svg" alt="">
+                            </div>
+                            <img class="article__image" src=""
+                                data-img-src="assets/img/articles__article-preview/Неоспоримые правила.png"
+                                alt="Превью статьи">
+                        </div>
+
+                        <p class="article__title project-paragraph">
+                            Неоспоримые правила здоровья
+                        </p>
+                        <p class="article__preview-text project-paragraph">
+                            Разумеется, правильно подобранная система питания позволит не только сохранить массу тела,
+                            но и избежать Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        </p>
+                    </a>
+
+                    <a href="article.html" class="article article-grid-section__item">
+                        <div class="article__image-container">
+                            <div class="hover-effect">
+                                <img src="assets/img/articles__arrow.svg" alt="">
+                            </div>
+                            <img class="article__image" src=""
+                                data-img-src="assets/img/articles__article-preview/Профессиональная диетология.png"
                                 alt="Превью статьи">
                         </div>
 
@@ -328,7 +464,7 @@
             </section>
 
             <!-- Видео -->
-            <section class="videos-on-theme article-grid-section">
+            <section class="videos-on-theme article-grid-section visually-hidden" data-group="diet">
                 <h2>Видео по теме</h2>
                 <div class="videos-on-theme__grid article-grid-section__grid">
                     <div class="video-preview article-grid-section__item">
@@ -338,8 +474,10 @@
                                 <div class="play-button">
                                     <img src="assets/img/play-button.svg" alt="">
                                 </div>
-                                <img class="thumbnail" alt=""
-                                    src="assets/img/articles__video-previews/Rectangle 30.png" />
+                                <img class="thumbnail"
+                                 alt="превью видео"
+                                 data-img-src="assets/img/articles__video-previews/Rectangle 30.png"
+                                     src="" />
                             </div>
                         </a>
                         <p class="project-paragraph video-title">О проблемах со здоровьем у женщин и детей, которые
@@ -353,11 +491,14 @@
                                 <div class="play-button">
                                     <img src="assets/img/play-button.svg" alt="">
                                 </div>
-                                <img class="thumbnail" alt=""
-                                    src="assets/img/articles__video-previews/Rectangle 31.png" />
+                                <img class="thumbnail"
+                                alt="превью видео"
+                                data-img-src="assets/img/articles__video-previews/Rectangle 31.png"
+                                    src="" />
                             </div>
                         </a>
-                        <p class="project-paragraph video-title">Курс эстетической остеопатии направлен на решение косметологиче&shy;ских проблем</p>
+                        <p class="project-paragraph video-title">Курс эстетической остеопатии направлен на решение
+                            косметологиче&shy;ских проблем</p>
                     </div>
 
                     <div class="video-preview article-grid-section__item">
@@ -367,11 +508,14 @@
                                 <div class="play-button">
                                     <img src="assets/img/play-button.svg" alt="">
                                 </div>
-                                <img class="thumbnail" alt=""
-                                    src="assets/img/articles__video-previews/Rectangle 32.png" />
+                                <img class="thumbnail" 
+                                alt="превью видео"
+                                data-img-src="assets/img/articles__video-previews/Rectangle 32.png"
+                                    src="" />
                             </div>
                         </a>
-                        <p class="project-paragraph video-title">Курс эстетической остеопатии направлен на решение косметологиче&shy;ских проблем</p>
+                        <p class="project-paragraph video-title">Курс эстетической остеопатии направлен на решение
+                            косметологиче&shy;ских проблем</p>
                     </div>
 
                     <div class="video-preview article-grid-section__item">
@@ -381,11 +525,14 @@
                                 <div class="play-button">
                                     <img src="assets/img/play-button.svg" alt="">
                                 </div>
-                                <img class="thumbnail" alt=""
-                                    src="assets/img/articles__video-previews/Rectangle 32.png" />
+                                <img class="thumbnail" 
+                                alt="превью видео"
+                                data-img-src="assets/img/articles__video-previews/Rectangle 32.png"
+                                    src="" />
                             </div>
                         </a>
-                        <p class="project-paragraph video-title">Курс эстетической остеопатии направлен на решение косметологиче&shy;ских проблем</p>
+                        <p class="project-paragraph video-title">Курс эстетической остеопатии направлен на решение
+                            косметологиче&shy;ских проблем</p>
                     </div>
 
                     <div class="video-preview article-grid-section__item">
@@ -395,8 +542,187 @@
                                 <div class="play-button">
                                     <img src="assets/img/play-button.svg" alt="">
                                 </div>
-                                <img class="thumbnail" alt=""
-                                    src="assets/img/articles__video-previews/Rectangle 30.png" />
+                                <img class="thumbnail"  alt="превью видео"
+                                data-img-src="assets/img/articles__video-previews/Rectangle 30.png"
+                                    src="" />
+                            </div>
+                        </a>
+                        <p class="project-paragraph video-title">О проблемах со здоровьем у женщин и детей, которые
+                            помогает решить остеопатия</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="videos-on-theme article-grid-section visually-hidden" data-group="osteopathy">
+                <h2>Видео по теме1</h2>
+                <div class="videos-on-theme__grid article-grid-section__grid">
+                    <div class="video-preview article-grid-section__item">
+                        <a href="https://rutube.ru/play/embed/68f0ae8364124de136d0dcb3f1fc50c9" data-fancybox
+                            data-width="735" data-height="422" data-type="iframe">
+                            <div class="thumbnail-container">
+                                <div class="play-button">
+                                    <img src="assets/img/play-button.svg" alt="">
+                                </div>
+                                <img class="thumbnail"
+                                 alt="превью видео"
+                                 data-img-src="assets/img/articles__video-previews/Rectangle 30.png"
+                                     src="" />
+                            </div>
+                        </a>
+                        <p class="project-paragraph video-title">О проблемах со здоровьем у женщин и детей, которые
+                            помогает решить остеопатия</p>
+                    </div>
+
+                    <div class="video-preview article-grid-section__item">
+                        <a href="https://rutube.ru/play/embed/68f0ae8364124de136d0dcb3f1fc50c9" data-fancybox
+                            data-width="735" data-height="422" data-type="iframe">
+                            <div class="thumbnail-container">
+                                <div class="play-button">
+                                    <img src="assets/img/play-button.svg" alt="">
+                                </div>
+                                <img class="thumbnail"
+                                alt="превью видео"
+                                data-img-src="assets/img/articles__video-previews/Rectangle 31.png"
+                                    src="" />
+                            </div>
+                        </a>
+                        <p class="project-paragraph video-title">Курс эстетической остеопатии направлен на решение
+                            косметологиче&shy;ских проблем</p>
+                    </div>
+
+                    <div class="video-preview article-grid-section__item">
+                        <a href="https://rutube.ru/play/embed/68f0ae8364124de136d0dcb3f1fc50c9" data-fancybox
+                            data-width="735" data-height="422" data-type="iframe">
+                            <div class="thumbnail-container">
+                                <div class="play-button">
+                                    <img src="assets/img/play-button.svg" alt="">
+                                </div>
+                                <img class="thumbnail" 
+                                alt="превью видео"
+                                data-img-src="assets/img/articles__video-previews/Rectangle 32.png"
+                                    src="" />
+                            </div>
+                        </a>
+                        <p class="project-paragraph video-title">Курс эстетической остеопатии направлен на решение
+                            косметологиче&shy;ских проблем</p>
+                    </div>
+
+                    <div class="video-preview article-grid-section__item">
+                        <a href="https://rutube.ru/play/embed/68f0ae8364124de136d0dcb3f1fc50c9" data-fancybox
+                            data-width="735" data-height="422" data-type="iframe">
+                            <div class="thumbnail-container">
+                                <div class="play-button">
+                                    <img src="assets/img/play-button.svg" alt="">
+                                </div>
+                                <img class="thumbnail" 
+                                alt="превью видео"
+                                data-img-src="assets/img/articles__video-previews/Rectangle 32.png"
+                                    src="" />
+                            </div>
+                        </a>
+                        <p class="project-paragraph video-title">Курс эстетической остеопатии направлен на решение
+                            косметологиче&shy;ских проблем</p>
+                    </div>
+
+                    <div class="video-preview article-grid-section__item">
+                        <a href="https://rutube.ru/play/embed/68f0ae8364124de136d0dcb3f1fc50c9" data-fancybox
+                            data-width="735" data-height="422" data-type="iframe">
+                            <div class="thumbnail-container">
+                                <div class="play-button">
+                                    <img src="assets/img/play-button.svg" alt="">
+                                </div>
+                                <img class="thumbnail"  alt="превью видео"
+                                data-img-src="assets/img/articles__video-previews/Rectangle 30.png"
+                                    src="" />
+                            </div>
+                        </a>
+                        <p class="project-paragraph video-title">О проблемах со здоровьем у женщин и детей, которые
+                            помогает решить остеопатия</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="videos-on-theme article-grid-section visually-hidden" data-group="gastroenterology">
+                <h2>Видео по теме2</h2>
+                <div class="videos-on-theme__grid article-grid-section__grid">
+                    <div class="video-preview article-grid-section__item">
+                        <a href="https://rutube.ru/play/embed/68f0ae8364124de136d0dcb3f1fc50c9" data-fancybox
+                            data-width="735" data-height="422" data-type="iframe">
+                            <div class="thumbnail-container">
+                                <div class="play-button">
+                                    <img src="assets/img/play-button.svg" alt="">
+                                </div>
+                                <img class="thumbnail"
+                                 alt="превью видео"
+                                 data-img-src="assets/img/articles__video-previews/Rectangle 30.png"
+                                     src="" />
+                            </div>
+                        </a>
+                        <p class="project-paragraph video-title">О проблемах со здоровьем у женщин и детей, которые
+                            помогает решить остеопатия</p>
+                    </div>
+
+                    <div class="video-preview article-grid-section__item">
+                        <a href="https://rutube.ru/play/embed/68f0ae8364124de136d0dcb3f1fc50c9" data-fancybox
+                            data-width="735" data-height="422" data-type="iframe">
+                            <div class="thumbnail-container">
+                                <div class="play-button">
+                                    <img src="assets/img/play-button.svg" alt="">
+                                </div>
+                                <img class="thumbnail"
+                                alt="превью видео"
+                                data-img-src="assets/img/articles__video-previews/Rectangle 31.png"
+                                    src="" />
+                            </div>
+                        </a>
+                        <p class="project-paragraph video-title">Курс эстетической остеопатии направлен на решение
+                            косметологиче&shy;ских проблем</p>
+                    </div>
+
+                    <div class="video-preview article-grid-section__item">
+                        <a href="https://rutube.ru/play/embed/68f0ae8364124de136d0dcb3f1fc50c9" data-fancybox
+                            data-width="735" data-height="422" data-type="iframe">
+                            <div class="thumbnail-container">
+                                <div class="play-button">
+                                    <img src="assets/img/play-button.svg" alt="">
+                                </div>
+                                <img class="thumbnail" 
+                                alt="превью видео"
+                                data-img-src="assets/img/articles__video-previews/Rectangle 32.png"
+                                    src="" />
+                            </div>
+                        </a>
+                        <p class="project-paragraph video-title">Курс эстетической остеопатии направлен на решение
+                            косметологиче&shy;ских проблем</p>
+                    </div>
+
+                    <div class="video-preview article-grid-section__item">
+                        <a href="https://rutube.ru/play/embed/68f0ae8364124de136d0dcb3f1fc50c9" data-fancybox
+                            data-width="735" data-height="422" data-type="iframe">
+                            <div class="thumbnail-container">
+                                <div class="play-button">
+                                    <img src="assets/img/play-button.svg" alt="">
+                                </div>
+                                <img class="thumbnail" 
+                                alt="превью видео"
+                                data-img-src="assets/img/articles__video-previews/Rectangle 32.png"
+                                    src="" />
+                            </div>
+                        </a>
+                        <p class="project-paragraph video-title">Курс эстетической остеопатии направлен на решение
+                            косметологиче&shy;ских проблем</p>
+                    </div>
+
+                    <div class="video-preview article-grid-section__item">
+                        <a href="https://rutube.ru/play/embed/68f0ae8364124de136d0dcb3f1fc50c9" data-fancybox
+                            data-width="735" data-height="422" data-type="iframe">
+                            <div class="thumbnail-container">
+                                <div class="play-button">
+                                    <img src="assets/img/play-button.svg" alt="">
+                                </div>
+                                <img class="thumbnail"  alt="превью видео"
+                                data-img-src="assets/img/articles__video-previews/Rectangle 30.png"
+                                    src="" />
                             </div>
                         </a>
                         <p class="project-paragraph video-title">О проблемах со здоровьем у женщин и детей, которые
@@ -433,6 +759,10 @@
 
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
