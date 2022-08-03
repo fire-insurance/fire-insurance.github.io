@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css" type="text/css"
+        media="screen" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <title>Гузель Евстигнеева</title>
+</head>
+
+<body>
+    <div class="container">
+
+        <!-- Затемнение экрана мод модальной навигацией -->
+        <div class="darkening"></div>
+
+        <!-- Хедер -->
+        <header class="header">
+            <a href="index.html">
+                <img class="logo" src="assets/img/logo.svg" alt="logo">
+            </a>
+            <!-- Навигационные ссылки -->
+            <nav class="navigation">
+                <div class="navigation__link ">
+                    <a href="index.html" data-title="Главная">Главная</a>
+                    <div class="underline"></div>
+                </div>
+                <div class="navigation__link navigation__link_active">
+                    <a href="articles.html" data-title="Статьи">Статьи</a>
+                    <div class="underline"></div>
+                </div>
+                <div class="navigation__link">
+                    <a href="videos.html" data-title="Видео">Видео</a>
+                    <div class="underline"></div>
+                </div>
+            </nav>
+
+            <div class="burger">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+
+            <!-- Навигационное меню для мобильных устройств -->
+            <div class="modal-menu">
+
+                <div class="modal-menu__container">
+                    <nav class="modal-menu__navigation">
+                        <div class="navigation__link ">
+                            <a href="index.html" data-title="Главная">Главная</a>
+                        </div>
+                        <div class="navigation__link navigation__link_active">
+                            <a href="articles.html" data-title="Статьи">Статьи</a>
+                        </div>
+                        <div class="navigation__link">
+                            <a href="videos.html" data-title="Видео">Видео</a>
+                        </div>
+                    </nav>
+                    <div class="modal-menu__social-networks">
+                        <div class="small-icons">
+                            <a href="#">
+                                <img class="social-network-icon" src="assets/img/telegram.svg" alt="telegram logo">
+                            </a>
+                            <a href="#">
+                                <img class="social-network-icon" src="assets/img/vk.svg" alt="vk logo">
+                            </a>
+                            <img class="social-network-icon" src="assets/img/whatsapp.svg" alt="whatsapp logo">
+                            </a>
+
+                        </div>
+                        <a href="#">
+                            <img class="social-network-icon" id="instagram-logo" src="assets/img/Instagram.svg"
+                                alt="Instagram logo">
+                        </a>
+                    </div>
+                    <button class="project-button project-button_color_dark-violet ">Записаться на
+                        прием</button>
+                </div>
+            </div>
+            <div class="mobile-background"></div>
+
+        </header>
+
+        <main>
+
+            <!-- Титульный блок страницы -->
+
+            <section class="about-greeting-block">
+                <div class="blurred-circle"></div>
+                <div class="about-greeting-block__text">
+                    <h1>Обо мне</h1>
+
+                    <div class="about-greeting-block__text-overflow">
+                        <div class="extra-text">
+                            <p class="about-info">Врач–гастроэнтеролог, диетолог, остеопат, врач превентивной
+                                медицины, медицинский эксперт федеральных образовательных программ для врачей,
+                                медицинский
+                                консультант федеральных телеканалов.</p>
+
+                            <p class="project-paragraph"><span style="font-weight: 600;">Ученая степень: </span>
+                                кандидат
+                                медицинских наук,
+                                врач высшей категории</p>
+                            <p class="project-paragraph">Основатель современного, многопрофильного медицинского центра
+                                превентивной медицины и остеопатии «Остеопоинт» </p>
+                        </div>
+
+                        <button class="about-greeting-block__show-more">
+                            <img src="assets/img/arrow_r.svg" alt="">
+                        </button>
+                    </div>
+
+                    <button
+                        class="about-greeting-block__project-button project-button project-button_color_dark-violet">Записаться
+                        на прием</button>
+                </div>
+                <div class="about-greeting-block__portrait">
+                    <img class="about-greeting-block__guzel-img" src="assets/img/about_page_portrait.png"
+                        alt="Портрет Гузель Евстингеевой">
+
+                    <!-- Боковая панель с соцсетями -->
+                    <div class="greeting-block__social-networks">
+                        <div class="line"></div>
+                        <a href="#">
+                            <img class="social-network-icon" src="assets/img/telegram.svg" alt="telegram logo">
+                        </a>
+                        <a href="#">
+                            <img class="social-network-icon" src="assets/img/vk.svg" alt="vk logo">
+                        </a>
+                        <a href="#">
+                            <img class="social-network-icon" src="assets/img/whatsapp.svg" alt="whatsapp logo">
+                        </a>
+                        <a href="#">
+                            <img class="social-network-icon" src="assets/img/Instagram.svg" alt="Instagram logo">
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Членство и квалификация -->
+            <section class="about-qualification-container">
+                <div class="about-qualification">
+
+                    <div class="about-qualification__block">
+                        <h3>Действительный член:</h3>
+                        <ul class="about-qualification__list">
+                            <p>Медицинской ассоциации профессиональных остеопатов</p>
+                            <p>Российской гастроэнтерологической ассоциации</p>
+                            <p>Российского общества по изучению печени</p>
+                            <p>Российского научного медицинского общества терапевтов</p>
+                        </ul>
+                    </div>
+                    <div class="about-qualification__block">
+                        <h3>Квалификации:</h3>
+                        <ul class="about-qualification__list">
+                            <p>Эксперт, спикер Международного института интегральной превентивной и антивозрастной
+                                медицины
+                                «PreventAge» и Первой профессиональной школы нутрициологии «НутриФест»</p>
+                        </ul>
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- Дипломы и сертификаты -->
+            <section class="about-diplomas">
+                <div class="about-diplomas__container">
+                    <h2>
+                        <p>Дипломы</p>
+                        <p>и сертификаты</p>
+                    </h2>
+                    <div class="about-diplomas__swiper-container">
+                        <div class="about-diplomas-swiper-slides">
+                            <!-- Слайды -->
+                            <div class="about-diplomas-swiper-wrapper swiper-wrapper">
+
+                                <div class="about-diplomas-slide swiper-slide">
+                                    <div class="diploma-slide__img" data-fancybox data-src="assets/img/diplomas/1.png">
+                                        <div class="hover-effect"></div>
+                                        <img src="assets/img/diplomas/1.png" alt="">
+                                    </div>
+
+                                    <div class="diploma-slide__text">
+                                        <p class="diploma-slide__title">Диплом</p>
+                                        <p class="diploma-slide__description project-paragraph">Здесь будет краткий
+                                            текст с названием
+                                            номинации «The American Gastroenterological Association» и год получения
+                                            диплома
+                                            максимум в три строки.</p>
+                                    </div>
+                                </div>
+
+                                <div class="about-diplomas-slide swiper-slide">
+                                    <div class="diploma-slide__img" data-fancybox data-src="assets/img/diplomas/1.png">
+                                        <div class="hover-effect"></div>
+                                        <img src="assets/img/diplomas/1.png" alt="">
+                                    </div>
+
+                                    <div class="diploma-slide__text">
+                                        <p class="diploma-slide__title">Диплом2</p>
+                                        <p class="diploma-slide__description project-paragraph">Здесь будет краткий
+                                            текст с названием
+                                            номинации «The American Gastroenterological Association» и год получения
+                                            диплома
+                                            максимум в три строки.</p>
+                                    </div>
+                                </div>
+
+                                <div class="about-diplomas-slide swiper-slide">
+                                    <div class="diploma-slide__img" data-fancybox data-src="assets/img/diplomas/1.png">
+                                        <div class="hover-effect"></div>
+                                        <img src="assets/img/diplomas/1.png" alt="">
+                                    </div>
+
+                                    <div class="diploma-slide__text">
+                                        <p class="diploma-slide__title">Диплом3</p>
+                                        <p class="diploma-slide__description project-paragraph">Здесь будет краткий
+                                            текст с названием
+                                            номинации «The American Gastroenterological Association» и год получения
+                                            диплома
+                                            максимум в три строки.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="about-diplomas__swiper-pagination swiper-pagination">
+                        </div>
+                    </div>
+
+                    <div class="swiper-arrows about-diplomas__swiper-arrows">
+                        <div class="swiper-button-prev about-diplomas__swiper-button-prev"></div>
+                        <div class="swiper-button-next about-diplomas__swiper-button-next"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Картинки с информацией -->
+            <section class="about-info-blocks">
+                <div class="about-info-blocks__container">
+
+                    <div class="about-info-blocks__block">
+                        <div class="image-container">
+                            <img src="assets/img/about_guzel1.png" alt="">
+                        </div>
+                        <div class="text">
+                            <h2>Заголовок</h2>
+                            <p class="project-paragraph">Гипотония, как считают многие, не так опасна, как гипертония.
+                                Какие проблемы могут быть
+                                при пониженном давлении? В действительности такое нарушение — это сигнал, что организм
+                                функционирует не нормально, недополучая кислород и питательные вещества.</p>
+                            <p class="project-paragraph">
+                                При диагностировании гипотонии доктор назначает медикаментозное лечение, которое можно
+                                дополнить «народными» средствами, повышая эффективность. Самый легкий способ — ввести
+                                в рацион продукты, которые повышают давление, в частности, фрукты.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="about-info-blocks__block">
+                        <div class="image-container">
+                            <img src="assets/img/about_guzel2.png" alt="">
+                        </div>
+                        <div class="text">
+                            <h2>Заголовок</h2>
+                            <p class="project-paragraph">Гипотония, как считают многие, не так опасна, как гипертония.
+                                Какие проблемы могут быть
+                                при пониженном давлении? В действительности такое нарушение — это сигнал, что организм
+                                функционирует не нормально, недополучая кислород и питательные вещества.</p>
+                            <p class="project-paragraph">
+                                При диагностировании гипотонии доктор назначает медикаментозное лечение, которое можно
+                                дополнить «народными» средствами, повышая эффективность. Самый легкий способ — ввести
+                                в рацион продукты, которые повышают давление, в частности, фрукты.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- Проекты с моим участием -->
+            <section class="about-projects">
+                <h2>Проекты с моим участием</h2>
+                <div class="about-projects__grid">
+                    <div class="video-preview">
+                        <a href="https://rutube.ru/play/embed/68f0ae8364124de136d0dcb3f1fc50c9" data-fancybox
+                            data-width="735" data-height="422" data-type="iframe">
+                            <div class="thumbnail-container">
+                                <img class="thumbnail" alt="превью видео" data-img-src="assets/img/about-projects/1.png"
+                                    src="assets/img/about-projects/1.png" />
+                                <img class="channel-img" src="assets/img/about-projects/NTV.png" alt="">
+                                <div class="title">
+                                    <div class="title__text">
+                                        <p class="video-title">Еда живая</p>
+                                        <p class="video-description project-paragraph">Гречка</p>
+                                    </div>
+                                </div>
+                                <div class="hover-effect"></div>
+                                <div class="play-button">
+                                    <img src="assets/img/play-button.svg" alt="">
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="video-preview video-preview_big">
+                        <a href="https://rutube.ru/play/embed/68f0ae8364124de136d0dcb3f1fc50c9" data-fancybox
+                            data-width="735" data-height="422" data-type="iframe">
+                            <div class="thumbnail-container">
+                                <img class="thumbnail" alt="превью видео" data-img-src="assets/img/about-projects/1.png"
+                                    src="assets/img/about-projects/2.png" />
+                                <img class="channel-img" src="assets/img/about-projects/NTV.png" alt="">
+                                <div class="title">
+                                    <div class="title__text">
+                                        <p class="video-title">Программа &laquo;Мальцева&raquo;</p>
+                                        <p class="video-description project-paragraph">Борьба с акне</p>
+                                    </div>
+                                </div>
+                                <div class="hover-effect"></div>
+                                <div class="play-button">
+                                    <img src="assets/img/play-button.svg" alt="">
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="video-preview video-preview_big">
+                        <a href="https://rutube.ru/play/embed/68f0ae8364124de136d0dcb3f1fc50c9" data-fancybox
+                            data-width="735" data-height="422" data-type="iframe">
+                            <div class="thumbnail-container">
+                                <img class="thumbnail" alt="превью видео" data-img-src="assets/img/about-projects/1.png"
+                                    src="assets/img/about-projects/3.png" />
+                                <img class="channel-img" src="assets/img/about-projects/NTV.png" alt="">
+                                <div class="title">
+                                    <div class="title__text">
+                                        <p class="video-title">Программа &laquo;Мальцева&raquo;</p>
+                                        <p class="video-description project-paragraph">Исправление прикуса</p>
+                                    </div>
+                                </div>
+                                <div class="hover-effect"></div>
+                                <div class="play-button">
+                                    <img src="assets/img/play-button.svg" alt="">
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="video-preview">
+                        <a href="https://rutube.ru/play/embed/68f0ae8364124de136d0dcb3f1fc50c9" data-fancybox
+                            data-width="735" data-height="422" data-type="iframe">
+                            <div class="thumbnail-container">
+                                <img class="thumbnail" alt="превью видео" data-img-src="assets/img/about-projects/1.png"
+                                    src="assets/img/about-projects/4.png" />
+                                <img class="channel-img" src="assets/img/about-projects/NTV.png" alt="">
+                                <div class="title">
+                                    <div class="title__text">
+                                        <p class="video-title">Программа &laquo;Мальцева&raquo;</p>
+                                        <p class="video-description project-paragraph">Лечение акне</p>
+                                    </div>
+                                </div>
+                                <div class="hover-effect"></div>
+                                <div class="play-button">
+                                    <img src="assets/img/play-button.svg" alt="">
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="video-preview">
+                        <a href="https://rutube.ru/play/embed/68f0ae8364124de136d0dcb3f1fc50c9" data-fancybox
+                            data-width="735" data-height="422" data-type="iframe">
+                            <div class="thumbnail-container">
+                                <img class="thumbnail" alt="превью видео" data-img-src="assets/img/about-projects/1.png"
+                                    src="assets/img/about-projects/5.png" />
+                                <img class="channel-img" src="assets/img/about-projects/NTV.png" alt="">
+                                <div class="title">
+                                    <div class="title__text">
+                                        <p class="video-title">Наш потребнадзор</p>
+                                        <p class="video-description project-paragraph">Продукты с коллагеном</p>
+                                    </div>
+                                </div>
+                                <div class="hover-effect"></div>
+                                <div class="play-button">
+                                    <img src="assets/img/play-button.svg" alt="">
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="video-preview video-preview_big">
+                        <a href="https://rutube.ru/play/embed/68f0ae8364124de136d0dcb3f1fc50c9" data-fancybox
+                            data-width="735" data-height="422" data-type="iframe">
+                            <div class="thumbnail-container">
+                                <img class="thumbnail" alt="превью видео" data-img-src="assets/img/about-projects/1.png"
+                                    src="assets/img/about-projects/6.png" />
+                                <img class="channel-img" src="assets/img/about-projects/NTV.png" alt="">
+                                <div class="title">
+                                    <div class="title__text">
+                                        <p class="video-title">Вся правда о пользе
+                                            и вреде красной икры</p>
+                                        <p class="video-description project-paragraph">Советы диетолога</p>
+                                    </div>
+                                </div>
+                                <div class="hover-effect"></div>
+                                <div class="play-button">
+                                    <img src="assets/img/play-button.svg" alt="">
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="video-preview video-preview_small">
+                        <a href="https://rutube.ru/play/embed/68f0ae8364124de136d0dcb3f1fc50c9" data-fancybox
+                            data-width="735" data-height="422" data-type="iframe">
+                            <div class="thumbnail-container">
+                                <img class="thumbnail" alt="превью видео" data-img-src="assets/img/about-projects/1.png"
+                                    src="assets/img/about-projects/7.png" />
+                                <img class="channel-img" src="assets/img/about-projects/NTV.png" alt="">
+                                <div class="title">
+                                    <div class="title__text">
+                                        <p class="video-title">Еда живая и мертвая</p>
+                                        <p class="video-description project-paragraph">Пшеница - друг или враг здоровья
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="hover-effect"></div>
+                                <div class="play-button">
+                                    <img src="assets/img/play-button.svg" alt="">
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="video-preview video-preview_small">
+                        <a href="https://rutube.ru/play/embed/68f0ae8364124de136d0dcb3f1fc50c9" data-fancybox
+                            data-width="735" data-height="422" data-type="iframe">
+                            <div class="thumbnail-container">
+                                <img class="thumbnail" alt="превью видео" data-img-src="assets/img/about-projects/1.png"
+                                    src="assets/img/about-projects/8.png" />
+                                <img class="channel-img" src="assets/img/about-projects/NTV.png" alt="">
+                                <div class="title">
+                                    <div class="title__text">
+                                        <p class="video-title">Наш потребна&shy;дзор</p>
+                                        <p class="video-description project-paragraph">Проверка чипсов</p>
+                                    </div>
+                                </div>
+                                <div class="hover-effect"></div>
+                                <div class="play-button">
+                                    <img src="assets/img/play-button.svg" alt="">
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="video-preview video-preview_small">
+                        <a href="https://rutube.ru/play/embed/68f0ae8364124de136d0dcb3f1fc50c9" data-fancybox
+                            data-width="735" data-height="422" data-type="iframe">
+                            <div class="thumbnail-container">
+                                <img class="thumbnail" alt="превью видео" data-img-src="assets/img/about-projects/1.png"
+                                    src="assets/img/about-projects/9.png" />
+                                <img class="channel-img" src="assets/img/about-projects/ChannelFirst.png" alt="">
+                                <div class="title">
+                                    <div class="title__text">
+                                        <p class="video-title">Пусть говорят</p>
+                                        <p class="video-description project-paragraph">Программа об Алесе Кафельниковой
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="hover-effect"></div>
+                                <div class="play-button">
+                                    <img src="assets/img/play-button.svg" alt="">
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <button class="about-projects__show-more">
+                    <img src="assets/img/arrow_r.svg" alt="">
+                </button>
+            </section>
+
+            <!-- Новые статьи -->
+            <section class="articles-on-theme article-grid-section ">
+                <h2>Новые статьи</h2>
+
+                <div class="articles-on-theme__grid article-grid-section__grid">
+
+                    <a href="article.html" class="article article-grid-section__item">
+                        <div class="article__image-container">
+                            <div class="hover-effect">
+                                <img src="assets/img/articles__arrow.svg" alt="">
+                            </div>
+                            <img class="article__image" src="assets/img/articles__article-preview/Cбалансированная диета.png"
+                                alt="Превью статьи">
+                        </div>
+
+                        <p class="article__title project-paragraph">
+                            Сбалансирован&shy;ная диета и что это такое?
+                        </p>
+                        <p class="article__preview-text project-paragraph">
+                            Сбалансирован&shy;ная диета способствует
+                            укреплению иммунитета, повышает сопротивляемость организма, что особен Lorem ipsum dolor sit
+                            amet consectetur adipisicing elit.
+                        </p>
+                    </a>
+
+                    <a href="article.html" class="article article-grid-section__item">
+                        <div class="article__image-container">
+                            <div class="hover-effect">
+                                <img src="assets/img/articles__arrow.svg" alt="">
+                            </div>
+                            <img class="article__image" src="assets/img/articles__article-preview/Неоспоримые правила.png"
+                                alt="Превью статьи">
+                        </div>
+
+                        <p class="article__title project-paragraph">
+                            Неоспоримые правила здоровья
+                        </p>
+                        <p class="article__preview-text project-paragraph">
+                            Разумеется, правильно подобранная система питания позволит не только сохранить массу тела,
+                            но и избежать Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        </p>
+                    </a>
+
+                    <a href="article.html" class="article article-grid-section__item">
+                        <div class="article__image-container">
+                            <div class="hover-effect">
+                                <img src="assets/img/articles__arrow.svg" alt="">
+                            </div>
+                            <img class="article__image" src="assets/img/articles__article-preview/Профессиональная диетология.png"
+                                alt="Превью статьи">
+                        </div>
+
+                        <p class="article__title project-paragraph">
+                            Профилактическая диетология
+                        </p>
+                        <p class="article__preview-text project-paragraph">
+                            Если говорить о профилактической диетологии, то она определяет следующие основные правила,
+                            или принципы, питан Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        </p>
+                    </a>
+                </div>
+
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="line"></div>
+            <nav class="footer__links">
+                <div class="navigation__link">
+                    <a href="index.html" data-title="Главная">Главная</a>
+                </div>
+                <div class="navigation__link">
+                    <a href="articles.html" data-title="Статьи">Статьи</a>
+                </div>
+                <div class="navigation__link">
+                    <a href="videos.html" data-title="Видео">Видео</a>
+                </div>
+            </nav>
+
+            <p class="location">1-й Щипковский переулок, д .4
+                Клиника "Остеопоинт" (ООО "Витамед)</p>
+
+            <button class="project-button project-button_color_dark-violet">Записаться на прием</button>
+        </footer>
+    </div>
+
+    <script src="jquery-3.6.0.min.js"></script>
+    <script src="main.js"></script>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
